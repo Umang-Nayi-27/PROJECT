@@ -1,0 +1,8 @@
+white-space:nowrap
+
+--> whitespace :: aa element ni anadaar  tab, backspace , linebreack new handle kerva vapray che...
+		
+--> whitespace:nowrap  --> nowrap ni madad thi text ee single line ma j rehse..
+
+
+display:inline-block

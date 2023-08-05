@@ -1,0 +1,1 @@
+gsap.to("#hl1",{x:-3000 , duration:8 , repeat:-1 , ease:"linear"})
