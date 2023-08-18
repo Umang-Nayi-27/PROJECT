@@ -3,12 +3,19 @@ html,body{
     margin:0px;
     box-sizing: border-box;
     font-family: 'Viga', sans-serif;
+    scroll-snap-type: y mandatory;
 }
+#bg{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 101vh;
+}
+
 /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
 
 #nav{
     position: fixed;
-    height: 500px; 
+    height: 100px; 
     width: auto;
     max-width: auto;
     margin-top: 2px;
@@ -30,10 +37,10 @@ html,body{
     gap: 40px;
     position: fixed;
     height: 100px; 
-    width: 400px;
+    width: auto;
     max-width: auto;
     margin-top: 15px;
-    left: 80%;
+    left: 88%;
     background-color: transparent;
     z-index: 5;
     overflow: hidden;
@@ -57,7 +64,10 @@ html,body{
     background-color:white;
     overflow: hidden;
     align-items: center;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
 }
+
 
 #page1>img{
     height: auto;
@@ -65,7 +75,7 @@ html,body{
     max-width: 100%;
     max-height: 100%;
     position: absolute;
-    z-index: 2;
+    z-index: 3;     
 }
 
 #page1>h1{
@@ -89,11 +99,7 @@ html,body{
     top: 55%;
     left: 4%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     font-size:28px;
-    font-weight: 30%;
-    background-color: transparent;
 }
 #qt2{
     font-family: 'Handjet', cursive;
@@ -102,12 +108,7 @@ html,body{
     width: 500px;
     top: 55%;
     left: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size:28px;
-    font-weight: 30%;
-    background-color: transparent;
 }
 #page1>h1>span{
     font-weight: lighter;
@@ -120,6 +121,15 @@ html,body{
     height: 100vh;
     width: 99vw;
     background-color:white;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+}
+
+#page2>#bg>#bg1{
+    background-color: white;
+}
+#page2>#bg>#bg2{
+    background-color: white;
 }
 #page2>img{
     height: auto;
@@ -129,7 +139,7 @@ html,body{
     max-height: 73%;
     position: absolute;
     z-index: 2;
-    left: 67%;
+    left: 36%;
     top:15%
 }
 #ani1{
@@ -149,63 +159,97 @@ html,body{
     right: 100%;
     background-color: black;
 }
-/* ------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
 #page3{
     position:relative;
     height: 100vh;
     width: 99vw;
-    background-color:white;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
+    background-color: transparent;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
 }
 
-
-#container31{
+#bgp3 {
     position: absolute;
     display: grid;
-    grid-template-rows: 250px;
-    grid-template-columns: 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px ;
-    white-space: nowrap;
-    column-gap: 10px;
-    top:37% ;
-}
-#container31>div{
-    border-radius: 5px;
-    background-color: black;
-    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 4fr 1.5fr;
+    place-items: center;
 }
 
-#container31>div>img{
-    height: 250px;
-    width: auto;
-}
 
-#container32{
-    position: absolute;
-    display: grid;
-    grid-template-rows: 250px;
-    grid-template-columns: 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px;
-    white-space: nowrap;
-    column-gap: 10px;
-    top: 70% ;
-    right: 1%;
-}
-
-#container32>div{
-    border-radius: 5px;
-    background-color: black;
-    overflow: hidden;
-}
-#container32>div>img{
-    height: 250px;
-    width: auto;
-}
-/* ----------------------------------------------------------------------------------------------------------------------------------------- */
-
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
 #page4{
     position:relative;
     height: 100vh;
     width: 99vw;
-    background-color:green;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
 }
+#cntr{
+    position: absolute;
+    height: 88vh;
+    width: 100vw;
+    top: 13vh;
+    background-color:transparent;
+    overflow:hidden;
+}
+
+#container41{
+    position: absolute;
+    display: grid;
+    grid-template-columns:200px;
+    grid-template-rows:200px 200px 200px 200px 200px 200px 200px 200px ;
+    white-space: nowrap;
+    row-gap: 10px;
+    left:11% ;
+}
+#container41>div{
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#container41>div>img{
+    height:auto;
+    width: 200px;
+    filter: grayscale(30%);
+}
+
+#container42{
+    position: absolute;
+    display: grid;
+    bottom: 0%;
+    grid-template-columns:200px;
+    grid-template-rows:200px 200px 200px 200px 200px 200px 200px 200px;
+    white-space: nowrap;
+    row-gap: 10px;
+    left: 23%;
+}
+
+#container42>div{
+    border-radius: 5px;
+    overflow: hidden;
+}
+#container42>div>img{
+    height:auto;
+    width: 200px;
+    filter: grayscale(30%);
+}
+    
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+#page5{
+    position:relative;
+    height: 100vh;
+    width: 99vw;
+    background-color: transparent;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+}
+
