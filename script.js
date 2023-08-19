@@ -12,8 +12,8 @@
 
   // -------------------------------------------------------------- PAGE 2-------------------------------------------------------
 
-  gsap.set("#p2pic",{opacity:0,y:100})
-  gsap.to("#p2pic",{opacity:1, y:0,scrollTrigger:{trigger:"#p2pic",start:"top 80%", end:"top 30%" ,duration:4,scrub:1}}) 
+  gsap.set("#vid",{opacity:0})
+  gsap.to("#vid",{opacity:1,scale:1.3,scrollTrigger:{trigger:"#vid",start:"top 50%", end:"top 10%" ,duration:4,scrub:1}}) 
 
   // ------------------------------------------------------------- PAGE 3----------------------------------------------------------
 
@@ -32,4 +32,4 @@
   gsap.to("#container41",{opacity:1,scrollTrigger:{trigger:"#container31",start:"top 80%", end:"top 30%" ,duration:2,scrub:1}}) 
 
   gsap.set("#container42",{opacity:0})
-  gsap.to("#container42",{opacity:1,scrollTrigger:{trigger:"#container32",start:"70% 80%", end:"top 30%" ,duration:2,scrub:1}}) 
+  gsap.to("#container42",{opacity:1,scrollTrigger:{trigger:"#container32",start:"top 80%", end:"top 30%" ,duration:2,scrub:1}}) 
