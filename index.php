@@ -63,21 +63,64 @@
         </div>
     </div>
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="page3">
-        <div id="bgp3">
-            <div id="bgp31"></div>
-            <div id="bgp32">
+    <div id="page2">
+        <div id="bgp2">
+            <div id="bgp21">
+                <h1>High Quality Music</h1>
+                        <p>Unleash your rhythm and ignite the groove with Beatboxify's electrifying melodies <br> where every note is a whisper of seduction and every beat, a dance of desire
+                        </p>
+            </div>
+            <div id="bgp22">
                 <img src="img/p3.jpg" alt="">
             </div>
-            <div id="bgp33">
+            <div id="bgp23">
                 <h1>Listen Song when ever, Where ever you want .</h1>
             </div>
         </div>
     </div>
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
 
-    <div id="page2">
-        
+    <div id="page3">
+        <div id="p3">
+            <div id="p31">
+                <h1>Discover the Symphony of Genres
+                </h1>
+            </div>
+            <div id="p32">
+                <div id="p323"></div>
+                <div id="p321">
+                    <div id="p3211">
+                        <video autoplay loop muted plays-inline id="vid61">
+                            <source src="img/p3vid4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="p3212">
+                        <div id="p32121">
+                            <video autoplay loop muted plays-inline id="vid61">
+                                <source src="img/p3vid6.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div id="p32122">
+                            <video autoplay loop muted plays-inline id="vid61">
+                                <source src="img/p3vid3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="p322">
+                    <div id="p3txt">
+                       
+                        <h3>Your Gateway to Musical Diversity!</h3>
+                        <img src="img/p3pic.png" style="height: 400px;width: auto;">
+                        <p>Welcome to our captivating corner of the internet,  where the world of music comes alive <br> in all its  vibrant and varied forms. Prepare to embark on anbr  exhilarating auditory <br> adventure through a kaleidoscope of genres, each offering a unique <br> rhythm, mood, and atmosphere</p>  
+                        
+                       
+                    </div>
+                   </div>
+            </div>
+        </div>
+
     </div>
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
 
