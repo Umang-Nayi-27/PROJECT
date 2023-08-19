@@ -1,11 +1,13 @@
-html,body{
-    padding:0px;
-    margin:0px;
+html,
+body {
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
     font-family: 'Viga', sans-serif;
     scroll-snap-type: y mandatory;
 }
-#bg{
+
+#bg {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 101vh;
@@ -13,9 +15,9 @@ html,body{
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
 
-#nav{
+#nav {
     position: fixed;
-    height: 100px; 
+    height: 100px;
     width: auto;
     max-width: auto;
     margin-top: 2px;
@@ -25,18 +27,19 @@ html,body{
     overflow: hidden;
 }
 
-#nav>img{
-    width: 140px; 
+#nav>img {
+    width: 140px;
     height: auto;
 }
+
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
-#nav2{
-    display:flex;
+#nav2 {
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
     position: fixed;
-    height: 100px; 
+    height: 100px;
     width: auto;
     max-width: auto;
     margin-top: 15px;
@@ -46,22 +49,22 @@ html,body{
     overflow: hidden;
 }
 
-#nav2>a>i{
+#nav2>a>i {
     font-size: 24px;
-    color:black;
+    color: black;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------ */
 
-#page1{
+#page1 {
     display: flex;
     flex-direction: column;
     padding: 0px 0px;
     margin: 0px 0px;
-    position:relative;
+    position: relative;
     height: 100vh;
     width: 99vw;
-    background-color:white;
+    background-color: white;
     overflow: hidden;
     align-items: center;
     scroll-snap-align: start;
@@ -69,16 +72,16 @@ html,body{
 }
 
 
-#page1>img{
+#page1>img {
     height: auto;
     width: auto;
     max-width: 100%;
     max-height: 100%;
     position: absolute;
-    z-index: 3;     
+    z-index: 3;
 }
 
-#page1>h1{
+#page1>h1 {
     left: 100%;
     position: absolute;
     height: 100px;
@@ -91,7 +94,7 @@ html,body{
     display: inline-block;
 }
 
-#qt1{
+#qt1 {
     font-family: 'Handjet', cursive;
     position: absolute;
     height: 200px;
@@ -99,70 +102,66 @@ html,body{
     top: 55%;
     left: 4%;
     display: flex;
-    font-size:28px;
+    font-size: 28px;
 }
-#qt2{
+
+#qt2 {
     font-family: 'Handjet', cursive;
     position: absolute;
     height: 200px;
     width: 500px;
     top: 55%;
     left: 70%;
-    font-size:28px;
+    font-size: 28px;
 }
-#page1>h1>span{
+
+#page1>h1>span {
     font-weight: lighter;
     color: black;
 }
+
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
-#page2{
-    position:relative;
+#page2 {
+    position: relative;
     height: 100vh;
     width: 99vw;
-    background-color:white;
+    background-color: white;
     scroll-snap-align: start;
     scroll-behavior: smooth;
+    z-index: -1;
 }
 
-#page2>#bg>#bg1{
-    background-color: white;
-}
-#page2>#bg>#bg2{
-    background-color: white;
-}
-#page2>img{
-    height: auto;
-    width: auto;
-    margin-top: 3%  ;
-    max-width: 77%;
-    max-height: 73%;
-    position: absolute;
-    z-index: 2;
-    left: 36%;
-    top:15%
-}
-#ani1{
-    position: absolute;
-    height: 10px;
-    width: 100vw;
-    top: 90%;
-    left: 100%;
-    background-color: black;
+
+/* 
+#bg20 {
+    display: grid;
+    height: 100vh;
+    width: 99vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    z-index: 1;
 }
 
-#ani2{
-    position: absolute;
-    height: 10px;
-    width: 100vw;
-    top: 92%;
-    right: 100%;
-    background-color: black;
+#bg21{
+    background-color:green;
 }
+#bg22{
+    display: grid;
+    place-items: center;
+    background-color:red;
+}
+#bg23{
+    
+    background-color:aquamarine;
+} */
+
+
+
 /* ----------------------------------------------------------------------------------------------------------------------------------------- */
 
-#page3{
-    position:relative;
+#page3 {
+    position: relative;
     height: 100vh;
     width: 99vw;
     background-color: transparent;
@@ -171,19 +170,43 @@ html,body{
 }
 
 #bgp3 {
-    position: absolute;
     display: grid;
     height: 100vh;
-    width: 100vw;
+    width: 99vw;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 4fr 1.5fr;
+    grid-template-rows: 1fr 4fr 1fr;
+
+
+}
+
+#bgp31 {
+    background-color: transparent;
+}
+
+#bgp32 {
+    background-color: transparent;
+    overflow: hidden;
+    display: grid;
+    justify-content: center;
+}
+
+#bgp32>img {
+    height: 70%;
+    width: auto;
+}
+
+#bgp33 {
+    background-color: transparent;
+    display: grid;
     place-items: center;
+    color: black;
 }
 
 
+
 /* ------------------------------------------------------------------------------------------------------------------------------------- */
-#page4{
-    position:relative;
+#page4 {
+    position: relative;
     height: 100vh;
     width: 99vw;
     overflow: hidden;
@@ -192,64 +215,135 @@ html,body{
     scroll-snap-align: start;
     scroll-behavior: smooth;
 }
-#cntr{
-    position: absolute;
-    height: 88vh;
-    width: 100vw;
-    top: 13vh;
-    background-color:transparent;
-    overflow:hidden;
-}
 
-#container41{
-    position: absolute;
-    display: grid;
-    grid-template-columns:200px;
-    grid-template-rows:200px 200px 200px 200px 200px 200px 200px 200px ;
-    white-space: nowrap;
-    row-gap: 10px;
-    left:11% ;
-}
-#container41>div{
-    border-radius: 5px;
-    overflow: hidden;
-}
 
-#container41>div>img{
-    height:auto;
-    width: 200px;
-    filter: grayscale(30%);
-}
 
-#container42{
-    position: absolute;
-    display: grid;
-    bottom: 0%;
-    grid-template-columns:200px;
-    grid-template-rows:200px 200px 200px 200px 200px 200px 200px 200px;
-    white-space: nowrap;
-    row-gap: 10px;
-    left: 23%;
-}
-
-#container42>div{
-    border-radius: 5px;
-    overflow: hidden;
-}
-#container42>div>img{
-    height:auto;
-    width: 200px;
-    filter: grayscale(30%);
-}
-    
 /* ----------------------------------------------------------------------------------------------------------------------------------------- */
 
-#page5{
-    position:relative;
+#page5 {
+    position: relative;
     height: 100vh;
     width: 99vw;
     background-color: transparent;
     scroll-snap-align: start;
     scroll-behavior: smooth;
 }
+
+
+
+/* --------------------------------- */
+#page6 {
+    position: relative;
+    height: 100vh;
+    width: 99vw;
+    background-color: white;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#vid61{
+    width: 99vw;
+    height: auto;
+    height: auto;
+    z-index: 1;
+}
+
+
+#grid6 {
+    height: auto; /* Change to auto to accommodate variable content */
+    width: 99vw;
+    position: absolute;
+    top: 0; /* Position the footer at the bottom */
+    z-index: 2;
+}
+
+#footer {
+    background-color:transparent;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Add padding to the footer */
+}
+/* Your existing CSS styles here */
+
+/* Footer content */
+.footer-content {
+    text-align: center;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.company-name {
+    font-size: 36px;
+    color: #070707;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.about-section h3,
+.contact-section h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-section p,
+.contact-section p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.side-section {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #666;
+}
+
+.side-section i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.footer-buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+
 
