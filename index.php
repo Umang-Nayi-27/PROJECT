@@ -62,62 +62,76 @@
             becomes your language of expression."
         </div>
     </div>
-    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
-    <div id="page2">
-        <div id="bg">
-            <div id="bg1"></div>
-            <div id="bg2"></div>
-        </div>
-        <img src="img/iphone.png" id="p2pic" alt="">
-        <div id="p21text">
-
-        </div>
-    </div>
-
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div id="page3">
-            
+        <div id="bgp3">
+            <div id="bgp31"></div>
+            <div id="bgp32">
+                <img src="img/p3.jpg" alt="">
+            </div>
+            <div id="bgp33">
+                <h1>Listen Song when ever, Where ever you want .</h1>
+            </div>
+        </div>
     </div>
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+
+    <div id="page2">
+        
+    </div>
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+
     <div id="page4">
-        <div id="bg">
-            <div id="bg1"></div>
-            <div id="bg2"></div>
-        </div>
-        <div id="cntr">
-            <div id="container41">
-                <div><img src="img/artist/amit.png" alt=""></div>
-                <div><img src="img/artist/ar.png" alt=""></div>
-                <div><img src="img/artist/arijit.jpg" alt=""></div>
-                <div><img src="img/artist/arman.png" alt=""></div>
-                <div><img src="img/artist/darshan.png" alt=""></div>
-                <div><img src="img/artist/harry.png" alt=""></div>
-                <div><img src="img/artist/jas.png" alt=""></div>
-                <div><img src="img/artist/sidhu.png" alt=""></div>
-                <div><img src="img/artist/sonu.png" alt=""></div>
-                <div><img src="img/artist/udit.png" alt=""></div>
-                <div><img src="img/artist/yoyo.png" alt=""></div>
-            </div>
-            <div id="container42">
-                <div><img src="img/artist/drake.png" alt=""></div>
-                <div><img src="img/artist/aminem.png" alt=""></div>
-                <div><img src="img/artist/charlie.png" alt=""></div>
-                <div><img src="img/artist/dua.png" alt=""></div>
-                <div><img src="img/artist/ed.png" alt=""></div>
-                <div><img src="img/artist/justin.png" alt=""></div>
-                <div><img src="img/artist/martin.png" alt=""></div>
-                <div><img src="img/artist/selena.png" alt=""></div>
-                <div><img src="img/artist/weeknd.png" alt=""></div>
-                <div><img src="img/artist/swift.png" alt=""></div>
-                <div><img src="img/artist/snake.png" alt=""></div>
-            </div>
-        </div>
+
+        
     </div>
-    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
     <div id="page5">
 
     </div>
-    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <div id="page6">
+            
+        <div id="page6">
+            <div id="grid6">
+                <div id="footerup"></div>
+                <div id="footer">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h2 class="company-name">BeatBoxify</h2>
+                            <p class="tagline">Your Melody, Our Passion</p>
+                            <div class="footer-buttons">
+                                <button class="btn">Sign In</button>
+                                <button class="btn">Login</button>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <div class="about-section">
+                                <h3>About Us</h3>
+                                <p>Founded with a passion for music and creativity, BeatBoxify is your ultimate destination for musical inspiration.</p>
+                                <div class="side-section">
+                                    <p>&nbsp; &nbsp; &nbsp; &nbsp;  Join us in our  Incredible and Beautiful journey</p>
+                                </div>
+                            </div>
+                            <div class="contact-section">
+                                <h3>Contact</h3>
+                                <p>Phone: +91 1234567890 </p>
+                                <p>Email: info@beatboxify.com</p>
+                                <div class="side-section">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <video autoplay loop muted plays-inline id="vid61">
+                <source src="img/p2vid2.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+
+
     <script src="script.js"></script>
 </body>
 
