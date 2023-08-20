@@ -67,8 +67,9 @@
         <div id="bgp2">
             <div id="bgp21">
                 <h1>High Quality Music</h1>
-                        <p>Unleash your rhythm and ignite the groove with Beatboxify's electrifying melodies <br> where every note is a whisper of seduction and every beat, a dance of desire
-                        </p>
+                <p>Unleash your rhythm and ignite the groove with Beatboxify's electrifying melodies <br> where every
+                    note is a whisper of seduction and every beat, a dance of desire
+                </p>
             </div>
             <div id="bgp22">
                 <img src="img/p3.jpg" alt="">
@@ -91,33 +92,40 @@
                 <div id="p321">
                     <div id="p3211">
                         <video autoplay loop muted plays-inline id="vid61">
-                            <source src="img/p3vid4.mp4" type="video/mp4">
+                            <source src="img/logvid.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div id="p3212">
-                        <div id="p32121">
-                            <video autoplay loop muted plays-inline id="vid61">
-                                <source src="img/p3vid6.mp4" type="video/mp4">
-                            </video>
-                        </div>
+
                         <div id="p32122">
                             <video autoplay loop muted plays-inline id="vid61">
-                                <source src="img/p3vid3.mp4" type="video/mp4">
+                                <source src="img/p3vid4.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div id="p322">
                     <div id="p3txt">
-                       
-                        <h3>Your Gateway to Musical Diversity!</h3>
+
+                        <h3>Listen Your Favorite Gerne, For Ages</h3>
                         <img src="img/p3pic.png" style="height: 400px;width: auto;">
-                        <p>Welcome to our captivating corner of the internet,  where the world of music comes alive <br> in all its  vibrant and varied forms. Prepare to embark on anbr  exhilarating auditory <br> adventure through a kaleidoscope of genres, each offering a unique <br> rhythm, mood, and atmosphere</p>  
-                        
-                       
+                        <p>Welcome to our captivating corner of the internet.</p>
+                        <p> Where the world of music comes alive
+                            in all its vibrant and varied forms. Prepare<br>
+                            to embark on an exhilarating auditory
+                            adventure through a kaleidoscope of genres,<br>
+                            each offering a unique rhythm, mood, and atmosphere
+                        </p>
+                        <p style="color: black;">
+                            listen Pop,
+                            Rock,
+                            Hip-Hop,
+                            Rap,
+                            R&B (Rhythm and Blues),Jazz and hundreds of <br>more gerne song on our platfrom
+                        </p>
                     </div>
-                   </div>
+                </div>
             </div>
         </div>
 
@@ -125,16 +133,71 @@
     <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
 
     <div id="page4">
+        <video autoplay loop muted plays-inline>
+            <source src="img/p6vid.mp4" type="video/mp4">
+        </video>
 
-        
+        <div id="bgp4">
+            <div id="bgp41">
+                <h1>Compose Your Personal Playlist</h1>
+                <p>Unleash your rhythm and ignite the groove with Beatboxify's electrifying melodies <br> where every
+                    note is a whisper of seduction and every beat, a dance of desire
+                </p>
+            </div>
+            <div id="bgp42">
+                <img src="img/p4.png" alt="">
+            </div>
+            <div id="bgp43">
+                <h1>Craft Your Unique Playlist: Your Personal Symphony of Sound </h1>
+            </div>
+        </div>
     </div>
-<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
     <div id="page5">
+        
+        <div id="cntr">
+            <div id="container51">
+                <div><img src="img/artist/amit.png" alt=""></div>
+                <div><img src="img/artist/ar.png" alt=""></div>
+                <div><img src="img/artist/arijit.jpg" alt=""></div>
+                <div><img src="img/artist/arman.png" alt=""></div>
+                <div><img src="img/artist/darshan.png" alt=""></div>
+                <div><img src="img/artist/harry.png" alt=""></div>
+                <div><img src="img/artist/jas.png" alt=""></div>
+                <div><img src="img/artist/sidhu.png" alt=""></div>
+                <div><img src="img/artist/sonu.png" alt=""></div>
+                <div><img src="img/artist/udit.png" alt=""></div>
+                <div><img src="img/artist/yoyo.png" alt=""></div>
 
+            </div>
+            <div id="container52">
+                <div><img src="img/artist/drake.png" alt=""></div>
+                <div><img src="img/artist/aminem.png" alt=""></div>
+                <div><img src="img/artist/charlie.png" alt=""></div>
+                <div><img src="img/artist/dua.png" alt=""></div>
+                <div><img src="img/artist/ed.png" alt=""></div>
+                <div><img src="img/artist/justin.png" alt=""></div>
+                <div><img src="img/artist/martin.png" alt=""></div>
+                <div><img src="img/artist/selena.png" alt=""></div>
+                <div><img src="img/artist/weeknd.png" alt=""></div>
+                <div><img src="img/artist/swift.png" alt=""></div>
+                <div><img src="img/artist/snake.png" alt=""></div>
+            </div>
+        </div>
+        <div id="grd">
+            <div id="up">
+                <h1>Listen To Your Favorite Star</h1>
+            </div>
+            <div id="mid"></div>
+            <div id="down">
+               <p> Indulge in the melodies of your favorite singers. Let their voices paint <br> emotions across the canvas of your senses. Dive into <br> a world where every lyric carries a memory and every note evokes a feeling.<br>Your go-to escape is just a play button away.</p>
+                <h1>"When Lyrics Touch Your Heartstrings."</h1>
+            </div>
+        </div>
     </div>
-<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
     <div id="page6">
-            
+
         <div id="page6">
             <div id="grid6">
                 <div id="footerup"></div>
@@ -151,9 +214,10 @@
                         <div class="footer-column">
                             <div class="about-section">
                                 <h3>About Us</h3>
-                                <p>Founded with a passion for music and creativity, BeatBoxify is your ultimate destination for musical inspiration.</p>
+                                <p>Founded with a passion for music and creativity, BeatBoxify is your ultimate
+                                    destination for musical inspiration.</p>
                                 <div class="side-section">
-                                    <p>&nbsp; &nbsp; &nbsp; &nbsp;  Join us in our  Incredible and Beautiful journey</p>
+                                    <p>&nbsp; &nbsp; &nbsp; &nbsp; Join us in our Incredible and Beautiful journey</p>
                                 </div>
                             </div>
                             <div class="contact-section">
@@ -161,7 +225,7 @@
                                 <p>Phone: +91 1234567890 </p>
                                 <p>Email: info@beatboxify.com</p>
                                 <div class="side-section">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -169,13 +233,13 @@
                 </div>
             </div>
             <video autoplay loop muted plays-inline id="vid61">
-                <source src="img/p2vid2.mp4" type="video/mp4">
+                <source src="img/p4vid2.mp4" type="video/mp4">
             </video>
         </div>
-        
 
 
-    <script src="script.js"></script>
+
+        <script src="script.js"></script>
 </body>
 
 </html>
