@@ -1,0 +1,64 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#page1 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 1fr;
+}
+#divvid {
+    background-color: aquamarine;
+    overflow: hidden;
+}
+#divvid > video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#divlg {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container {
+    background-color:transparent;
+    text-align: center;
+    padding: 20px 20px;
+    border: 1px solid beige;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+}
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-container button {
+    background-color: greenyellow;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.forgot-password {
+    color: #444;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#aha{
+    color: #ccc;
+}
+#aha:hover {
+    color: grey;
+}

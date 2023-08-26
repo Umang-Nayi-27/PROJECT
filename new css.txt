@@ -6,3 +6,7 @@ white-space:nowrap
 
 
 display:inline-block
+
+
+
+place-tems : center aa matr display:grid karelu hoy tyare j work kare che . . .
