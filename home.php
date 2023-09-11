@@ -58,7 +58,7 @@ if (!isset($_SESSION["sessionuser"])) {
 
 <body>
 
-    <!-- //------------------------------------------------------navbar ------------------------------------------------------------------------------------ -->
+<!-- //------------------------------------------------------navbar ------------------------------------------------------------------------------------ -->
     <div id="mainpage">
         <nav class="navbar" id="nav">
             <div class="navbar-brand">
@@ -236,20 +236,72 @@ if (!isset($_SESSION["sessionuser"])) {
                             </a>
                         </div>
                     </div>
-                    <br>
-                    <div id="recent">
-                        <h4>Recently played</h4>
-                        <hr>
+                    <div class="recent">
+                        <div  class="heading">
+                        <h6>Recently played</h6>
+                        </div>
+                        <br>
+                        <div class="recent2">
                         <?php
-                            for ($i = 0; $i < 6; $i++) {
+                            for ($i = 0; $i < 10; $i++) {
                                 echo 
-                                "<div id='recentbox'>
+                                "<div class='recentbox'>
 
                                 </div>";
                             }
                         ?>
-                        <div id="recentbox">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="recent">
+                        <div  class="heading">
+                        <h6>Recently played</h6>
+                        </div>
+                        <br>
+                        <div class="recent2">
+                        <?php
+                            for ($i = 0; $i < 10; $i++) {
+                                echo 
+                                "<div class='recentbox'>
 
+                                </div>";
+                            }
+                        ?>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="recent">
+                        <div  class="heading">
+                        <h6>Recently played</h6>
+                        </div>
+                        <br>
+                        <div class="recent2">
+                        <?php
+                            for ($i = 0; $i < 10; $i++) {
+                                echo 
+                                "<div class='art'>
+
+                                </div>";
+                            }
+                        ?>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="recent">
+                        <div  class="heading">
+                        <h6>Recently played</h6>
+                        </div>
+                        <br>
+                        <div class="recent2">
+                        <?php
+                            for ($i = 0; $i < 10; $i++) {
+                                echo 
+                                "<div class='art'>
+
+                                </div>";
+                            }
+                        ?>
                         </div>
                     </div>
                 </div>
