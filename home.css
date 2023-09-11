@@ -265,6 +265,7 @@ li {
     color: #fff; 
     padding: 20px;
     font-weight:lighter;
+    z-index: 0;
 }
 
 .singer-player p {
@@ -301,6 +302,7 @@ li {
     color: #fff; /* Text color */
     padding: 20px;
     overflow: auto; /* this will add scrollbar if overflow */
+    z-index: 0;
 }
 
 #recc {
@@ -353,47 +355,54 @@ li {
 
 /* -------------------------------------------------- main ----------------------------------------------------------------------------- */
 
-#mainhome{
+#mainhome {
+    z-index: 0;
     height: 90%;
     width: 55%;
     background-color: #0a0a0a;
     left: 26.8%;
     position: fixed;
     margin-top: 10px;
-    overflow: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 6% 94%;
+    display: flex;
+    flex-direction: column; /* Stack the child elements vertically */
+    align-items: center; /* Center child elements horizontally */
 }
 
-/* CSS for the centered-links class */
 .links {
-    background-color:#121212 ;
+    background-color: #121212;
     color: #ccc;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */ /* Adjust the height as needed */
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 10px 30px; 
+    width: 100%; 
+}
+
+.links a {
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
     
 }
-/* CSS for the dropdown */
+
 .dropdown {
     position: relative;
     display: inline-block;
 }
-.dropbtn{
+
+.dropbtn {
     color: #ccc;
-    background-color:#121212 
+    background-color: #121212;
 }
-.dropbtn:hover{
+
+.dropbtn:hover {
     color: #ccc;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color:#222 ;
+    background-color: #222;
     min-width: 160px;
     z-index: 1;
 }
@@ -410,43 +419,73 @@ li {
     color: #ccc;
 }
 
-
-.links a {
-    text-decoration: none;
-    font-size: 15px; /* Adjust the font size as needed */
-    cursor: pointer;
-}
-.songs{
-    height: 100%;
-    width: 100%;
-    background-color: #999;
-    overflow: auto;
-}
-#recent {
-    position: relative;
-    height: 250px;
-    width: auto;
-    background-color: #000000;
+.funct {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align content to the left within the flex container */
-    overflow: hidden; /* Hide any content that overflows */
+    align-items: center; /* Center child elements horizontally */
+    width: 100%; /* Take up the full width of the container */
+    overflow-y: auto;
+    background-color: #0a0a0a;
 }
 
-h4 {
-    margin: 10px 0;
+
+.songs {
+    height: 100%;
+    width: 100%;
+    background-color:transparent;
+    overflow: auto;
 }
 
-#scroll-container {
-    overflow-x: scroll; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks inside the container */
-    display: flex; /* Make its children flex items */
+.recent {
+    margin-top: 10px;
+    height: auto;
+    width: 100%;
+    background-color:transparent;
+}
+
+.heading{
+    height: auto;
+    width: 100%;
+}
+
+.recent2{
+    margin-top: -10px;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    overflow-x: auto; /* Add horizontal scroll if necessary */
+    overflow-y: hidden; /* Hide vertical scroll if it appears */
+    flex-wrap: nowrap; /* Allow items to wrap to the next line */
+    justify-content: flex-start; /* Align items to the left */
+    align-content: flex-start; /* Align items to the top */
+}
+.recent2::-webkit-scrollbar {
+    height: 4px;
+}
+.recent2::-webkit-scrollbar-track{
+    background-color:#222;
+}
+.recent2::-webkit-scrollbar-thumb{
+    background-color:white;
+}
+.heading{
+    color: #ccc;
 }
 
 .recentbox {
-    display: inline-block;
-    margin-left: 15px;
+    margin: 10px;
     height: 150px;
     width: 150px;
-    background-color:white;
+    background-color: white;
+    flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.art{
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    flex-shrink: 0;
+    border-radius: 50%;
 }
