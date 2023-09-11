@@ -7,7 +7,7 @@ session_start();
 if (!isset($_SESSION["sessionuser"])) {
     echo "<script> window.location.href='index.php'; </script>";
 } else {
-    echo $_SESSION["path"];
+
     if (isset($_POST["logout"])) {
         echo "<script>alert('You are Logged Out.')</script>";
         session_unset();
@@ -31,281 +31,265 @@ if (!isset($_SESSION["sessionuser"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+
+    <link rel="shortcut icon" type="x-icon" href="img/browser.jpg" style="background-color: white;">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&family=Titillium+Web&display=swap" rel="stylesheet">
 
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Include Bootstrap JavaScript (requires jQuery and Popper.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <style>
-        /* Reset some default styles */
-        body,
-        h1,
-        h2,
-        h3,
-        p,
-        ul,
-        li {
-            margin: 0;
-            padding: 0;
-            font-family: 'Viga', sans-serif;
-        }
-
-        /* Style for the navigation bar */
-        .navbar {
-            background-color: white;
-            color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
-
-        .navbar-logo {
-            color: black;
-            text-decoration: none;
-            font-size: 24px;
-        }
-
-        .navbar-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .navbar-links li {
-            margin-right: 20px;
-
-        }
-
-        .navbar-links a:hover {
-            color: #777;
-        }
-
-        .navbar-links a {
-
-            font-weight: normal;
-            color: black;
-            text-decoration: none;
-        }
-
-        /* Style for the right corner buttons */
-        .navbar-right {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar-button {
-            margin-left: 20px;
-            padding: 10px 20px;
-            background-color: #d4cfd0;
-            color: black;
-            border-color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition-delay: 0.2s;
-
-            /* Add cursor style for better interaction */
-        }
-
-        .navbar-button:hover {
-
-            background-color: white;
-            border-color: #222;
-        }
-
-        #prpic {
-            height: 10vh;
-            width: auto;
-            object-fit: cover;
-
-        }
-
-        /* ... Other CSS rules ... */
-
-        /* Button Styles */
-        #upd {
-            background-color: #80bfff;
-            color: black;
-        }
-
-        #close {
-            background-color: #ff6666;
-            color: white;
-        }
-
-        #chng {
-            background-color: #80bfff;
-            color: black;
-        }
-
-        /* Hover Styles */
-        #upd:hover {
-            
-            /* Add a color change on hover for better visibility */
-            background-color: #666;
-            border-color: #222;
-            color: white;
-        }
-
-        #close:hover {
-            /* Add a color change on hover for better visibility */
-            background-color: #666;
-            border-color: #222;
-            color: white;
-        }
-
-        #chng:hover {
-            
-            /* Add a color change on hover for better visibility */
-            background-color: #666;
-            border-color: #222;
-            color: white;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-        /* Responsive adjustments */
-        @media screen and (max-width: 768px) {
-            .navbar-links {
-                display: none;
-            }
-
-            .navbar-right {
-                margin-left: auto;
-            }
-        }
-
-        /* Other CSS styles ... */
-        /* Responsive adjustments ... */
-    </style>
 </head>
 
 <body>
-    <nav class="navbar" id="nav">
-        <div class="navbar-brand">
-            <img src="img\log2.png" alt="" style=" width: 150px;height: auto;">
-        </div>
-        <ul class="navbar-links">
-            <li><a href="#" style="color: #777;">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="navbar-right">
-            <form method="post" action="">
-                <input type="submit" class="navbar-button" name="logout" value="Logout">
-                <a type="" name="updtpr" id="name" style="color:#666; padding:20px ; cursor:pointer" value="">
-                    <?php echo $_SESSION["uname"]; ?></a>
-            </form>
-        </div>
-    </nav>
-    <div id="prof" style="height: 50vh; width: 40vw; position: absolute; top: 20%; left: 30%; z-index: 5; padding: 10px; display: none">
-        <button type="submit" class="btn btn-primary" id="close" >X</button>
-        <div class="container mt-4" style="background-color: #f2f2f2; padding: 20px; display: flex; justify-content: center; align-items: center; border-radius: 10px;">
 
-            <div style="display: flex; flex-direction: row; align-items: center;">
-                <div style="flex: 1;">
-                    <!-- Profile Image (left side) -->
-                    <img src="<?php echo $_SESSION["path"]; ?>" alt="" id="prpic" style="height: 40vh; width: auto; object-fit: cover; ">
-                </div>
-                <div style="flex: 2;display: flex; flex-direction: row; align-items: center;">
-                    <!-- User Details (right side) -->
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="username" class="detail" style="color: #777;">user-name :</label><br>
-                            <label class="input"><?php echo $_SESSION["uname"]; ?></label>
-                        </div>
-                        <div class="form-group">
-                            <label for="fullname" class="detail" style="color: #777;">full-name :</label><br>
-                            <label class="input"><?php echo $_SESSION["fname"]; ?></label>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="detail" style="color: #777;">email :</label><br>
-                            <label class="input"><?php echo $_SESSION["email"]; ?></label>
-                        </div>
+    <!-- //------------------------------------------------------navbar ------------------------------------------------------------------------------------ -->
+    <div id="mainpage">
+        <nav class="navbar" id="nav">
+            <div class="navbar-brand">
+                <!-- <img src="img\HOME_LOGO.png" alt="" style=" width: 100px;height: auto;"> -->
+                <span style="font-size: 25px;">BeatBoxify</span>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="#" style="color: #777;">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="navbar-right">
+                <form method="post" action="">
 
-                        <div class="text-center">
-                            <button type="submit" id="upd" class="btn btn-primary" name="updtpr" >Update profile?</button>
-                        </div>
-                        <div class="text-center">
-                            <br>
-                            <button type="submit" id="chng" class="btn btn-primary" name="cngpass" >Change Password?</button>
-                        </div>
-                    </form>
+                    <img src="<?php echo $_SESSION["path"] ?>" alt="" id="name">
+                    <input type="submit" class="navbar-button" name="logout" value="Logout">
+                </form>
+            </div>
+        </nav>
+        <div id="prof" style="height: 50vh; width: 40vw; position: absolute; top: 20%; left: 30%; z-index: 5; padding: 10px; display: none">
+            <button type="submit" class="btn btn-primary" id="close">X</button>
+            <div class="container mt-4" id="prcard">
+
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <div style="flex: 1;">
+                        <!-- Profile Image (left side) -->
+                        <img src="<?php echo $_SESSION["path"]; ?>" alt="" id="prpic">
+                    </div>
+                    <div style="flex: 2;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
+                        <!-- User Details (right side) -->
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="username" class="detail" style="color: #777;">user-name :</label><br>
+                                <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["uname"]; ?></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullname" class="detail" style="color: #777;">full-name :</label><br>
+                                <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["fname"]; ?></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="detail" style="color: #777;">email :</label><br>
+                                <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["email"]; ?></label>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" id="upd" class="btn btn-primary" name="updtpr">Update profile?</button>
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" id="chng" class="btn btn-primary" name="cngpass">Change Password?</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+<!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
+        <div id="song_player" class="fixed-player">
+            <img src="img/song.jpg" id="pbimg">
 
-    <!-- Bootstrap Carousel -->
-    <div class="container mt-4" id="slider" style="width: 100vw;margin:0;padding:0;">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100vw;margin:0 0;padding:0 0;">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-            </ol>
+            <center>
+                <br>
+                <h3 id="song-name">Song Name</h3>
+                <p style="color: #999;"> Singer name</p>
+            </center>
+            <br>
+            <audio>
+                <source src="song.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" style="width: 100%;" value="0">
+            <div id="time" class="time-container">
+                <span class="right-corner">00:00</span>
+                <span class="left-corner">3:00</span>
+            </div>
+            <br>
+            <div id="playback">
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="b3.png" alt="Slide 1" class="d-block w-100">
-                    <div class="carousel-caption">
-
-                    </div>
+                <div id="previous">
+                    <i class="fa-solid fa-backward"></i>
                 </div>
-                <div class="carousel-item">
-                    <img src="b2.jpg" alt="Slide 2" class="d-block w-100">
-                    <div class="carousel-caption">
-
-                    </div>
+                <div id="play">
+                    <i class="fa-solid fa-play"></i>
                 </div>
-                <div class="carousel-item">
-                    <img src="b1.png" alt="Slide 3" class="d-block w-100">
-                    <div class="carousel-caption">
-
-                    </div>
+                <div id="next">
+                    <i class="fa-solid fa-forward"></i>
                 </div>
             </div>
+            <div id="playback2">
 
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <div id="repeat">
+                    <i class="fa-solid fa-repeat"></i>
+                </div>
+                <div id="suffle">
+                    <i class="fa-solid fa-shuffle"></i>
+                </div>
+
+                <div id="like">
+                    <i class="fa-regular fa-heart "></i>
+                </div>
+                <div id="volume">
+                    <i class="fa-solid fa-list"></i>
+                </div>
+            </div>
+        </div>
+
+<!-- -------------------------------------------------------Main Bar----------------------------------------------------------------------->
+        <div id="mainhome">
+
+            <div class="links"> <!-- Add the class name here -->
+                <a>All</a>
+                <a>Search</a>
+                <div class="dropdown">
+                    <a class="dropbtn">Top Album 🡻</a>
+                    <div class="dropdown-content">
+                        <a href="#">Top Hindi Album</a>
+                        <a href="#">Top English Album</a>
+                        <a href="#">Top Gujarati Album</a>
+                        <a href="#">Top K-POP Album</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">Mood & Genre 🡻</a>
+                    <div class="dropdown-content">
+                        <a href="#">Party Song</a>
+                        <a href="#">Dance Song</a>
+                        <a href="#">Bollywood Song</a>
+                        <a href="#">Romantic Song</a>
+                        <a href="#">Bhakti Song</a>
+                        <a href="#">Lofi SOng</a>
+                    </div>
+                </div>
+                <a>Playlist</a>
+                <a>liked</a>
+                <a>Queue</a>
+            </div>
+            <div class="funct">
+                <div class="songs">
+                    <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                            </ol>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="b3.png" alt="Slide 1" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="b2.jpg" alt="Slide 2" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="ps4.png" alt="Slide 3" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="recent">
+                        <h4>Recently played</h4>
+                        <hr>
+                        <?php
+                            for ($i = 0; $i < 6; $i++) {
+                                echo 
+                                "<div id='recentbox'>
+
+                                </div>";
+                            }
+                        ?>
+                        <div id="recentbox">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="search"></div>
+                <div class="album"></div>
+                <div class="genres"></div>
+                <div class="playlist"></div>
+                <div class="liked"></div>
+                <div class="queue"></div>
+                <div class="recent"></div>
+            </div>
+        </div>
+
+<!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
+        <div id="singer_area" class="singer-player">
+            <img src="img/arijit.jpg" id="singerimg">
+            <center>
+                <br>
+                <p>Singer Name</p>
+            </center>
+        </div>
+<!-- // -------------------------------------------------------------song info---------------------------------------------------------------- -->
+        <div id="suggested_info">
+            <div id="recc">
+                <center>
+                    <h5>Recommended song</h5>
+                </center>
+            </div>
+            <?php
+            for ($i = 0; $i < 10; $i++) {
+                echo "<div id='songdiv'>
+                            <img src='img/arijit.jpg' >
+                            <span>Apna Bana le apna bana le piaya...</span>               
+                      </div>";
+            }
+            ?>
         </div>
     </div>
-
-
-    <script>
-        var profile = document.getElementById("prof");
-        var nav = document.getElementById("nav");
-        var slider = document.getElementById("slider");
-        var close = document.getElementById("close");
-
-        document.getElementById("name").addEventListener("click", function() {
-            event.preventDefault(); // default rite a tag link per redirect thay.... to aa default vastu je automatic thay tene prevent kersse che
-            profile.style.display = "block";
-            nav.style.filter = "blur(10px)";
-            slider.style.filter = "blur(10px)";
-        })
-
-        document.getElementById("close").addEventListener("click", function() {
-            event.preventDefault();
-            profile.style.display = "none";
-            nav.style.filter = "blur(0px)";
-            slider.style.filter = "blur(0px)";
-        })
-    </script>
+<!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
+    <script src="home.js"></script>
 </body>
 
 </html>

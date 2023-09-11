@@ -2,6 +2,7 @@ html, body {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    font-family: 'Viga', sans-serif;
 }
 
 #page1 {
@@ -38,6 +39,7 @@ html, body {
 .registration-container {
     width: 100%;
     max-width: 400px;
+    font-weight: normal;
     text-align: center;
     padding: 40px;
     border: 1px solid #ccc;
@@ -56,6 +58,7 @@ html, body {
     border-radius: 5px;
 }
 #aha{
+    font-weight:lighter;
     color: #ccc;
 }
 #aha:hover {

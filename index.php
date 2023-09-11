@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing page</title>
+    <link rel="shortcut icon" type="x-icon" href="img/browser.jpg" style="background-color: white;" >
+    <title>BeatBoxify</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -134,7 +135,7 @@
 
     <div id="page4">
         <video autoplay loop muted plays-inline>
-            <source src="img/p6vid.mp4" type="video/mp4">
+            <source src="img/d.mp4" type="video/mp4">
         </video>
 
         <div id="bgp4">

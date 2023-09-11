@@ -1,0 +1,452 @@
+/* Reset some default styles */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #121212;
+}
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#mainpage{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color:#000000;
+}
+/* -----------------------------------------navbar styling--------------------------------------------- */
+.navbar {
+    background-color:#000000; /* Dark background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.navbar-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li {
+    margin-right: 20px;
+}
+
+.navbar-links a:hover {
+    color: #777; /* Hover color */
+}
+
+.navbar-links a {
+    font-weight: normal;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #222; /* Dark button background color */
+    color: white;
+    border-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition-delay: 0.2s;
+}
+
+.navbar-button:hover {
+    background-color: #ff7a93; /* Button hover color */
+    border-color: #ff7a93;
+}
+/* ------------------------------------------------------------ profile card ------------------------------------------------------------- */
+#prcard{
+    background-color:#222; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-radius: 20px;
+}
+
+#prpic {
+    height: 390px;
+    border-radius: 5px;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+#upd {
+    background-color: crimson;
+    color: white;
+    border-color: black;
+}
+
+#close {
+    background-color:#222;
+    font-weight: bold;
+    color:white;
+    border: 1px solid black;
+    border-color: black;
+}
+
+#chng {
+    background-color: crimson;
+    border-color: black;
+    color: white;
+}
+
+/* Hover Styles */
+#upd:hover {
+    background-color:white;
+    border-color: #222;
+    color: black;
+}
+
+#close:hover {
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
+
+#chng:hover {
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
+
+#name {
+    height: 40px;
+    width: auto;
+    object-fit: fill;
+    border: solid;
+    border-color:#222;
+    border-width: 1px;
+    border-radius: 100%;
+    cursor: pointer;
+    filter: opacity(0.7);
+}
+
+/* ---------------------------------------------- Playback Player ---------------------------------------------------------------- */
+.fixed-player {
+    position: fixed;
+    margin-left: 20px;
+    left: 0;
+    width: 25%;
+    height: 90%;
+    background-color: #0a0a0a;
+    color: #fff; 
+    border: 0px solid #ccc;
+    margin-top: 10px;
+    padding: 20px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#song-name {
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color:#fff;
+}
+
+#song-player audio {
+    width: 100%;
+}
+
+#pbimg                                                /*   image in the music player  */
+{
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    width: 100%;
+    height: 400px;
+}
+
+#playback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#playback div {
+    display: inline-flex;
+    height: 40px;
+    width: 40px;
+    background-color:white; 
+    color:black;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#playback div:nth-child(2) {
+    height: 60px;
+    width: 60px;
+}
+
+#playback div:hover {
+    background-color: #888;
+}
+
+#playback2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#playback2 div {
+    display: inline-flex;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 45px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#playback2 div:hover {
+    color: #777;
+}
+.time-container {
+    display: flex;
+    justify-content: space-between; /* Creates space between the two spans */
+}
+
+.right-corner {
+    order: 1; /* Pushes this span to the right */
+}
+
+.left-corner {
+    order: 2; /* Pushes this span to the left */
+}
+/* ----------------------------------------------------------------------------- singer_area ------------------------------------------- */
+
+.singer-player {
+    position: fixed;
+    margin-left: 20px;
+    margin-top: 10px;
+    right: 0;
+    width: 17%;
+    height: 35%;
+    margin-right: 10px;
+    background-color: #0a0a0a; 
+    color: #fff; 
+    padding: 20px;
+    font-weight:lighter;
+}
+
+.singer-player p {
+    color: #999; /* Text color */
+}
+
+#singerimg {
+    border: 1px solid white;
+    width: 100%;
+    height: 260px;
+}
+
+#song_player,
+#singer_area,
+#nav,
+#mainhome,
+#suggested_info
+{
+    transition: filter 0.5s ease-in-out; 
+}
+
+/* ------------------------------------------------------------ suggested song ------------------------------------------------------ */
+
+#suggested_info {
+    position: fixed;
+    margin-left: 20px;
+    right: 0;
+    top: 44.5%;
+    width: 17%;
+    height: 53%;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    background-color: #0a0a0a; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 20px;
+    overflow: auto; /* this will add scrollbar if overflow */
+}
+
+#recc {
+    width: 100%;
+    height: 45px;
+}
+
+#suggested_info::-webkit-scrollbar {
+    width: 8px;
+}
+#suggested_info::-webkit-scrollbar-track{
+    background-color:#222;
+}
+#suggested_info::-webkit-scrollbar-thumb{
+    background-color: #666;
+}
+
+#suggested_info div {
+    margin-top: 10px;
+}
+
+/* --------------------------------------------------------------- songdiv-------------------------------------------------------- */
+#songdiv {
+    width: 100%;
+    height: 45px;
+    background-color: #121212; 
+    color: #999;
+    overflow: hidden; 
+}
+#songdiv img{
+    height: 39px;
+    width:39px;
+    object-fit:cover;
+    margin:3px 3px;
+}
+
+/* ---------------------------------------------------------- size ---------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-right {
+        margin-left: auto;
+    }
+}
+#work{
+        background-color: #777;
+    }
+
+/* -------------------------------------------------- main ----------------------------------------------------------------------------- */
+
+#mainhome{
+    height: 90%;
+    width: 55%;
+    background-color: #0a0a0a;
+    left: 26.8%;
+    position: fixed;
+    margin-top: 10px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6% 94%;
+}
+
+/* CSS for the centered-links class */
+.links {
+    background-color:#121212 ;
+    color: #ccc;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */ /* Adjust the height as needed */
+    justify-content: space-between;
+    padding: 10px 30px;
+    
+}
+/* CSS for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn{
+    color: #ccc;
+    background-color:#121212 
+}
+.dropbtn:hover{
+    color: #ccc;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#222 ;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #ccc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: #ccc;
+}
+
+
+.links a {
+    text-decoration: none;
+    font-size: 15px; /* Adjust the font size as needed */
+    cursor: pointer;
+}
+.songs{
+    height: 100%;
+    width: 100%;
+    background-color: #999;
+    overflow: auto;
+}
+#recent {
+    position: relative;
+    height: 250px;
+    width: auto;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left within the flex container */
+    overflow: hidden; /* Hide any content that overflows */
+}
+
+h4 {
+    margin: 10px 0;
+}
+
+#scroll-container {
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks inside the container */
+    display: flex; /* Make its children flex items */
+}
+
+.recentbox {
+    display: inline-block;
+    margin-left: 15px;
+    height: 150px;
+    width: 150px;
+    background-color:white;
+}

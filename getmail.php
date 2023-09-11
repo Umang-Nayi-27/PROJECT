@@ -1,3 +1,43 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verify E-mail</title>
+    <link rel="shortcut icon" type="x-icon" href="img/browser.jpg" style="background-color: white;" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div id="page1">
+        <div id="divlg">
+            <div class="registration-container">
+                <a class="navbar-logo" href="#">
+                    <img src="img\log2.png" alt="" style="width: 200px;height: auto;">
+                </a>
+                <hr>
+                <h2>Registered E-mail</h2>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Registered Email" required>
+                    <button type="submit" name="register">Get Link</button>
+                </form>
+            </div>
+        </div>
+        <div id="divvid">
+            <video autoplay loop muted playsinline>
+                <source src="img/p3vid3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+
+
 <?php
 
 ini_set('display_errors', 1);
@@ -70,8 +110,9 @@ if (isset($_POST['register'])) {
         $query="UPDATE `demo_reg` SET `token`='$reset_token',`token_exp`='$date' WHERE `email`='$email'";
         if(mysqli_query($connection, $query)  && sendMail($_POST['email'],$reset_token) ){
             echo " /// works";
-            echo "<script>window.alert('Password reset email has been sent to your email address. Please check your inbox.')</script>";
-
+            echo "<script>
+                        swal('Done !', 'Reset Pass link has been sent to Your Email Address', 'success');
+                        </script>";
         }
         else{
             echo "///not wokrking";
@@ -84,34 +125,5 @@ if (isset($_POST['register'])) {
 
 ?>
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
-    <link rel="stylesheet" href="signup.css">
-</head>
-<body>
-    <div id="page1">
-        <div id="divlg">
-            <div class="registration-container">
-                <h2>Registered E-mail</h2>
-                <form action="#" method="post">
-                    <input type="email" name="email" placeholder="Registered Email" required>
-                    <button type="submit" name="register">Get Link</button>
-                </form>
-            </div>
-        </div>
-        <div id="divvid">
-            <video autoplay loop muted playsinline>
-                <source src="img/p3vid3.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-</body>
 
 </html>
