@@ -404,7 +404,7 @@ li {
     position: absolute;
     background-color: #222;
     min-width: 160px;
-    z-index: 1;
+    z-index: 999;
 }
 
 .dropdown-content a {
@@ -419,23 +419,8 @@ li {
     color: #ccc;
 }
 
-.funct {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center child elements horizontally */
-    width: 100%; /* Take up the full width of the container */
-    overflow-y: auto;
-    background-color: #0a0a0a;
-}
 
-
-.songs {
-    height: 100%;
-    width: 100%;
-    background-color:transparent;
-    overflow: auto;
-}
-
+/* -------------------------------ALl-------------------------------------------------------------------------------------- */
 .recent {
     margin-top: 10px;
     height: auto;
@@ -467,7 +452,7 @@ li {
     background-color:#222;
 }
 .recent2::-webkit-scrollbar-thumb{
-    background-color:white;
+    background-color:#666;
 }
 .heading{
     color: #ccc;
@@ -479,13 +464,96 @@ li {
     width: 150px;
     background-color: white;
     flex-shrink: 0; /* Prevent items from shrinking */
+    cursor: pointer;
+}
+
+.recentbox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .art{
     margin: 10px;
-    height: 150px;
-    width: 150px;
+    height: 135px;
+    width: 135px;
     background-color: white;
     flex-shrink: 0;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.art img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+/* ------------------------------------------p2 */
+.funct {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements horizontally */
+    height: 90%;
+    width: 100%; /* Take up the full width of the container */
+    overflow: hidden;
+    background-color: #0a0a0a;
+}
+
+
+.funct section{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 94%;
+    width: 100%;
+    background-color: #0a0a0a;
+    overflow-y: auto;
+}
+
+.funct section::-webkit-scrollbar{
+    width: 4px;
+}
+.funct section::-webkit-scrollbar-track{
+    background-color:#222;
+}
+.funct section::-webkit-scrollbar-thumb{
+    background-color:#666;
+}
+
+.songfunct{
+    z-index: 6;
+    background-color: #0a0a0a;
+}
+
+.albumfunct{
+    z-index: 5;
+    background-color: #0a0a0a;
+ 
+}
+
+.genresfunct{
+    z-index: 4;
+    background-color: #0a0a0a;
+    
+}
+
+.playlistfunct{
+    z-index: 3;
+    background-color: #0a0a0a;
+   
+}
+
+.likedfunct{
+    z-index: 2;
+    background-color: #0a0a0a;
+ 
+}
+
+.queuefunct{
+    z-index: 1;
+    background-color: #0a0a0a;
+  
 }
