@@ -169,10 +169,10 @@ if (!isset($_SESSION["sessionuser"])) {
         <div id="mainhome">
 
             <div class="links"> <!-- Add the class name here -->
-                <a>All</a>
-                <a>Search</a>
+                <a id="all">All</a>
+                <a id="search">Search</a>
                 <div class="dropdown">
-                    <a class="dropbtn">Top Album 🡻</a>
+                    <a class="dropbtn">Top Album </a>
                     <div class="dropdown-content">
                         <a href="#">Top Hindi Album</a>
                         <a href="#">Top English Album</a>
@@ -181,7 +181,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a class="dropbtn">Mood & Genre 🡻</a>
+                    <a class="dropbtn">Mood & Genre </a>
                     <div class="dropdown-content">
                         <a href="#">Party Song</a>
                         <a href="#">Dance Song</a>
@@ -195,8 +195,8 @@ if (!isset($_SESSION["sessionuser"])) {
                 <a>liked</a>
                 <a>Queue</a>
             </div>
-            <div class="funct">
-                <div class="songs">
+            <div class="funct" >
+                <section class="songfunct" id="sfc">
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
                             <ol class="carousel-indicators">
@@ -225,7 +225,7 @@ if (!isset($_SESSION["sessionuser"])) {
                                     </div>
                                 </div>
                             </div>
-
+                                
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
@@ -246,7 +246,7 @@ if (!isset($_SESSION["sessionuser"])) {
                             for ($i = 0; $i < 10; $i++) {
                                 echo 
                                 "<div class='recentbox'>
-
+                                <img src='img/song2.jpg' >
                                 </div>";
                             }
                         ?>
@@ -255,7 +255,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     <br>
                     <div class="recent">
                         <div  class="heading">
-                        <h6>Recently played</h6>
+                        <h6>Latest Trending</h6>
                         </div>
                         <br>
                         <div class="recent2">
@@ -263,7 +263,7 @@ if (!isset($_SESSION["sessionuser"])) {
                             for ($i = 0; $i < 10; $i++) {
                                 echo 
                                 "<div class='recentbox'>
-
+                                <img src='img/song.jpg' >
                                 </div>";
                             }
                         ?>
@@ -272,7 +272,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     <br>
                     <div class="recent">
                         <div  class="heading">
-                        <h6>Recently played</h6>
+                        <h6>Top Indian Artist</h6>
                         </div>
                         <br>
                         <div class="recent2">
@@ -280,7 +280,7 @@ if (!isset($_SESSION["sessionuser"])) {
                             for ($i = 0; $i < 10; $i++) {
                                 echo 
                                 "<div class='art'>
-
+                                <img src='img/artist/yoyo.png'>
                                 </div>";
                             }
                         ?>
@@ -290,7 +290,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     <br>
                     <div class="recent">
                         <div  class="heading">
-                        <h6>Recently played</h6>
+                        <h6>Top International Artist</h6>
                         </div>
                         <br>
                         <div class="recent2">
@@ -298,21 +298,19 @@ if (!isset($_SESSION["sessionuser"])) {
                             for ($i = 0; $i < 10; $i++) {
                                 echo 
                                 "<div class='art'>
-
+                                <img src='img/artist/swift.png'>
                                 </div>";
                             }
                         ?>
                         </div>
                     </div>
+                </section>
+                    <section class="albumfunct" id="    "><h1>this is Album</h1></section>
+                    <section class="genresfunct"><h1>this is gernes</h1></section>
+                    <section class="playlistfunct"><h1>this is playlist</h1></section>
+                    <section class="likedfunct"><h1>this is liked song</h1></section>
+                    <section class="queuefunct"><h1>this is queue</h1></section>
                 </div>
-                <div class="search"></div>
-                <div class="album"></div>
-                <div class="genres"></div>
-                <div class="playlist"></div>
-                <div class="liked"></div>
-                <div class="queue"></div>
-                <div class="recent"></div>
-            </div>
         </div>
 
 <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
