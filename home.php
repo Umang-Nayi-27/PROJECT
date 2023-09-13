@@ -172,31 +172,31 @@ if (!isset($_SESSION["sessionuser"])) {
                 <a id="all">All</a>
                 <a id="search">Search</a>
                 <div class="dropdown">
-                    <a class="dropbtn">Top Album </a>
+                    <a class="dropbtn">Artist </a>
                     <div class="dropdown-content">
-                        <a href="#">Top Hindi Album</a>
-                        <a href="#">Top English Album</a>
-                        <a href="#">Top Gujarati Album</a>
-                        <a href="#">Top K-POP Album</a>
+                        <a id="hindi">Top Hindi Artist</a>
+                        <a id="eng">Top English Artist</a>
+                        <a id="guj">Top Gujarati Artist</a>
+                        <a id="kpop">Top K-POP Artist</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a class="dropbtn">Mood & Genre </a>
                     <div class="dropdown-content">
-                        <a href="#">Party Song</a>
-                        <a href="#">Dance Song</a>
-                        <a href="#">Bollywood Song</a>
-                        <a href="#">Romantic Song</a>
-                        <a href="#">Bhakti Song</a>
-                        <a href="#">Lofi SOng</a>
+                        <a id="party">Party Song</a>
+                        <a id="dance">Dance Song</a>
+                        <a id="bollywood">Bollywood Song</a>
+                        <a id="romantic">Romantic Song</a>
+                        <a id="bhakti">Bhakti Song</a>
+                        <a id="lofi">Lofi SOng</a>
                     </div>
                 </div>
-                <a>Playlist</a>
-                <a>liked</a>
-                <a>Queue</a>
+                <a id="plist">Playlist</a>
+                <a id="linked">liked</a>
+                <a id="queue">Queue</a>
             </div>
             <div class="funct" >
-                <section class="songfunct" id="sfc">
+                <section class="songfunct" >
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
                             <ol class="carousel-indicators">
@@ -305,14 +305,25 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                 </section>
-                    <section class="albumfunct" id="    "><h1>this is Album</h1></section>
-                    <section class="genresfunct"><h1>this is gernes</h1></section>
-                    <section class="playlistfunct"><h1>this is playlist</h1></section>
-                    <section class="likedfunct"><h1>this is liked song</h1></section>
-                    <section class="queuefunct"><h1>this is queue</h1></section>
+                <section class="searchfunct"><h1>this is search</h1></section>
+                <!-- ------------------------------------------artist---------------------------- -->
+                <section class="arthin"><h1>Hindi Artist</h1></section>
+                <section class="arteng"><h1>English Artist</h1></section>
+                <section class="artguj"><h1>Gujarati Artist</h1></section>
+                <section class="artkpop"><h1>Kpop Artist</h1></section>
+                <!-- ------------------------------------------------gerne ------------------------- -->
+                <section class="genresparty"><h1>this is gernesgernes</h1></section>
+                <section class="genresdance"><h1>this is genresdance</h1></section>
+                <section class="genresbollywood"><h1>this is genresbollywood</h1></section>
+                <section class="genresromantic"><h1>this is genresromantic</h1></section>
+                <section class="genresbhakti"><h1>this is genresbhakti</h1></section>
+                <section class="genreslofi"><h1>this is genreslofi</h1></section>
+                <!-- --------------------------------------------------------------------------------------->
+                <section class="playlistfunct"><h1>this is playlist</h1></section>
+                <section class="likedfunct"><h1>this is liked song</h1></section>
+                <section class="queuefunct"><h1>this is queue</h1></section>
                 </div>
         </div>
-
 <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
         <div id="singer_area" class="singer-player">
             <img src="img/arijit.jpg" id="singerimg">
