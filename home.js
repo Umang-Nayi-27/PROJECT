@@ -73,7 +73,7 @@ var queuefunct = document.querySelector(".queuefunct");
 
 document.getElementById("all").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="99";
     searchfunct.style.zIndex="1";
@@ -97,7 +97,7 @@ document.getElementById("all").addEventListener("click", function(event) {
 
 document.getElementById("search").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="99";
@@ -121,7 +121,7 @@ document.getElementById("search").addEventListener("click", function(event) {
 
 document.getElementById("hindi").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -145,7 +145,7 @@ document.getElementById("hindi").addEventListener("click", function(event) {
 
 document.getElementById("eng").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -169,7 +169,7 @@ document.getElementById("eng").addEventListener("click", function(event) {
 
 document.getElementById("guj").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -193,7 +193,7 @@ document.getElementById("guj").addEventListener("click", function(event) {
 
 document.getElementById("kpop").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -217,7 +217,7 @@ document.getElementById("kpop").addEventListener("click", function(event) {
 
 document.getElementById("party").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -242,7 +242,7 @@ document.getElementById("party").addEventListener("click", function(event) {
 
 document.getElementById("dance").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -266,7 +266,7 @@ document.getElementById("dance").addEventListener("click", function(event) {
 
 document.getElementById("bollywood").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -290,7 +290,7 @@ document.getElementById("bollywood").addEventListener("click", function(event) {
 
 document.getElementById("romantic").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -314,7 +314,7 @@ document.getElementById("romantic").addEventListener("click", function(event) {
 
 document.getElementById("bhakti").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -338,7 +338,7 @@ document.getElementById("bhakti").addEventListener("click", function(event) {
 
 document.getElementById("lofi").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -362,7 +362,7 @@ document.getElementById("lofi").addEventListener("click", function(event) {
 
 document.getElementById("plist").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -386,7 +386,7 @@ document.getElementById("plist").addEventListener("click", function(event) {
 
 document.getElementById("linked").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -410,7 +410,7 @@ document.getElementById("linked").addEventListener("click", function(event) {
 
 document.getElementById("queue").addEventListener("click", function(event) {
     event.preventDefault();
-    window.alert("clicked");
+    
     
     songfunct.style.zIndex="1";
     searchfunct.style.zIndex="1";
@@ -431,4 +431,4 @@ document.getElementById("queue").addEventListener("click", function(event) {
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="99";
 });
-
+                                                                                                                                  
