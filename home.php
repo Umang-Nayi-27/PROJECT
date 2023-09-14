@@ -197,45 +197,45 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
             <div class="funct" >
                 <section class="songfunct" >
-                    <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
 
-                            </ol>
+                                </ol>
 
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="b3.png" alt="Slide 1" class="d-block w-100">
-                                    <div class="carousel-caption">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="b3.png" alt="Slide 1" class="d-block w-100">
+                                        <div class="carousel-caption">
 
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="b2.jpg" alt="Slide 2" class="d-block w-100">
+                                        <div class="carousel-caption">
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="ps4.png" alt="Slide 3" class="d-block w-100">
+                                        <div class="carousel-caption">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="b2.jpg" alt="Slide 2" class="d-block w-100">
-                                    <div class="carousel-caption">
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="ps4.png" alt="Slide 3" class="d-block w-100">
-                                    <div class="carousel-caption">
-                                    </div>
-                                </div>
+                                    
+                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
-                                
-                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
-                    </div>
                     <div class="recent">
                         <div  class="heading">
                         <h6>Recently played</h6>
@@ -243,7 +243,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         <br>
                         <div class="recent2">
                         <?php
-                            for ($i = 0; $i < 10; $i++) {
+                            for ($i = 0; $i < 4; $i++) {
                                 echo 
                                 "<div class='recentbox'>
                                 <img src='img/song2.jpg' >
@@ -305,12 +305,178 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                 </section>
-                <section class="searchfunct"><h1>this is search</h1></section>
+                <section class="searchfunct">
+                    <input type="text" id="searchInput" placeholder="Search Song ....">
+                    <div id="searchResults"></div>
+                </section>
                 <!-- ------------------------------------------artist---------------------------- -->
-                <section class="arthin"><h1>Hindi Artist</h1></section>
-                <section class="arteng"><h1>English Artist</h1></section>
-                <section class="artguj"><h1>Gujarati Artist</h1></section>
-                <section class="artkpop"><h1>Kpop Artist</h1></section>
+                <section class="arthin">
+                    <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/banner/arijit.png" alt="Slide 1" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/darshan.png" alt="Slide 2" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/yoyo.png" alt="Slide 3" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                <h3>Top Hindi Artist</h3>
+                <div>
+
+                </div>
+                </section>
+                <section class="arteng">
+                    <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/banner/swift.png" alt="Slide 1" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/weeknd.png" alt="Slide 2" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/eng.jpg" alt="Slide 3" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                <h3>Top English Artist</h3>
+                </section>
+                <section class="artguj">
+                    <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/banner/guj1.png" alt="Slide 1" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/guj2.png" alt="Slide 2" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/guj3.jpeg" alt="Slide 3" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Top Gujarati Artist</h3>
+                </section>
+                <section class="artkpop">
+                    <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/banner/kpop1.jpeg" alt="Slide 1" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/kpop2.jpeg" alt="Slide 2" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img  src="img/banner/kpop3.png" alt="Slide 3" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                <h3>Top K-POP Artist</h3>
+                </section>
                 <!-- ------------------------------------------------gerne ------------------------- -->
                 <section class="genresparty"><h1>this is gernesgernes</h1></section>
                 <section class="genresdance"><h1>this is genresdance</h1></section>
