@@ -23,7 +23,19 @@ li {
     width: 100vw;
     position: relative;
     background-color:#000000;
+    opacity: 0;
 }
+/* ----------------------------------------------------------intro video ------------------------------------ */
+#intro-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 9999; /* Ensure the video is on top of other elements */
+}
+
 /* -----------------------------------------navbar styling--------------------------------------------- */
 .navbar {
     background-color:#000000; /* Dark background color */
@@ -461,11 +473,13 @@ li {
 
 .recentbox {
     margin: 10px;
-    height: 150px;
-    width: 150px;
+    height: 140px;
+    width: 140px;
     background-color: white;
     flex-shrink: 0; /* Prevent items from shrinking */
     cursor: pointer;
+    color: white;
+    font-size: 12px;
 }
 
 .recentbox img{
@@ -480,14 +494,15 @@ li {
     width: 135px;
     background-color: white;
     flex-shrink: 0;
-    border-radius: 50%;
+    border-radius: 10%;
     cursor: pointer;
+    color: white;
+    font-size: 12px;
 }
 
 .art img{
     height: 100%;
     width: 100%;
-    border-radius: 50%;
     object-fit: cover;
     overflow: hidden;
 }
@@ -532,22 +547,81 @@ li {
     z-index: 14;
     background-color: #0a0a0a;   
 }
-#searchInput{
-    width: 100%;
-    height: 34px;
-    margin: 5px 0px;
-    border: 1px solid #ccc; 
-    outline:1px; 
+#search-container input{
+    border: none;
+    outline: none;
+    background-color: rgba(29, 29, 29, 0.5); /* Set your desired transparent background color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px; /* Add some border radius for rounded corners */
+    width: 98%; /* Set your desired width */
+    margin-top: 10px;
 }
-#searchInput::-webkit-input-placeholder{
-    background-color:white;
-    color:black;
+
+#search-container input:hover,
+#search-container input:focus{
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
 /* -------------------------------------------------------------------------------------------- */
 .arthin{
     z-index: 13;
     background-color: #0a0a0a;
+    overflow-y: auto;
 }
+
+.biography-container {
+    display: grid;
+    grid-template-columns: auto auto 1fr; /* Three columns: image, singer name, biography */
+    align-items: center; /* Vertically center content */
+    width: 98%;
+    height: 200px;
+    padding: 5px;   
+    gap: 25px;
+    border: 1px solid #222;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.biography-container:hover{
+    background-color:black;
+}
+
+.biography-image {
+    height: 196px;
+    width: auto;
+    grid-column: 1;
+    padding:5px 5px;
+}
+
+.biography-info {
+    font-size: 20px;
+    padding-left: 5px;
+    grid-column: 2;
+    color:white;
+    font-weight: bold;
+}
+
+.biography-history {
+    font-size: 18px;
+    height: 98%;
+    overflow-y: auto;   
+    border: 1px solid transparent;
+    grid-column: 3;
+    color: #777;
+}
+.biography-history::-webkit-scrollbar {
+    width: 2px;
+}
+.biography-history::-webkit-scrollbar-track{
+    background-color:#222;
+}
+.biography-history::-webkit-scrollbar-thumb{
+    background-color: #666;
+}
+/* ------------------------------------------------------------------------------------------------ */
 .funct section h3{
     padding-top: 10px;
     color:white;
