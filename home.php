@@ -47,6 +47,7 @@ if (!isset($_SESSION["sessionuser"])) {
 
     <!-- Include Bootstrap JavaScript (requires jQuery and Popper.js) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -58,7 +59,8 @@ if (!isset($_SESSION["sessionuser"])) {
 
 <body>
 
-<!-- //------------------------------------------------------navbar ------------------------------------------------------------------------------------ -->
+    <!-- //------------------------------------------------------navbar ------------------------------------------------------------------------------------ -->
+
     <div id="mainpage">
         <nav class="navbar" id="nav">
             <div class="navbar-brand">
@@ -116,7 +118,7 @@ if (!isset($_SESSION["sessionuser"])) {
                 </div>
             </div>
         </div>
-<!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
+        <!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
         <div id="song_player" class="fixed-player">
             <img src="img/song.jpg" id="pbimg">
 
@@ -165,7 +167,7 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
 
-<!-- -------------------------------------------------------Main Bar----------------------------------------------------------------------->
+        <!-- -------------------------------------------------------Main Bar----------------------------------------------------------------------->
         <div id="mainhome">
 
             <div class="links"> <!-- Add the class name here -->
@@ -195,119 +197,126 @@ if (!isset($_SESSION["sessionuser"])) {
                 <a id="linked">liked</a>
                 <a id="queue">Queue</a>
             </div>
-            <div class="funct" >
-                <section class="songfunct" >
-                        <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
-                            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+            <div class="funct">
+                <section class="songfunct">
+                    <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;margin:0 0;padding:0 0;">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
 
-                                </ol>
+                            </ol>
 
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="b3.png" alt="Slide 1" class="d-block w-100">
-                                        <div class="carousel-caption">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="b3.png" alt="Slide 1" class="d-block w-100">
+                                    <div class="carousel-caption">
 
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="b2.jpg" alt="Slide 2" class="d-block w-100">
-                                        <div class="carousel-caption">
-
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="ps4.png" alt="Slide 3" class="d-block w-100">
-                                        <div class="carousel-caption">
-                                        </div>
                                     </div>
                                 </div>
-                                    
-                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
+                                <div class="carousel-item">
+                                    <img src="b2.jpg" alt="Slide 2" class="d-block w-100">
+                                    <div class="carousel-caption">
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="ps4.png" alt="Slide 3" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                    </div>
+                                </div>
                             </div>
+
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
+                    </div>
                     <div class="recent">
-                        <div  class="heading">
-                        <h6>Recently played</h6>
+                        <div class="heading">
+                            <h6>Recently played</h6>
                         </div>
                         <br>
                         <div class="recent2">
-                        <?php
+                            <?php
                             for ($i = 0; $i < 4; $i++) {
-                                echo 
+                                echo
                                 "<div class='recentbox'>
                                 <img src='img/song2.jpg' >
+                                <br>
+                                song name
                                 </div>";
                             }
-                        ?>
+                            ?>
                         </div>
                     </div>
                     <br>
                     <div class="recent">
-                        <div  class="heading">
-                        <h6>Latest Trending</h6>
+                        <div class="heading">
+                            <h6>Latest Trending</h6>
                         </div>
                         <br>
                         <div class="recent2">
-                        <?php
+                            <?php
                             for ($i = 0; $i < 10; $i++) {
-                                echo 
+                                echo
                                 "<div class='recentbox'>
                                 <img src='img/song.jpg' >
+                                <br>
+                                song name
                                 </div>";
                             }
-                        ?>
+                            ?>
                         </div>
                     </div>
                     <br>
                     <div class="recent">
-                        <div  class="heading">
-                        <h6>Top Indian Artist</h6>
+                        <div class="heading">
+                            <h6>Top Indian Artist</h6>
                         </div>
                         <br>
                         <div class="recent2">
-                        <?php
+                            <?php
                             for ($i = 0; $i < 10; $i++) {
-                                echo 
+                                echo
                                 "<div class='art'>
                                 <img src='img/artist/yoyo.png'>
+                                <br>
+                                song name
                                 </div>";
                             }
-                        ?>
+                            ?>
                         </div>
                     </div>
 
                     <br>
                     <div class="recent">
-                        <div  class="heading">
-                        <h6>Top International Artist</h6>
+                        <div class="heading">
+                            <h6>Top International Artist</h6>
                         </div>
                         <br>
                         <div class="recent2">
-                        <?php
+                            <?php
                             for ($i = 0; $i < 10; $i++) {
-                                echo 
+                                echo
                                 "<div class='art'>
                                 <img src='img/artist/swift.png'>
+                                <br>
+                                song name
                                 </div>";
                             }
-                        ?>
+                            ?>
                         </div>
                     </div>
                 </section>
-                <section class="searchfunct">
-                    <input type="text" id="searchInput" placeholder="Search Song ....">
-                    <div id="searchResults"></div>
+                <section class="searchfunct" id="search-container">
+                    <input type="text" placeholder="⚲    Search ">
                 </section>
                 <!-- ------------------------------------------artist---------------------------- -->
                 <section class="arthin">
@@ -327,18 +336,18 @@ if (!isset($_SESSION["sessionuser"])) {
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/darshan.png" alt="Slide 2" class="d-block w-100">
+                                    <img src="img/banner/darshan.png" alt="Slide 2" class="d-block w-100">
                                     <div class="carousel-caption">
 
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/yoyo.png" alt="Slide 3" class="d-block w-100">
+                                    <img src="img/banner/yoyo.png" alt="Slide 3" class="d-block w-100">
                                     <div class="carousel-caption">
                                     </div>
                                 </div>
                             </div>
-                                
+
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
@@ -349,10 +358,31 @@ if (!isset($_SESSION["sessionuser"])) {
                             </a>
                         </div>
                     </div>
-                <h3>Top Hindi Artist</h3>
-                <div>
+                    <h3>Top Hindi Artist</h3>
+                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
+                        <input type="text" class="search-input" placeholder="Search Artist">
+                    </div>
+                    <?php
+                    for ($i = 0; $i < 4; $i++) {
+                        echo
+                        "<div class='biography-container'>
+                                <img class='biography-image' src='img/avt1.png' alt='Singer Image'>
+                                <h2 class='biography-info'>Singer Name</h2>
+                                <div class='biography-history'>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id quam vel libero tincidunt tincidunt.
+                                    Sed ultricies ligula sed metus faucibus volutpat. In vehicula consectetur elit, nec varius dui dignissim nec.
+                                    Integer a mi eget ex semper finibus. Fusce bibendum, urna nec scelerisque fermentum, est felis bibendum nunc,
+                                    in rhoncus nisl eros eu quam. Sed at bibendum felis, a tincidunt risus. Fusce vestibulum massa non tellus
+                                    fermentum, nec mattis purus luctus. Sed nec arcu bibendum, cursus nunc in, vehicula ex. Quisque bibendum,
+                                    erat at bibendum bibendum, ipsum erat bibendum ex, ut laoreet metus nisl quis risus. In sit amet erat auctor,
+                                    fringilla ex vel, mattis lectus.
+                                </div>
+                                </div>";
+                    }
+                    ?>
 
-                </div>
+
+
                 </section>
                 <section class="arteng">
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
@@ -371,18 +401,18 @@ if (!isset($_SESSION["sessionuser"])) {
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/weeknd.png" alt="Slide 2" class="d-block w-100">
+                                    <img src="img/banner/weeknd.png" alt="Slide 2" class="d-block w-100">
                                     <div class="carousel-caption">
 
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/eng.jpg" alt="Slide 3" class="d-block w-100">
+                                    <img src="img/banner/eng.jpg" alt="Slide 3" class="d-block w-100">
                                     <div class="carousel-caption">
                                     </div>
                                 </div>
                             </div>
-                                
+
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
@@ -393,7 +423,10 @@ if (!isset($_SESSION["sessionuser"])) {
                             </a>
                         </div>
                     </div>
-                <h3>Top English Artist</h3>
+                    <h3>Top English Artist</h3>
+                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
+                        <input type="text" class="search-input" placeholder="Search Artist">
+                    </div>
                 </section>
                 <section class="artguj">
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
@@ -412,18 +445,18 @@ if (!isset($_SESSION["sessionuser"])) {
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/guj2.png" alt="Slide 2" class="d-block w-100">
+                                    <img src="img/banner/guj2.png" alt="Slide 2" class="d-block w-100">
                                     <div class="carousel-caption">
 
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/guj3.jpeg" alt="Slide 3" class="d-block w-100">
+                                    <img src="img/banner/guj3.jpeg" alt="Slide 3" class="d-block w-100">
                                     <div class="carousel-caption">
                                     </div>
                                 </div>
                             </div>
-                                
+
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
@@ -435,6 +468,9 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <h3>Top Gujarati Artist</h3>
+                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
+                        <input type="text" class="search-input" placeholder="Search Artist">
+                    </div>
                 </section>
                 <section class="artkpop">
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
@@ -453,18 +489,18 @@ if (!isset($_SESSION["sessionuser"])) {
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/kpop2.jpeg" alt="Slide 2" class="d-block w-100">
+                                    <img src="img/banner/kpop2.jpeg" alt="Slide 2" class="d-block w-100">
                                     <div class="carousel-caption">
 
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img  src="img/banner/kpop3.png" alt="Slide 3" class="d-block w-100">
+                                    <img src="img/banner/kpop3.png" alt="Slide 3" class="d-block w-100">
                                     <div class="carousel-caption">
                                     </div>
                                 </div>
                             </div>
-                                
+
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
@@ -475,22 +511,43 @@ if (!isset($_SESSION["sessionuser"])) {
                             </a>
                         </div>
                     </div>
-                <h3>Top K-POP Artist</h3>
+                    <h3>Top K-POP Artist</h3>
+                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
+                        <input type="text" class="search-input" placeholder="Search Artist">
+                    </div>
                 </section>
                 <!-- ------------------------------------------------gerne ------------------------- -->
-                <section class="genresparty"><h1>this is gernesgernes</h1></section>
-                <section class="genresdance"><h1>this is genresdance</h1></section>
-                <section class="genresbollywood"><h1>this is genresbollywood</h1></section>
-                <section class="genresromantic"><h1>this is genresromantic</h1></section>
-                <section class="genresbhakti"><h1>this is genresbhakti</h1></section>
-                <section class="genreslofi"><h1>this is genreslofi</h1></section>
+                <section class="genresparty">
+                    <h1>this is gernesgernes</h1>
+                </section>
+                <section class="genresdance">
+                    <h1>this is genresdance</h1>
+                </section>
+                <section class="genresbollywood">
+                    <h1>this is genresbollywood</h1>
+                </section>
+                <section class="genresromantic">
+                    <h1>this is genresromantic</h1>
+                </section>
+                <section class="genresbhakti">
+                    <h1>this is genresbhakti</h1>
+                </section>
+                <section class="genreslofi">
+                    <h1>this is genreslofi</h1>
+                </section>
                 <!-- --------------------------------------------------------------------------------------->
-                <section class="playlistfunct"><h1>this is playlist</h1></section>
-                <section class="likedfunct"><h1>this is liked song</h1></section>
-                <section class="queuefunct"><h1>this is queue</h1></section>
-                </div>
+                <section class="playlistfunct">
+                    <h1>this is playlist</h1>
+                </section>
+                <section class="likedfunct">
+                    <h1>this is liked song</h1>
+                </section>
+                <section class="queuefunct">
+                    <h1>this is queue</h1>
+                </section>
+            </div>
         </div>
-<!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
         <div id="singer_area" class="singer-player">
             <img src="img/arijit.jpg" id="singerimg">
             <center>
@@ -498,7 +555,7 @@ if (!isset($_SESSION["sessionuser"])) {
                 <p>Singer Name</p>
             </center>
         </div>
-<!-- // -------------------------------------------------------------song info---------------------------------------------------------------- -->
+        <!-- // -------------------------------------------------------------song info---------------------------------------------------------------- -->
         <div id="suggested_info">
             <div id="recc">
                 <center>
@@ -515,7 +572,7 @@ if (!isset($_SESSION["sessionuser"])) {
             ?>
         </div>
     </div>
-<!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
+    <!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
     <script src="home.js"></script>
 </body>
 
