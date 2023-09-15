@@ -1,3 +1,14 @@
+function runFadeInAnimation() {
+    gsap.to("#mainpage", {
+        opacity: 1, // Animate opacity to 1 (fully visible)
+        duration: 2, // Animation duration in seconds
+        ease: "power.in", // Easing function for smooth animation (optional)
+    });
+}
+
+document.addEventListener("DOMContentLoaded", runFadeInAnimation);
+
+
 var profile = document.getElementById("prof");
 var nav = document.getElementById("nav");
 var close = document.getElementById("close");
