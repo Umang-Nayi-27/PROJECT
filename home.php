@@ -1,9 +1,5 @@
 <?php
-
-
 session_start();
-
-
 if (!isset($_SESSION["sessionuser"])) {
     echo "<script> window.location.href='index.php'; </script>";
 } else {
@@ -68,8 +64,8 @@ if (!isset($_SESSION["sessionuser"])) {
                 <span style="font-size: 25px;">BeatBoxify</span>
             </div>
             <ul class="navbar-links">
-                <li><a href="#" style="color: #777;">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="home.php" style="color: #777;">Home</a></li>
+                <li><a href="aboutus.php">About</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -120,7 +116,7 @@ if (!isset($_SESSION["sessionuser"])) {
         </div>
         <!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
         <div id="song_player" class="fixed-player">
-            <img src="img/song.jpg" id="pbimg">
+            <img src="img/song3.png" id="pbimg">
 
             <center>
                 <br>
@@ -171,8 +167,8 @@ if (!isset($_SESSION["sessionuser"])) {
         <div id="mainhome">
 
             <div class="links"> <!-- Add the class name here -->
-                <a id="all">All</a>
-                <a id="search">Search</a>
+                <a id="all" >All</a>
+                <a id="search" >Search</a>
                 <div class="dropdown">
                     <a class="dropbtn">Artist </a>
                     <div class="dropdown-content">
@@ -187,15 +183,14 @@ if (!isset($_SESSION["sessionuser"])) {
                     <div class="dropdown-content">
                         <a id="party">Party Song</a>
                         <a id="dance">Dance Song</a>
-                        <a id="bollywood">Bollywood Song</a>
                         <a id="romantic">Romantic Song</a>
-                        <a id="bhakti">Bhakti Song</a>
                         <a id="lofi">Lofi SOng</a>
+                        <a id="bhakti">Bhakti Song</a>
+                        <a id="bollywood">90's era</a>
                     </div>
                 </div>
                 <a id="plist">Playlist</a>
-                <a id="linked">liked</a>
-                <a id="queue">Queue</a>
+                <a id="linked">liked Song</a>
             </div>
             <div class="funct">
                 <section class="songfunct">
@@ -256,7 +251,8 @@ if (!isset($_SESSION["sessionuser"])) {
                             ?>
                         </div>
                     </div>
-                    <br>
+                    <img src="img/banner/h1.jpeg" style="width: 100%;margin-top:20px;" alt="">
+                    
                     <div class="recent">
                         <div class="heading">
                             <h6>Latest Trending</h6>
@@ -275,7 +271,6 @@ if (!isset($_SESSION["sessionuser"])) {
                             ?>
                         </div>
                     </div>
-                    <br>
                     <div class="recent">
                         <div class="heading">
                             <h6>Top Indian Artist</h6>
@@ -362,12 +357,14 @@ if (!isset($_SESSION["sessionuser"])) {
                     <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
                         <input type="text" class="search-input" placeholder="Search Artist">
                     </div>
+                    <br>
+                    <br>
                     <?php
                     for ($i = 0; $i < 4; $i++) {
                         echo
                         "<div class='biography-container'>
-                                <img class='biography-image' src='img/avt1.png' alt='Singer Image'>
-                                <h2 class='biography-info'>Singer Name</h2>
+                                <img class='biography-image' src='img/song3.png' alt='Singer Image'>
+                                <h2 class='biography-info'> Black Pink</h2>
                                 <div class='biography-history'>
                                     &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id quam vel libero tincidunt tincidunt.
                                     Sed ultricies ligula sed metus faucibus volutpat. In vehicula consectetur elit, nec varius dui dignissim nec.
@@ -378,7 +375,7 @@ if (!isset($_SESSION["sessionuser"])) {
                                     fringilla ex vel, mattis lectus.
                                 </div>
                                 </div>";
-                    }
+                        }
                     ?>
 
 
@@ -516,25 +513,45 @@ if (!isset($_SESSION["sessionuser"])) {
                         <input type="text" class="search-input" placeholder="Search Artist">
                     </div>
                 </section>
+                        
                 <!-- ------------------------------------------------gerne ------------------------- -->
                 <section class="genresparty">
+                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                    <source src="img/banner/party.mp4" type="video/mp4">
+                </video>
                     <h1>this is gernesgernes</h1>
                 </section>
                 <section class="genresdance">
+                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                    <source src="img/banner/dance.mp4" type="video/mp4">
+                </video>
                     <h1>this is genresdance</h1>
                 </section>
                 <section class="genresbollywood">
+                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);; ">
+                    <source src="img/banner/90.mp4" type="video/mp4">
+                </video>
                     <h1>this is genresbollywood</h1>
                 </section>
                 <section class="genresromantic">
+                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                    <source src="img/banner/ro1.mp4" type="video/mp4">
+                </video>
                     <h1>this is genresromantic</h1>
                 </section>
                 <section class="genresbhakti">
+                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                    <source src="img/banner/spiritual.mp4" type="video/mp4">
+                </video>
                     <h1>this is genresbhakti</h1>
                 </section>
                 <section class="genreslofi">
+                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                    <source src="img/banner/lofi.mp4" type="video/mp4">
+                </video>
                     <h1>this is genreslofi</h1>
                 </section>
+                
                 <!-- --------------------------------------------------------------------------------------->
                 <section class="playlistfunct">
                     <h1>this is playlist</h1>
