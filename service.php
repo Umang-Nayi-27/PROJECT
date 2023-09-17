@@ -214,7 +214,7 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
         <section class="services">
-            <div class="container">
+            <div class="container" id="srvc">
                 <h2 class="section-title" style="color: white; font-weight:normal">Our Services</h2>
                 <div class="row">
                     <div class="col-md-4">
@@ -264,8 +264,8 @@ if (!isset($_SESSION["sessionuser"])) {
         </section>
         <!-- After your existing content (section class="services"), add the footer section below -->
 
-        <footer class="site-footer" id="ftr">
-            <div class="container">
+        <footer class="site-footer" >
+            <div class="container" id="ftr">
                 <div class="row">
 
                     <div class="col-md-4">
@@ -298,18 +298,18 @@ if (!isset($_SESSION["sessionuser"])) {
 
     <script src="home.js"></script>
     <script>
-        var aboutus = document.getElementById("aboutus");
+       var srvc = document.getElementById("srvc");
         var ftr = document.getElementById("ftr");
 
         document.getElementById("name").addEventListener("click", function(event) {
             event.preventDefault();
-            aboutus.style.filter = "blur(10px)";
+            srvc.style.filter = "blur(10px)";
             ftr.style.filter = "blur(10px)";
         });
 
         document.getElementById("close").addEventListener("click", function(event) {
             event.preventDefault();
-            aboutus.style.filter = "blur(0px)";
+            srvc.style.filter = "blur(0px)";
             ftr.style.filter = "blur(0px)";
         });
 
