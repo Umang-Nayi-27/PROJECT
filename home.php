@@ -37,6 +37,7 @@ if (!isset($_SESSION["sessionuser"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&family=Titillium+Web&display=swap" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -590,6 +591,38 @@ if (!isset($_SESSION["sessionuser"])) {
     </div>
     <!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
     <script src="home.js"></script>
+    <script>
+        gsap.from("#suggested_info", {
+            opacity: 0,
+            y: 50,
+            duration: 2,
+            delay: 0.5
+        });
+
+        // Animation for #singer_area
+        gsap.from("#singer_area", {
+            opacity: 0,
+            x: 50,
+            duration: 2,
+            delay: 0.5
+        });
+
+        // Animation for #mainhome
+        gsap.from("#mainhome", {
+            opacity: 0,
+            y: -50,
+            duration: 2,
+            delay: 0.5
+        });
+
+        // Animation for #song_player
+        gsap.from("#song_player", {
+            opacity: 0,
+            x: -50,
+            duration: 2,
+            delay: 0.5
+        });
+    </script>
 </body>
 
 </html>
