@@ -125,8 +125,20 @@ li {
     border: 1px solid black;
     border-color: black;
 }
+#closepr{
+    background-color:#222;
+    font-weight: bold;
+    color:white;
+    border: 1px solid black;
+    border-color: black;
+}
 
 #chng {
+    background-color: crimson;
+    border-color: black;
+    color: white;
+}
+#updpr{
     background-color: crimson;
     border-color: black;
     color: white;
@@ -144,8 +156,18 @@ li {
     border-color: #222;
     color:black;
 }
+#closepr:hover{
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
 
 #chng:hover {
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
+#updpr :hover{
     background-color:white;
     border-color: #222;
     color:black;
