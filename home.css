@@ -172,7 +172,6 @@ li {
     height: 90%;
     background-color: #0a0a0a;
     color: #fff; 
-    border: 0px solid #ccc;
     margin-top: 10px;
     padding: 20px;
     z-index: 0;
@@ -191,11 +190,8 @@ li {
 
 #pbimg                                                /*   image in the music player  */
 {
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
     width: 100%;
-    height: 400px;
+    height: auto;
 }
 
 #playback {
@@ -285,7 +281,7 @@ li {
 }
 
 #singerimg {
-    border: 1px solid white;
+    border: 0px solid white;
     width: 100%;
     height: 260px;
 }
@@ -526,6 +522,7 @@ li {
     height: 94%;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .funct section::-webkit-scrollbar{
@@ -567,53 +564,56 @@ li {
 .arthin{
     z-index: 13;
     background-color: #0a0a0a;
-    overflow-y: auto;
 }
-
 .biography-container {
-    display: grid;
-    grid-template-columns: auto auto 1fr; /* Three columns: image, singer name, biography */
-    align-items: center; /* Vertically center content */
-    width: 98%;
-    height: 200px;
-    padding: 5px;   
-    gap: 25px;
     border: 1px solid #222;
     border-radius: 5px;
-    overflow: hidden;
-    margin-top: 10px;
+    padding: 15px;
+    margin: 10px;
+    height: 200px;
+    width: 98%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: row;
     cursor: pointer;
-    background-color: transparent;
 }
-.biography-container:hover{
-    background-color:black;
+
+.biography-container:hover {
+    background-color: #000000;
 }
 
 .biography-image {
-    height: 196px;
+    height: 100%;
     width: auto;
-    grid-column: 1;
-    padding:5px 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
 }
 
 .biography-info {
-    font-size: 20px;
-    padding-left: 5px;
-    grid-column: 2;
-    color:white;
-    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    color: #fff;
+    font-weight: normal;
+
 }
 
 .biography-history {
-    font-size: 18px;
-    height: 98%;
-    overflow-y: auto;   
-    border: 1px solid transparent;
-    grid-column: 3;
-    color: #777;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    padding-left: 10px;
+    color: #ccc;
+    width: 700PX;
+    
 }
 .biography-history::-webkit-scrollbar {
     width: 2px;
+    margin-left: 3px;
 }
 .biography-history::-webkit-scrollbar-track{
     background-color:#222;

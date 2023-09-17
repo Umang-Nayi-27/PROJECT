@@ -26,7 +26,7 @@ if (!isset($_SESSION["sessionuser"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>BeatBoxify / aboutus</title>
     <link rel="stylesheet" href="home.css">
 
     <link rel="shortcut icon" type="x-icon" href="img/browser.jpg" style="background-color: white;">
@@ -49,6 +49,7 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
     <style>
         .about-us-container {
@@ -142,6 +143,12 @@ if (!isset($_SESSION["sessionuser"])) {
         .footer-links a {
             color: #777;
         }
+
+        #aboutus,
+        #ftr 
+        {
+            transition: filter 0.5s ease-in-out;
+        }
     </style>
 
 
@@ -158,8 +165,8 @@ if (!isset($_SESSION["sessionuser"])) {
             <ul class="navbar-links">
                 <li><a href="home.php">Home</a></li>
                 <li><a href="aboutus.php" style="color: #777;">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="service.php">Services</a></li>
+                
             </ul>
             <div class="navbar-right">
                 <form method="post" action="">
@@ -207,9 +214,9 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
 
-        <div class="about-us-container">
+        <div class="about-us-container" id="aboutus">
 
-            <section class="about-us" >
+            <section class="about-us">
                 <h1 style="color: #ccc;">About Beat Boxify</h1>
                 <p style="color: #555;">
                     Welcome to the world of music, where rhythm and melody blend to create emotions and experiences. At Beat Boxify, we are passionate about music, and we want to share that passion with you.
@@ -217,8 +224,8 @@ if (!isset($_SESSION["sessionuser"])) {
                 <p style="color: #555;">
                     Beat Boxify started as a dream among a group of music enthusiasts. We envisioned a platform where music lovers could come together to explore, discover, and connect with the art form that transcends boundaries and unites hearts.
                 </p>
-                <video muted autoplay style="width: 100%;height:auto">
-                    <source src="img/bgvid.mp4" type="video/mp4">
+                <video muted autoplay loop style="width: 100%;height:auto">
+                    <source src="img/banner/abt.mp4" type="video/mp4">
                 </video>
                 <h2 style="color:#C70039;">Our Mission</h2>
                 <p style="color: #555;">
@@ -248,7 +255,7 @@ if (!isset($_SESSION["sessionuser"])) {
         </div>
 
         <!-- Your styled footer here -->
-        <footer class="site-footer" id="site-footer">
+        <footer class="site-footer" id="ftr">
             <div class="container">
                 <div class="row">
 
@@ -278,8 +285,45 @@ if (!isset($_SESSION["sessionuser"])) {
         </footer>
     </div>
 
-
     <script src="home.js"></script>
+    <script>
+        var aboutus = document.getElementById("aboutus");
+        var ftr = document.getElementById("ftr");
+
+        document.getElementById("name").addEventListener("click", function(event) {
+            event.preventDefault();
+            aboutus.style.filter = "blur(10px)";
+            ftr.style.filter = "blur(10px)";
+        });
+
+        document.getElementById("close").addEventListener("click", function(event) {
+            event.preventDefault();
+            aboutus.style.filter = "blur(0px)";
+            ftr.style.filter = "blur(0px)";
+        });
+
+        gsap.from(".about-us h1, .about-us p", {
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            duration: 1,
+            ease: "power4.out"  
+        });
+
+    gsap.from(".about-us video", {
+        opacity: 0,
+            x: -50,
+            stagger: 0.2,
+            duration: 2,
+            ease: "power4.out",
+            scrollTrigger: {
+                trigger: ".feature",
+                start: "top 80%",
+                end: "bottom 70%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    </script>
 </body>
 
 </html>

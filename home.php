@@ -26,7 +26,7 @@ if (!isset($_SESSION["sessionuser"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>BeatBoxify / Home</title>
     <link rel="stylesheet" href="home.css">
 
     <link rel="shortcut icon" type="x-icon" href="img/browser.jpg" style="background-color: white;">
@@ -66,8 +66,7 @@ if (!isset($_SESSION["sessionuser"])) {
             <ul class="navbar-links">
                 <li><a href="home.php" style="color: #777;">Home</a></li>
                 <li><a href="aboutus.php">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="service.php">Services</a></li>
             </ul>
             <div class="navbar-right">
                 <form method="post" action="">
@@ -120,8 +119,8 @@ if (!isset($_SESSION["sessionuser"])) {
 
             <center>
                 <br>
-                <h3 id="song-name">Song Name</h3>
-                <p style="color: #999;"> Singer name</p>
+                <h3 style="color: crimson;" id="song-name">Song Name</h3>
+                <p > Singer name</p>
             </center>
             <br>
             <audio>
@@ -235,7 +234,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     </div>
                     <div class="recent">
                         <div class="heading">
-                            <h6>Recently played</h6>
+                            <h6 style="color: crimson;">Recently played</h6>
                         </div>
                         <br>
                         <div class="recent2">
@@ -255,7 +254,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     
                     <div class="recent">
                         <div class="heading">
-                            <h6>Latest Trending</h6>
+                            <h6 style="color: crimson;">Latest Trending</h6>
                         </div>
                         <br>
                         <div class="recent2">
@@ -273,7 +272,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     </div>
                     <div class="recent">
                         <div class="heading">
-                            <h6>Top Indian Artist</h6>
+                            <h6 style="color: crimson;">Top Indian Artist</h6>
                         </div>
                         <br>
                         <div class="recent2">
@@ -293,7 +292,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     <br>
                     <div class="recent">
                         <div class="heading">
-                            <h6>Top International Artist</h6>
+                            <h6 style="color: crimson;">Top International Artist</h6>
                         </div>
                         <br>
                         <div class="recent2">
@@ -576,7 +575,7 @@ if (!isset($_SESSION["sessionuser"])) {
         <div id="suggested_info">
             <div id="recc">
                 <center>
-                    <h5>Recommended song</h5>
+                    <h5 style="color: crimson;">Recommended song</h5>
                 </center>
             </div>
             <?php
