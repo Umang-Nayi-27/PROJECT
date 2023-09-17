@@ -13,9 +13,6 @@ if (!isset($_SESSION["sessionuser"])) {
     if (isset($_POST["cngpass"])) {
         echo "<script> window.location.href='chngpass.php'; </script>";
     }
-    if (isset($_POST["updtpr"])) {
-        echo "<script> window.location.href='updtpr.php'; </script>";
-    }
 }
 
 ?>
@@ -37,11 +34,9 @@ if (!isset($_SESSION["sessionuser"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&family=Titillium+Web&display=swap" rel="stylesheet">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <!-- Include Bootstrap JavaScript (requires jQuery and Popper.js) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -114,14 +109,36 @@ if (!isset($_SESSION["sessionuser"])) {
                 </div>
             </div>
         </div>
-        <!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
+        <div id="profupd" style="height: 50vh; width: 17vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
+            <button type="submit"  class="btn btn-primary" id="closeupd">X</button>
+            <div class="container mt-4" id="prcard">
+
+                <div style="display: flex; flex-direction: row; align-items: center;">
+
+                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
+                        <form action="updtpr.php" method="post">
+                            <div class="form-group">
+                                <label for="username" class="detail" style="color: #777;">full-name :</label><br>
+                                <input type="text" name="fname" placeholder="Update Full Name">
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Update Profile</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
         <div id="song_player" class="fixed-player">
             <img src="img/song3.png" id="pbimg">
 
             <center>
                 <br>
                 <h3 style="color: crimson;" id="song-name">Song Name</h3>
-                <p > Singer name</p>
+                <p> Singer name</p>
             </center>
             <br>
             <audio>
@@ -163,12 +180,12 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
 
-        <!-- -------------------------------------------------------Main Bar----------------------------------------------------------------------->
+<!-- -------------------------------------------------------Main Bar----------------------------------------------------------------------->
         <div id="mainhome">
 
             <div class="links"> <!-- Add the class name here -->
-                <a id="all" >All</a>
-                <a id="search" >Search</a>
+                <a id="all">All</a>
+                <a id="search">Search</a>
                 <div class="dropdown">
                     <a class="dropbtn">Artist </a>
                     <div class="dropdown-content">
@@ -252,7 +269,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <img src="img/banner/h1.jpeg" style="width: 100%;margin-top:20px;" alt="">
-                    
+
                     <div class="recent">
                         <div class="heading">
                             <h6 style="color: crimson;">Latest Trending</h6>
@@ -375,7 +392,7 @@ if (!isset($_SESSION["sessionuser"])) {
                                     fringilla ex vel, mattis lectus.
                                 </div>
                                 </div>";
-                        }
+                    }
                     ?>
 
 
@@ -513,58 +530,60 @@ if (!isset($_SESSION["sessionuser"])) {
                         <input type="text" class="search-input" placeholder="Search Artist">
                     </div>
                 </section>
-                        
+
                 <!-- ------------------------------------------------gerne ------------------------- -->
                 <section class="genresparty">
-                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                    <source src="img/banner/party.mp4" type="video/mp4">
-                </video>
+                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                        <source src="img/banner/party.mp4" type="video/mp4">
+                    </video>
                     <h1>this is gernesgernes</h1>
                 </section>
                 <section class="genresdance">
-                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                    <source src="img/banner/dance.mp4" type="video/mp4">
-                </video>
+                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                        <source src="img/banner/dance.mp4" type="video/mp4">
+                    </video>
                     <h1>this is genresdance</h1>
                 </section>
                 <section class="genresbollywood">
-                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);; ">
-                    <source src="img/banner/90.mp4" type="video/mp4">
-                </video>
+                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);; ">
+                        <source src="img/banner/90.mp4" type="video/mp4">
+                    </video>
                     <h1>this is genresbollywood</h1>
                 </section>
                 <section class="genresromantic">
-                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                    <source src="img/banner/ro1.mp4" type="video/mp4">
-                </video>
+                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                        <source src="img/banner/ro1.mp4" type="video/mp4">
+                    </video>
                     <h1>this is genresromantic</h1>
                 </section>
                 <section class="genresbhakti">
-                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                    <source src="img/banner/spiritual.mp4" type="video/mp4">
-                </video>
+                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                        <source src="img/banner/spiritual.mp4" type="video/mp4">
+                    </video>
                     <h1>this is genresbhakti</h1>
                 </section>
                 <section class="genreslofi">
-                <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                    <source src="img/banner/lofi.mp4" type="video/mp4">
-                </video>
+                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
+                        <source src="img/banner/lofi.mp4" type="video/mp4">
+                    </video>
                     <h1>this is genreslofi</h1>
                 </section>
-                
+
                 <!-- --------------------------------------------------------------------------------------->
                 <section class="playlistfunct">
                     <h1>this is playlist</h1>
                 </section>
+
                 <section class="likedfunct">
                     <h1>this is liked song</h1>
                 </section>
+
                 <section class="queuefunct">
                     <h1>this is queue</h1>
                 </section>
             </div>
         </div>
-        <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
+<!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
         <div id="singer_area" class="singer-player">
             <img src="img/arijit.jpg" id="singerimg">
             <center>
@@ -572,7 +591,7 @@ if (!isset($_SESSION["sessionuser"])) {
                 <p>Singer Name</p>
             </center>
         </div>
-        <!-- // -------------------------------------------------------------song info---------------------------------------------------------------- -->
+<!-- // -------------------------------------------------------------song info---------------------------------------------------------------- -->
         <div id="suggested_info">
             <div id="recc">
                 <center>
@@ -589,7 +608,7 @@ if (!isset($_SESSION["sessionuser"])) {
             ?>
         </div>
     </div>
-    <!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
+<!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
     <script src="home.js"></script>
     <script>
         gsap.from("#suggested_info", {
@@ -622,6 +641,21 @@ if (!isset($_SESSION["sessionuser"])) {
             duration: 2,
             delay: 0.5
         });
+
+        document.getElementById("upd").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "block";
+        });
+
+        document.getElementById("closeupd").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "none";
+        });
+        document.getElementById("close").addEventListener("click", function(event) {
+        event.preventDefault();
+        profupd.style.display = "none";
+    });
+        
     </script>
 </body>
 
