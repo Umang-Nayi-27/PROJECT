@@ -144,9 +144,8 @@ if (!isset($_SESSION["sessionuser"])) {
             color: #777;
         }
 
-        #aboutus,
-        #ftr 
-        {
+        #srvc,
+        #ftr {
             transition: filter 0.5s ease-in-out;
         }
     </style>
@@ -166,7 +165,7 @@ if (!isset($_SESSION["sessionuser"])) {
                 <li><a href="home.php">Home</a></li>
                 <li><a href="aboutus.php">About</a></li>
                 <li><a href="service.php" style="color: #777;">Services</a></li>
-                
+
             </ul>
             <div class="navbar-right">
                 <form method="post" action="">
@@ -209,6 +208,60 @@ if (!isset($_SESSION["sessionuser"])) {
                                 <button type="submit" id="chng" class="btn btn-primary" name="cngpass">Change Password?</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="profupd" style="height: 50vh; width: 20vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
+            <button type="submit" class="btn btn-primary" id="closeupd">X</button>
+            <div class="container mt-4" id="prcard">
+
+                <div style="display: flex; flex-direction: row; align-items: center;">
+
+                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
+                        <form action="updtpr.php" method="post">
+                            <div class="form-group">
+                                <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
+                                <br>
+
+                                <label for="username" class="detail" style="color: #777;">full-name :</label><br>
+                                <input type="text" name="fname" placeholder="Update Full Name" style="width: 100%;">
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Update Profile</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="profchng" style="height: 50vh; width: 20vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
+            <button type="submit" class="btn btn-primary" id="closechng">X</button>
+            <div class="container mt-4" id="prcard">
+
+                <div style="display: flex; flex-direction: row; align-items: center;">
+
+                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
+                        <form action="chngpass.php" method="post">
+                            <div class="form-group">
+                                <h4 style="color: crimson; font-weight:bolder">Change Password</h4>
+                                <br>
+                                <label for="username" class="detail" style="color: #777;">Enter New Password :</label><br>
+                                <input type="password" name=" password" placeholder="New Password" style="width: 100%;">
+                                <br>
+                                <br>
+                                <label for="username" class="detail" style="color: #777;">Enter New password Again :</label><br>
+                                <input type="password" name="confirm_password" placeholder="Re-enter Password" style="width: 100%;">
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Change Password</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -264,7 +317,7 @@ if (!isset($_SESSION["sessionuser"])) {
         </section>
         <!-- After your existing content (section class="services"), add the footer section below -->
 
-        <footer class="site-footer" >
+        <footer class="site-footer">
             <div class="container" id="ftr">
                 <div class="row">
 
@@ -298,19 +351,22 @@ if (!isset($_SESSION["sessionuser"])) {
 
     <script src="home.js"></script>
     <script>
-       var srvc = document.getElementById("srvc");
+        var srvc = document.getElementById("srvc");
         var ftr = document.getElementById("ftr");
+        var nav = document.getElementById("nav");
 
         document.getElementById("name").addEventListener("click", function(event) {
             event.preventDefault();
             srvc.style.filter = "blur(10px)";
             ftr.style.filter = "blur(10px)";
+            nav.style.filter = "blur(10px)";
         });
 
         document.getElementById("close").addEventListener("click", function(event) {
             event.preventDefault();
             srvc.style.filter = "blur(0px)";
             ftr.style.filter = "blur(0px)";
+            nav.style.filter = "blur(0px)";
         });
 
         gsap.from(".service-card", {
@@ -325,6 +381,35 @@ if (!isset($_SESSION["sessionuser"])) {
                 end: "bottom 70%",
                 toggleActions: "play none none reverse"
             }
+        });
+
+        document.getElementById("upd").addEventListener("click", function(event) {
+            event.preventDefault();
+
+            profchng.style.display = "none";
+            profupd.style.display = "block";
+        });
+
+        document.getElementById("chng").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "none";
+            profchng.style.display = "block";
+        });
+        // ---------------------------------------------------------------------------------------------- close click
+        document.getElementById("closeupd").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "none";
+        });
+
+        document.getElementById("closechng").addEventListener("click", function(event) {
+            event.preventDefault();
+            profchng.style.display = "none";
+        });
+
+        document.getElementById("close").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "none";
+            profchng.style.display = "none";
         });
     </script>
 </body>

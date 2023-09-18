@@ -118,7 +118,9 @@ li {
     border-color: black;
 }
 
-#close {
+#close,
+#closeupd,
+#closechng {
     background-color:#222;
     font-weight: bold;
     color:white;
@@ -151,7 +153,9 @@ li {
     color: black;
 }
 
-#close:hover {
+#close:hover,
+#closeupd:hover,
+#closechng:hover {
     background-color:white;
     border-color: #222;
     color:black;

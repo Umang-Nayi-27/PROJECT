@@ -1,53 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singer Biography</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .biography-container {
-            display: grid;
-            grid-template-columns: auto auto 1fr; /* Three columns: image, singer name, biography */
-            align-items: center; /* Vertically center content */
-            width: 100%;
-            height: 200px;
-            padding: 5px;
-        }
-
-        .biography-image {
-            height: 100%;
-            width: auto;
-            grid-column: 1;
-        }
-
-        .biography-info {
-            font-size: 20px;
-            margin: 0;
-            grid-column: 2;
-        }
-
-        .biography-history {
-            height: 100%;
-            overflow-y: auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            grid-column: 3;
-        }
     </style>
 </head>
 <body>
-    <div class="biography-container">
-        <img class="biography-image" src="img/arijit.jpg" alt="Singer Image">
-        <h3 class="biography-info">Singer Name</h3>
-        <div class="biography-history">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id quam vel libero tincidunt tincidunt.
-            Sed ultricies ligula sed metus faucibus volutpat. In vehicula consectetur elit, nec varius dui dignissim nec.
-            Integer a mi eget ex semper finibus. Fusce bibendum, urna nec scelerisque fermentum, est felis bibendum nunc,
-            in rhoncus nisl eros eu quam. Sed at bibendum felis, a tincidunt risus. Fusce vestibulum massa non tellus
-            fermentum, nec mattis purus luctus. Sed nec arcu bibendum, cursus nunc in, vehicula ex. Quisque bibendum,
-            erat at bibendum bibendum, ipsum erat bibendum ex, ut laoreet metus nisl quis risus. In sit amet erat auctor,
-            fringilla ex vel, mattis lectus.
+    <div class="container">
+        <div class="row">
+        <!--
+             this col md have some by default padding right and left.
+            totall collumng in a line is 12
+            this is bootstrap okkay
+            by default settled in the center
+        -->
+            <div class="col-md-12" style="background-color: aqua;">          
+                <!-- Content for the first column goes here -->
+                <p>Column 1</p>
+            </div>
+            <div class="col-md-4" style="background-color: chartreuse;">
+                <!-- Content for the second column goes here -->
+                <p>Column 2</p>
+            </div>
+            <div class="col-md-2" style="background-color: coral;">
+                <!-- Content for the third column goes here -->
+                <p>Column 3</p>
+            </div>
         </div>
     </div>
+    
+
 </body>
 </html>

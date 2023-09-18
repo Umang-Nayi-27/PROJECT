@@ -53,7 +53,7 @@ if (!isset($_SESSION["sessionuser"])) {
 
     <style>
         .about-us-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -213,6 +213,60 @@ if (!isset($_SESSION["sessionuser"])) {
                 </div>
             </div>
         </div>
+        <div id="profupd" style="height: 50vh; width: 20vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
+            <button type="submit" class="btn btn-primary" id="closeupd">X</button>
+            <div class="container mt-4" id="prcard">
+
+                <div style="display: flex; flex-direction: row; align-items: center;">
+
+                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
+                        <form action="updtpr.php" method="post">
+                            <div class="form-group">
+                            <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
+                            <br>
+                            
+                                <label for="username" class="detail" style="color: #777;">full-name :</label><br>
+                                <input type="text" name="fname" placeholder="Update Full Name" style="width: 100%;">
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Update Profile</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="profchng" style="height: 50vh; width: 20vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
+            <button type="submit" class="btn btn-primary" id="closechng">X</button>
+            <div class="container mt-4" id="prcard">
+
+                <div style="display: flex; flex-direction: row; align-items: center;">
+
+                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
+                        <form action="chngpass.php" method="post">
+                            <div class="form-group">
+                                <h4 style="color: crimson; font-weight:bolder">Change Password</h4>
+                                <br>
+                                <label for="username" class="detail" style="color: #777;">Enter New Password :</label><br>
+                                <input type="password" name=" password" placeholder="New Password" style="width: 100%;">
+                                <br>
+                                <br>
+                                <label for="username" class="detail" style="color: #777;">Enter New password Again :</label><br>
+                                <input type="password" name="confirm_password" placeholder="Re-enter Password" style="width: 100%;">
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Change Password</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="about-us-container" id="aboutus">
 
@@ -289,17 +343,20 @@ if (!isset($_SESSION["sessionuser"])) {
     <script>
         var aboutus = document.getElementById("aboutus");
         var ftr = document.getElementById("ftr");
+        var nav = document.getElementById("nav");
 
         document.getElementById("name").addEventListener("click", function(event) {
             event.preventDefault();
             aboutus.style.filter = "blur(10px)";
             ftr.style.filter = "blur(10px)";
+            nav.style.filter = "blur(10px)";
         });
 
         document.getElementById("close").addEventListener("click", function(event) {
             event.preventDefault();
             aboutus.style.filter = "blur(0px)";
             ftr.style.filter = "blur(0px)";
+            nav.style.filter = "blur(0px)";
         });
 
         gsap.from(".about-us h1, .about-us p", {
@@ -323,6 +380,35 @@ if (!isset($_SESSION["sessionuser"])) {
                 toggleActions: "play none none reverse"
             }
         });
+
+        document.getElementById("upd").addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            profchng.style.display = "none";
+            profupd.style.display = "block";
+        });
+
+        document.getElementById("chng").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "none";
+            profchng.style.display = "block";
+        });
+// ---------------------------------------------------------------------------------------------- close click
+        document.getElementById("closeupd").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "none";
+        });
+
+        document.getElementById("closechng").addEventListener("click", function(event) {
+            event.preventDefault();
+            profchng.style.display = "none";
+        });
+
+        document.getElementById("close").addEventListener("click", function(event) {
+            event.preventDefault();
+            profupd.style.display = "none";
+            profchng.style.display = "none";
+        }); 
     </script>
 </body>
 
