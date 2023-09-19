@@ -52,8 +52,15 @@ if (!isset($_SESSION["sessionuser"])) {
 <body>
 
     <!-- //------------------------------------------------------navbar ------------------------------------------------------------------------------------ -->
-
     <div id="mainpage">
+        <?php
+        if ($_SESSION['role'] == 1) {
+            echo "<div id='uploadsong'>";
+            echo "<i class='fa-solid fa-plus fa-fade fa-2xl' style='padding: 45px 33px '></i>";
+            echo "</div>";
+        }
+        ?>
+
         <nav class="navbar" id="nav">
             <div class="navbar-brand">
                 <!-- <img src="img\HOME_LOGO.png" alt="" style=" width: 100px;height: auto;"> -->
@@ -66,7 +73,6 @@ if (!isset($_SESSION["sessionuser"])) {
             </ul>
             <div class="navbar-right">
                 <form method="post" action="">
-
                     <img src="<?php echo $_SESSION["path"] ?>" alt="" id="name">
                     <input type="submit" class="navbar-button" name="logout" value="Logout">
                 </form>
@@ -97,6 +103,7 @@ if (!isset($_SESSION["sessionuser"])) {
                                 <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["email"]; ?></label>
                             </div>
 
+
                             <div class="text-center">
                                 <button type="submit" id="upd" class="btn btn-primary" name="updtpr">Update profile?</button>
                             </div>
@@ -118,9 +125,9 @@ if (!isset($_SESSION["sessionuser"])) {
                     <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
                         <form action="updtpr.php" method="post">
                             <div class="form-group">
-                            <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
-                            <br>
-                            
+                                <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
+                                <br>
+
                                 <label for="username" class="detail" style="color: #777;">full-name :</label><br>
                                 <input type="text" name="fname" placeholder="Update Full Name" style="width: 100%;">
                             </div>
@@ -135,34 +142,62 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
 
-        <div id="profchng" style="height: 50vh; width: 20vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
-            <button type="submit" class="btn btn-primary" id="closechng">X</button>
-            <div class="container mt-4" id="prcard">
-
+        <div id="songuploadform" style="height: 40vh; width: 35vw; position: absolute; top: 10%; left: 30%; z-index: 5; padding: 10px;display:none">
+            <button type="submit" class="btn btn-primary" id="closesonguploadform">X</button>
+            <div class="container mt-2" id="prcard" style="max-width: 500px; margin: 0 auto; padding: 10px; background-color: #222;color:white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 5px;">
                 <div style="display: flex; flex-direction: row; align-items: center;">
+                    <!-- Removed Profile Image (left side) -->
 
-                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
-                        <form action="chngpass.php" method="post">
-                            <div class="form-group">
-                                <h4 style="color: crimson; font-weight:bolder">Change Password</h4>
-                                <br>
-                                <label for="username" class="detail" style="color: #777;">Enter New Password :</label><br>
-                                <input type="password" name=" password" placeholder="New Password" style="width: 100%;">
-                                <br>
-                                <br>
-                                <label for="username" class="detail" style="color: #777;">Enter New password Again :</label><br>
-                                <input type="password" name="confirm_password" placeholder="Re-enter Password" style="width: 100%;">
-                            </div>
-                            <div class="text-center">
-                                <br>
-                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Change Password</button>
-                            </div>
+                    <div style="flex: 2; display: flex; padding: 10px; flex-direction: row; align-items: center;">
+                        <!-- Song Upload Form (right side) -->
+                        <form action="upload_song.php" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column;">
+                            <h1 style="font-size: 20px;text-align:center;font-weight:bold; margin-bottom: 10px;">Song Upload Form</h2>
+                                <hr>
+
+                                <label for="songTitle" style="margin-bottom: 5px;">Song Title:</label>
+                                <input type="text" id="songTitle" name="songTitle" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
+
+                                <label for="artistName" style="margin-bottom: 5px;">Artist Name:</label>
+                                <input type="text" id="artistName" name="artistName" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
+
+                                <label for="songGenre" style="margin-bottom: 5px;">Song Genre:</label>
+                                <select id="songGenre" name="songGenre" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
+                                    <option value="Party">Party Song</option>
+                                    <option value="Dance">Dance Song</option>
+                                    <option value="Romantic">Romantic Song</option>
+                                    <option value="Lofi">Lofi Song</option>
+                                    <option value="Bhakti">Bhakti Song</option>
+                                    <option value="90s">90's era</option>
+                                </select>
+
+                                <label for="songLanguage" style="margin-bottom: 5px;">Song Language:</label>
+                                <select id="songLanguage" name="songLanguage" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
+                                    <option value="English">English</option>
+                                    <option value="Hindi">Hindi</option>
+                                    <option value="Gujarati">Gujarati</option>
+                                    <option value="Korean">Korean</option>
+                                    <!-- Add more language options as needed -->
+                                </select>
+
+                                <label for="songImage" style="margin-bottom: 5px;">Song Profile Picture:</label>
+                                <input type="file" id="songImage" name="songImage" accept="image/*" required style="padding: 2px; margin-bottom: 10px;">
+
+                                <label for="songFile" style="margin-bottom: 5px;">Upload Song (MP3):</label>
+                                <input type="file" id="songFile" name="songFile" accept=".mp3" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
+
+                                <label for="albumName" style="margin-bottom: 5px;">Album Name:</label>
+                                <input type="text" id="albumName" name="albumName" style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
+
+                                <!-- Add additional song details fields here -->
+                                <hr>
+                                <input type="submit" value="Upload Song" style="background-color:crimson; color: #fff; border: none; padding: 5px 10px; cursor: pointer;">
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
+
+
         <!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
         <div id="song_player" class="fixed-player">
             <img src="img/song3.png" id="pbimg">
@@ -240,6 +275,12 @@ if (!isset($_SESSION["sessionuser"])) {
                 </div>
                 <a id="plist">Playlist</a>
                 <a id="linked">liked Song</a>
+                <?php
+                if ($_SESSION['role'] == 1) {
+                    echo "<a id='plist'>Your Music</a>";
+                }
+                ?>
+
             </div>
             <div class="funct">
                 <section class="songfunct">
@@ -643,6 +684,15 @@ if (!isset($_SESSION["sessionuser"])) {
     <!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
     <script src="home.js"></script>
     <script>
+        var uploadsong = document.getElementById("uploadsong");
+        document.getElementById("name").addEventListener("click", function() {
+            uploadsong.style.filter = "blur(10px)";
+        });
+
+        document.getElementById("close").addEventListener("click", function() {
+            uploadsong.style.filter = "blur(0px)";
+        });
+
         gsap.from("#suggested_info", {
             opacity: 0,
             y: 50,
@@ -673,35 +723,15 @@ if (!isset($_SESSION["sessionuser"])) {
             duration: 2,
             delay: 0.5
         });
-// ------------------------------------------------------------------------------------------------open click
-        document.getElementById("upd").addEventListener("click", function(event) {
-            event.preventDefault();
-            
-            profchng.style.display = "none";
-            profupd.style.display = "block";
+
+        gsap.from("#uploadsong", {
+            opacity: 0,
+            scale: 0.8,
+            duration: 2,
+            delay: 0.5
         });
 
-        document.getElementById("chng").addEventListener("click", function(event) {
-            event.preventDefault();
-            profupd.style.display = "none";
-            profchng.style.display = "block";
-        });
-// ---------------------------------------------------------------------------------------------- close click
-        document.getElementById("closeupd").addEventListener("click", function(event) {
-            event.preventDefault();
-            profupd.style.display = "none";
-        });
-
-        document.getElementById("closechng").addEventListener("click", function(event) {
-            event.preventDefault();
-            profchng.style.display = "none";
-        });
-
-        document.getElementById("close").addEventListener("click", function(event) {
-            event.preventDefault();
-            profupd.style.display = "none";
-            profchng.style.display = "none";
-        });
+        // ------------------------------------------------------------------------------------------------open click
     </script>
 </body>
 

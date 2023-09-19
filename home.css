@@ -25,6 +25,20 @@ li {
     background-color:#000000;
     opacity: 0;
 }
+
+#uploadsong{
+    background-color: crimson;
+    color:white;
+    height:100px;
+    width:100px;
+    z-index:10;
+    border-radius:50%;
+    position:absolute;
+    top:86.2%;
+    left:92.5%;
+    border: 4px solid palevioletred;
+    cursor: pointer ;
+}
 /* ----------------------------------------------------------intro video ------------------------------------ */
 #intro-video {
     position: fixed;
@@ -316,7 +330,8 @@ li {
 #singer_area,
 #nav,
 #mainhome,
-#suggested_info
+#suggested_info,
+#uploadsong
 {
     transition: filter 0.5s ease-in-out; 
 }

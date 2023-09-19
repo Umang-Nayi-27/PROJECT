@@ -383,34 +383,7 @@ if (!isset($_SESSION["sessionuser"])) {
             }
         });
 
-        document.getElementById("upd").addEventListener("click", function(event) {
-            event.preventDefault();
-
-            profchng.style.display = "none";
-            profupd.style.display = "block";
-        });
-
-        document.getElementById("chng").addEventListener("click", function(event) {
-            event.preventDefault();
-            profupd.style.display = "none";
-            profchng.style.display = "block";
-        });
-        // ---------------------------------------------------------------------------------------------- close click
-        document.getElementById("closeupd").addEventListener("click", function(event) {
-            event.preventDefault();
-            profupd.style.display = "none";
-        });
-
-        document.getElementById("closechng").addEventListener("click", function(event) {
-            event.preventDefault();
-            profchng.style.display = "none";
-        });
-
-        document.getElementById("close").addEventListener("click", function(event) {
-            event.preventDefault();
-            profupd.style.display = "none";
-            profchng.style.display = "none";
-        });
+        
     </script>
 </body>
 

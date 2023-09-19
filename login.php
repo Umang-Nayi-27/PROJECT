@@ -63,7 +63,7 @@ if (isset($_SESSION["sessionuser"]) && isset($_SESSION["sessionpass"])) {
             echo $password . "<br>";
 
             // Fetch user data from the database based on the provided username
-            $query = "SELECT `pass`,`fname`,`uname`,`email`,`img` FROM `demo_reg` WHERE `email`='$mailoruser'";
+            $query = "SELECT `pass`,`fname`,`uname`,`email`,`img`,`role` FROM `demo_reg` WHERE `email`='$mailoruser'";
             $result = mysqli_query($connection, $query);
             if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
@@ -75,6 +75,7 @@ if (isset($_SESSION["sessionuser"]) && isset($_SESSION["sessionpass"])) {
                     $email = $row['email'];
                     $fname = $row['fname'];
                     $path = $row['img'];
+                    $role = $row['role'];
                     echo "getting rows...." . "<br>";
                     if ($pass == $password) {
                         $_SESSION["sessionuser"] = $email; // Store username in session
@@ -83,8 +84,9 @@ if (isset($_SESSION["sessionuser"]) && isset($_SESSION["sessionpass"])) {
                         $_SESSION["email"] = $email;
                         $_SESSION["fname"] = $fname;
                         $_SESSION["path"]  = $path;
-
+                        $_SESSION["role"] = $role;
                         echo "password correct";
+                        echo "<script>alert(".$_SESSION["role"].")</script>";
                         // Store hashed password in session
                         echo "<script> window.location.href='home.php' </script>";
                     } else {
@@ -98,7 +100,7 @@ if (isset($_SESSION["sessionuser"]) && isset($_SESSION["sessionpass"])) {
                     </script>";
                 }
             } else {
-                $query = "SELECT `pass`,`fname`,`uname`,`email`,`img` FROM `demo_reg` WHERE `uname`='$mailoruser'";
+                $query = "SELECT `pass`,`fname`,`uname`,`email`,`img`,`role` FROM `demo_reg` WHERE `uname`='$mailoruser'";
                 $result = mysqli_query($connection, $query);
                 if (mysqli_num_rows($result) > 0) {
                     $row = mysqli_fetch_assoc($result);
@@ -109,6 +111,7 @@ if (isset($_SESSION["sessionuser"]) && isset($_SESSION["sessionpass"])) {
                         $email = $row['email'];
                         $fname = $row['fname'];
                         $path = $row['img'];
+                        $role = $row['role'];
                         if ($pass == $password) {
                             $_SESSION["sessionuser"] = $user; // Store username in session
                             $_SESSION["sessionpass"] = $pass;
@@ -116,7 +119,9 @@ if (isset($_SESSION["sessionuser"]) && isset($_SESSION["sessionpass"])) {
                             $_SESSION["uname"] = $user;
                             $_SESSION["fname"] = $fname;
                             $_SESSION["path"]  = $path;
+                            $_SESSION["role"] = $role;
                             // Store hashed password in session
+                            echo "<script>alert(".$_SESSION["role"].")</script>";
                             echo "<script> window.location.href='home.php' </script>";
                         } else {
                             echo "<script>
