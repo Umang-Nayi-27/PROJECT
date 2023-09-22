@@ -52,15 +52,8 @@ if (!isset($_SESSION["sessionuser"])) {
 <body>
 
     <!-- //------------------------------------------------------navbar ------------------------------------------------------------------------------------ -->
-    <div id="mainpage">
-        <?php
-        if ($_SESSION['role'] == 1) {
-            echo "<div id='uploadsong'>";
-            echo "<i class='fa-solid fa-plus fa-fade fa-2xl' style='padding: 45px 33px '></i>";
-            echo "</div>";
-        }
-        ?>
 
+    <div id="mainpage">
         <nav class="navbar" id="nav">
             <div class="navbar-brand">
                 <!-- <img src="img\HOME_LOGO.png" alt="" style=" width: 100px;height: auto;"> -->
@@ -73,6 +66,7 @@ if (!isset($_SESSION["sessionuser"])) {
             </ul>
             <div class="navbar-right">
                 <form method="post" action="">
+
                     <img src="<?php echo $_SESSION["path"] ?>" alt="" id="name">
                     <input type="submit" class="navbar-button" name="logout" value="Logout">
                 </form>
@@ -102,7 +96,6 @@ if (!isset($_SESSION["sessionuser"])) {
                                 <label for="email" class="detail" style="color: #777;">email :</label><br>
                                 <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["email"]; ?></label>
                             </div>
-
 
                             <div class="text-center">
                                 <button type="submit" id="upd" class="btn btn-primary" name="updtpr">Update profile?</button>
@@ -142,6 +135,34 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
 
+        <div id="profchng" style="height: 50vh; width: 20vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
+            <button type="submit" class="btn btn-primary" id="closechng">X</button>
+            <div class="container mt-4" id="prcard">
+
+                <div style="display: flex; flex-direction: row; align-items: center;">
+
+                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
+                        <form action="chngpass.php" method="post">
+                            <div class="form-group">
+                                <h4 style="color: crimson; font-weight:bolder">Change Password</h4>
+                                <br>
+                                <label for="username" class="detail" style="color: #777;">Enter New Password :</label><br>
+                                <input type="password" name=" password" placeholder="New Password" style="width: 100%;">
+                                <br>
+                                <br>
+                                <label for="username" class="detail" style="color: #777;">Enter New password Again :</label><br>
+                                <input type="password" name="confirm_password" placeholder="Re-enter Password" style="width: 100%;">
+                            </div>
+                            <div class="text-center">
+                                <br>
+                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Change Password</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="songuploadform" style="height: 40vh; width: 35vw; position: absolute; top: 10%; left: 30%; z-index: 5; padding: 10px;display:none">
             <button type="submit" class="btn btn-primary" id="closesonguploadform">X</button>
             <div class="container mt-2" id="prcard" style="max-width: 500px; margin: 0 auto; padding: 10px; background-color: #222;color:white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 5px;">
@@ -196,7 +217,6 @@ if (!isset($_SESSION["sessionuser"])) {
                 </div>
             </div>
         </div>
-
 
         <!-- //-------------------------------------------------- music player -------------------------------------------------------------------------------------------------------- -->
         <div id="song_player" class="fixed-player">
@@ -276,11 +296,10 @@ if (!isset($_SESSION["sessionuser"])) {
                 <a id="plist">Playlist</a>
                 <a id="linked">liked Song</a>
                 <?php
-                if ($_SESSION['role'] == 1) {
-                    echo "<a id='plist'>Your Music</a>";
+                if ($_SESSION['role'] == 2) {
+                    echo "<a id='your_music' style='color:crimson'>Your Music</a>";
                 }
                 ?>
-
             </div>
             <div class="funct">
                 <section class="songfunct">
@@ -657,13 +676,46 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
         <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
-        <div id="singer_area" class="singer-player">
-            <img src="img/arijit.jpg" id="singerimg">
+        <div id="lyrics_player" >
             <center>
-                <br>
-                <p>Singer Name</p>
+                <h4>Lyrics</h4>
             </center>
+            <div id="lyrics-area" style="height: 240px; overflow-x: hidden; overflow-y:auto">
+                <p>
+                    Twinkle, twinkle, little star,
+                    How I wonder what you are!
+                    Up above the world so high,
+                    Like a diamond in the sky.
+
+                    When the blazing sun is gone,
+                    When he nothing shines upon,
+                    Then you show your little light,
+                    Twinkle, twinkle, all the night.
+
+                    Then the traveler in the dark,
+                    Thanks you for your tiny spark,
+                    He could not see which way to go,
+                    If you did not twinkle so.
+
+                    In the dark blue sky you keep,
+                    And often through my curtains peep,
+                    For you never shut your eye
+                    Till the sun is in the sky.
+
+                    As your bright and tiny spark,
+                    Lights the traveler in the dark.
+                    Though I know not what you are,
+                    Twinkle, twinkle, little star.
+
+                    Twinkle, twinkle, little star,
+                    How I wonder what you are!
+                    Up above the world so high,
+                    Like a diamond in the sky.
+                </p>
+            </div>
         </div>
+
+
         <!-- // -------------------------------------------------------------song info---------------------------------------------------------------- -->
         <div id="suggested_info">
             <div id="recc">
@@ -682,56 +734,11 @@ if (!isset($_SESSION["sessionuser"])) {
         </div>
     </div>
     <!-- -------------------------------------------------------------------- script --------------------------------------------------------     -->
-    <script src="home.js"></script>
+    <script src="home_main_route.js"></script>
+    <script src="gsap.js"></script>
+    <script src="profile_picture_click.js"></script>
+    <script src="upload_song.js"></script>
     <script>
-        var uploadsong = document.getElementById("uploadsong");
-        document.getElementById("name").addEventListener("click", function() {
-            uploadsong.style.filter = "blur(10px)";
-        });
-
-        document.getElementById("close").addEventListener("click", function() {
-            uploadsong.style.filter = "blur(0px)";
-        });
-
-        gsap.from("#suggested_info", {
-            opacity: 0,
-            y: 50,
-            duration: 2,
-            delay: 0.5
-        });
-
-        // Animation for #singer_area
-        gsap.from("#singer_area", {
-            opacity: 0,
-            x: 50,
-            duration: 2,
-            delay: 0.5
-        });
-
-        // Animation for #mainhome
-        gsap.from("#mainhome", {
-            opacity: 0,
-            y: -50,
-            duration: 2,
-            delay: 0.5
-        });
-
-        // Animation for #song_player
-        gsap.from("#song_player", {
-            opacity: 0,
-            x: -50,
-            duration: 2,
-            delay: 0.5
-        });
-
-        gsap.from("#uploadsong", {
-            opacity: 0,
-            scale: 0.8,
-            duration: 2,
-            delay: 0.5
-        });
-
-        // ------------------------------------------------------------------------------------------------open click
     </script>
 </body>
 

@@ -25,20 +25,6 @@ li {
     background-color:#000000;
     opacity: 0;
 }
-
-#uploadsong{
-    background-color: crimson;
-    color:white;
-    height:100px;
-    width:100px;
-    z-index:10;
-    border-radius:50%;
-    position:absolute;
-    top:86.2%;
-    left:92.5%;
-    border: 4px solid palevioletred;
-    cursor: pointer ;
-}
 /* ----------------------------------------------------------intro video ------------------------------------ */
 #intro-video {
     position: fixed;
@@ -301,7 +287,7 @@ li {
 }
 /* ----------------------------------------------------------------------------- singer_area ------------------------------------------- */
 
-.singer-player {
+#lyrics_player {
     position: fixed;
     margin-left: 20px;
     margin-top: 10px;
@@ -314,24 +300,19 @@ li {
     padding: 20px;
     font-weight:lighter;
     z-index: 0;
+    overflow: hidden;
 }
 
-.singer-player p {
-    color: #999; /* Text color */
-}
-
-#singerimg {
-    border: 0px solid white;
-    width: 100%;
-    height: 260px;
+#lyrics-area {
+    height: 240px;
+    width: 100%; overflow: auto;
 }
 
 #song_player,
 #singer_area,
 #nav,
 #mainhome,
-#suggested_info,
-#uploadsong
+#suggested_info
 {
     transition: filter 0.5s ease-in-out; 
 }
@@ -359,13 +340,16 @@ li {
     height: 45px;
 }
 
-#suggested_info::-webkit-scrollbar {
-    width: 8px;
+#suggested_info::-webkit-scrollbar,
+#lyrics-area::-webkit-scrollbar {
+    width: 6px;
 }
-#suggested_info::-webkit-scrollbar-track{
+#suggested_info::-webkit-scrollbar-track,
+#lyrics-area::-webkit-scrollbar{
     background-color:#222;
 }
-#suggested_info::-webkit-scrollbar-thumb{
+#suggested_info::-webkit-scrollbar-thumb,
+#lyrics-area::-webkit-scrollbar{
     background-color: #666;
 }
 
@@ -404,6 +388,8 @@ li {
 
 /* -------------------------------------------------- main ----------------------------------------------------------------------------- */
 
+
+
 #mainhome {
     z-index: 0;
     height: 90%;
@@ -432,6 +418,9 @@ li {
     font-size: 15px;
     cursor: pointer;
     
+}
+#your_music{
+    color: crimson;
 }
 
 .dropdown {
