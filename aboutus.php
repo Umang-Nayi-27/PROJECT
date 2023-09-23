@@ -339,7 +339,7 @@ if (!isset($_SESSION["sessionuser"])) {
         </footer>
     </div>
 
-    <script src="home.js"></script>
+    <script src="profile_picture_click.js"></script>
     <script>
         var aboutus = document.getElementById("aboutus");
         var ftr = document.getElementById("ftr");
@@ -373,12 +373,7 @@ if (!isset($_SESSION["sessionuser"])) {
             stagger: 0.2,
             duration: 2,
             ease: "power4.out",
-            scrollTrigger: {
-                trigger: ".feature",
-                start: "top 80%",
-                end: "bottom 70%",
-                toggleActions: "play none none reverse"
-            }
+            
         });
 
        

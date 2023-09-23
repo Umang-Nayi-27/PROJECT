@@ -625,39 +625,27 @@ if (!isset($_SESSION["sessionuser"])) {
 
                 <!-- ------------------------------------------------gerne ------------------------- -->
                 <section class="genresparty">
-                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                        <source src="img/banner/party.mp4" type="video/mp4">
-                    </video>
+                    
                     <h1>this is gernesgernes</h1>
                 </section>
                 <section class="genresdance">
-                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                        <source src="img/banner/dance.mp4" type="video/mp4">
-                    </video>
+                    
                     <h1>this is genresdance</h1>
                 </section>
                 <section class="genresbollywood">
-                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);; ">
-                        <source src="img/banner/90.mp4" type="video/mp4">
-                    </video>
+                    
                     <h1>this is genresbollywood</h1>
                 </section>
                 <section class="genresromantic">
-                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                        <source src="img/banner/ro1.mp4" type="video/mp4">
-                    </video>
+                    
                     <h1>this is genresromantic</h1>
                 </section>
                 <section class="genresbhakti">
-                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                        <source src="img/banner/spiritual.mp4" type="video/mp4">
-                    </video>
+                    
                     <h1>this is genresbhakti</h1>
                 </section>
                 <section class="genreslofi">
-                    <video autoplay loop muted plays-inline id="vid" style="width:100%;height:auto;filter: brightness(80%);">
-                        <source src="img/banner/lofi.mp4" type="video/mp4">
-                    </video>
+                    
                     <h1>this is genreslofi</h1>
                 </section>
 
@@ -678,40 +666,48 @@ if (!isset($_SESSION["sessionuser"])) {
         <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
         <div id="lyrics_player" >
             <center>
-                <h4>Lyrics</h4>
+                <h4 style="color: crimson;">Lyrics</h4>
             </center>
-            <div id="lyrics-area" style="height: 240px; overflow-x: hidden; overflow-y:auto">
-                <p>
-                    Twinkle, twinkle, little star,
-                    How I wonder what you are!
-                    Up above the world so high,
-                    Like a diamond in the sky.
+            <div id="lyrics_area" style="height: 240px; overflow-x: hidden; overflow-y:auto">
+                
+            तुम जो आये जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+तुम जो आये जिन्दगी में बात बन गयी
 
-                    When the blazing sun is gone,
-                    When he nothing shines upon,
-                    Then you show your little light,
-                    Twinkle, twinkle, all the night.
+तेरे साथ गुज़रा हर लम्हा
+कुछ भी समझ आया
+क्यूँ कि तुम जो आये
+जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
 
-                    Then the traveler in the dark,
-                    Thanks you for your tiny spark,
-                    He could not see which way to go,
-                    If you did not twinkle so.
+तुम जो आये जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+तुम जो आये...
 
-                    In the dark blue sky you keep,
-                    And often through my curtains peep,
-                    For you never shut your eye
-                    Till the sun is in the sky.
+तुम जो आये जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
 
-                    As your bright and tiny spark,
-                    Lights the traveler in the dark.
-                    Though I know not what you are,
-                    Twinkle, twinkle, little star.
+सारे सपने असर कोई ना पहचाने
+अब तो आके भी वो
+शक्ल है तू जो इनाम है तू
+अब तो आके भी वो
+शक्ल है तू जो इनाम है तू
+क्यूँ कि तुम जो आये
+जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
 
-                    Twinkle, twinkle, little star,
-                    How I wonder what you are!
-                    Up above the world so high,
-                    Like a diamond in the sky.
-                </p>
+तुम जो आये जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+
+दिल को मेरे हुआ यकीं क़रार
+क्यूँ कि तुम जो आये
+जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+
+तुम जो आये जिन्दगी में बात बन गयी
+इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+तुम जो आये...
+
             </div>
         </div>
 
@@ -737,7 +733,7 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="home_main_route.js"></script>
     <script src="gsap.js"></script>
     <script src="profile_picture_click.js"></script>
-    <script src="upload_song.js"></script>
+    
     <script>
     </script>
 </body>

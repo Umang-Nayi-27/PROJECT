@@ -5,8 +5,8 @@ gsap.from("#suggested_info", {
     delay: 0.5
 });
 
-// Animation for #singer_area
-gsap.from("#singer_area", {
+
+gsap.from("#lyrics_player", {
     opacity: 0,
     x: 50,
     duration: 2,

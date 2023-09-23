@@ -349,7 +349,7 @@ if (!isset($_SESSION["sessionuser"])) {
         </footer>
     </div>
 
-    <script src="home.js"></script>
+    <script src="profile_picture_click.js"></script>
     <script>
         var srvc = document.getElementById("srvc");
         var ftr = document.getElementById("ftr");

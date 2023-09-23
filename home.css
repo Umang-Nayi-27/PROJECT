@@ -23,7 +23,6 @@ li {
     width: 100vw;
     position: relative;
     background-color:#000000;
-    opacity: 0;
 }
 /* ----------------------------------------------------------intro video ------------------------------------ */
 #intro-video {
@@ -297,22 +296,27 @@ li {
     margin-right: 10px;
     background-color: #0a0a0a; 
     color: #fff; 
-    padding: 20px;
-    font-weight:lighter;
-    z-index: 0;
+    padding: 3px;
     overflow: hidden;
 }
 
-#lyrics-area {
-    height: 240px;
-    width: 100%; overflow: auto;
+#lyrics_area {
+    white-space: pre-line;
+    text-align: center;
+    margin-top: 2%  ;
+    font-size: 14px;
+    color: #666;
+    height: 280px;
+    width: 100%; 
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #song_player,
-#singer_area,
 #nav,
 #mainhome,
-#suggested_info
+#suggested_info,
+#lyrics_player
 {
     transition: filter 0.5s ease-in-out; 
 }
@@ -341,15 +345,15 @@ li {
 }
 
 #suggested_info::-webkit-scrollbar,
-#lyrics-area::-webkit-scrollbar {
+#lyrics_area::-webkit-scrollbar {
     width: 6px;
 }
 #suggested_info::-webkit-scrollbar-track,
-#lyrics-area::-webkit-scrollbar{
+#lyrics_area::-webkit-scrollbar-track{
     background-color:#222;
 }
 #suggested_info::-webkit-scrollbar-thumb,
-#lyrics-area::-webkit-scrollbar{
+#lyrics_area::-webkit-scrollbar-thumb{
     background-color: #666;
 }
 
