@@ -30,6 +30,7 @@ if (!isset($_SESSION["sessionuser"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +91,7 @@ if (!isset($_SESSION["sessionuser"])) {
                             </div>
                             <div class="form-group">
                                 <label for="fullname" class="detail" style="color: #777;">full-name :</label><br>
-                                <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["fname"]; ?></label>
+                                <label class="input" style="font-weight: bold;color:white" id="prfname"><?php echo $_SESSION["fname"]; ?></label>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="detail" style="color: #777;">email :</label><br>
@@ -112,24 +113,18 @@ if (!isset($_SESSION["sessionuser"])) {
         <div id="profupd" style="height: 50vh; width: 20vw;z-index:999 ; position: absolute; top: 20%; left: 71%; z-index: 5; padding: 10px;display:none">
             <button type="submit" class="btn btn-primary" id="closeupd">X</button>
             <div class="container mt-4" id="prcard">
-
                 <div style="display: flex; flex-direction: row; align-items: center;">
-
-                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: row; align-items: center;">
-                        <form action="updtpr.php" method="post">
-                            <div class="form-group">
-                                <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
-                                <br>
-
-                                <label for="username" class="detail" style="color: #777;">full-name :</label><br>
-                                <input type="text" name="fname" placeholder="Update Full Name" style="width: 100%;">
-                            </div>
-                            <div class="text-center">
-                                <br>
-                                <button type="submit" id="updpr" class="btn btn-primary" name="submit">Update Profile</button>
-                            </div>
-                        </form>
-
+                    <div style="flex: 1;display: flex;padding:20px 20px; flex-direction: column; align-items: center;">
+                        <div class="form-group">
+                            <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
+                            <br>
+                            <label for="username" class="detail" style="color: #777;">full-name :</label><br>
+                            <input type="text" id="fullname" name="fname" placeholder="Update Full Name" style="width: 100%;">
+                        </div>
+                        <div class="text-center">
+                            <br>
+                            <button type="submit" id="updpr" class="btn btn-primary" name="submit">Update Profile</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,7 +153,6 @@ if (!isset($_SESSION["sessionuser"])) {
                                 <button type="submit" id="updpr" class="btn btn-primary" name="submit">Change Password</button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -228,13 +222,13 @@ if (!isset($_SESSION["sessionuser"])) {
                 <p> Singer name</p>
             </center>
             <br>
-            <audio>
-                <source src="song.mp3" type="audio/mpeg">
+            <audio id="song">
+                <source src="s1.mp3" type="audio/mpeg">
             </audio>
-            <input type="range" style="width: 100%;" value="0">
+            <input type="range" id="range" style="width: 100%;" value="0">
             <div id="time" class="time-container">
                 <span class="right-corner">00:00</span>
-                <span class="left-corner">3:00</span>
+                <span class="left-corner" id="song_duration">3:00</span>
             </div>
             <br>
             <div id="playback">
@@ -625,27 +619,27 @@ if (!isset($_SESSION["sessionuser"])) {
 
                 <!-- ------------------------------------------------gerne ------------------------- -->
                 <section class="genresparty">
-                    
+
                     <h1>this is gernesgernes</h1>
                 </section>
                 <section class="genresdance">
-                    
+
                     <h1>this is genresdance</h1>
                 </section>
                 <section class="genresbollywood">
-                    
+
                     <h1>this is genresbollywood</h1>
                 </section>
                 <section class="genresromantic">
-                    
+
                     <h1>this is genresromantic</h1>
                 </section>
                 <section class="genresbhakti">
-                    
+
                     <h1>this is genresbhakti</h1>
                 </section>
                 <section class="genreslofi">
-                    
+
                     <h1>this is genreslofi</h1>
                 </section>
 
@@ -664,49 +658,49 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
         <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
-        <div id="lyrics_player" >
+        <div id="lyrics_player">
             <center>
-                <h4 style="color: crimson;">Lyrics</h4>
+                <h4 style="color: crimson;padding-top: 30px;padding-bottom: 20px;">Lyrics</h4>
             </center>
             <div id="lyrics_area" style="height: 240px; overflow-x: hidden; overflow-y:auto">
-                
-            तुम जो आये जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-तुम जो आये जिन्दगी में बात बन गयी
 
-तेरे साथ गुज़रा हर लम्हा
-कुछ भी समझ आया
-क्यूँ कि तुम जो आये
-जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                तुम जो आये जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                तुम जो आये जिन्दगी में बात बन गयी
 
-तुम जो आये जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-तुम जो आये...
+                तेरे साथ गुज़रा हर लम्हा
+                कुछ भी समझ आया
+                क्यूँ कि तुम जो आये
+                जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
 
-तुम जो आये जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                तुम जो आये जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                तुम जो आये...
 
-सारे सपने असर कोई ना पहचाने
-अब तो आके भी वो
-शक्ल है तू जो इनाम है तू
-अब तो आके भी वो
-शक्ल है तू जो इनाम है तू
-क्यूँ कि तुम जो आये
-जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                तुम जो आये जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
 
-तुम जो आये जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                सारे सपने असर कोई ना पहचाने
+                अब तो आके भी वो
+                शक्ल है तू जो इनाम है तू
+                अब तो आके भी वो
+                शक्ल है तू जो इनाम है तू
+                क्यूँ कि तुम जो आये
+                जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
 
-दिल को मेरे हुआ यकीं क़रार
-क्यूँ कि तुम जो आये
-जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                तुम जो आये जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
 
-तुम जो आये जिन्दगी में बात बन गयी
-इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-तुम जो आये...
+                दिल को मेरे हुआ यकीं क़रार
+                क्यूँ कि तुम जो आये
+                जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+
+                तुम जो आये जिन्दगी में बात बन गयी
+                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
+                तुम जो आये...
 
             </div>
         </div>
@@ -733,9 +727,8 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="home_main_route.js"></script>
     <script src="gsap.js"></script>
     <script src="profile_picture_click.js"></script>
-    
-    <script>
-    </script>
+    <script src="update_profile.js"></script>
+    <script src="song_play.js"></script>
 </body>
 
 </html>

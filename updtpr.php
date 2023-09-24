@@ -39,9 +39,7 @@
             }
         } else {
             echo "<script>
-                swal('Error!', 'Invalid Username', 'error').then(function() {
-                    window.location.href='home.php';
-                });
+                swal('Error!', 'Invalid Username', 'error');
                 </script>";
         }
     }
