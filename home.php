@@ -291,7 +291,8 @@ if (!isset($_SESSION["sessionuser"])) {
                 <a id="linked">liked Song</a>
                 <?php
                 if ($_SESSION['role'] == 2) {
-                    echo "<a id='your_music' style='color:crimson'>Your Music</a>";
+                    echo "<a id='your_music' style='color:crimson;font-weight:bold'>Your Music</a>";
+                    echo "<a id='music_upload' style='color:crimson;font-weight:bold'>Upload Song</a>";
                 }
                 ?>
             </div>
@@ -655,6 +656,57 @@ if (!isset($_SESSION["sessionuser"])) {
                 <section class="queuefunct">
                     <h1>this is queue</h1>
                 </section>
+
+                <section class="your_music_class">
+
+                    <h1>this is Your Music</h1>
+                </section>
+
+                <section class="upload_song_class" style="background-color: #0a0a0a;  color: white;">
+                    <h1 style="font-weight: bold; color: crimson; font-size: 24px; padding-top: 20px;">Upload song</h1>
+                    <form  style="display: flex; flex-direction: column; padding: 20px; width: 600px;">
+                        <!-- Song Name -->
+                        <label for="song_name" style="color: white; font-size: 16px;">Song Name:</label>
+                        <input type="text" id="song_name" name="song_name" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
+
+                        <!-- Song Image -->
+                        <label for="song_image" style="color: white; font-size: 16px;">Song Image:</label>
+                        <input type="file" id="song_image" name="song_image" accept="image/*" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
+
+                        <!-- Song Language Dropdown -->
+                        <label for="song_language" style="color: white; font-size: 16px;">Song Language:</label>
+                        <select id="song_language" name="song_language" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
+                            <option value="hindi">Hindi</option>
+                            <option value="english">English</option>
+                            <option value="gujarati">Gujarati</option>
+                            <option value="korean">Korean</option>
+                        </select>
+
+                        <!-- Song Genre Dropdown -->
+                        <label for="song_genre" style="color: white; font-size: 16px;">Song Genre:</label>
+                        <select id="song_genre" name="song_genre" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
+                            <option value="party">Party</option>
+                            <option value="dance">Dance</option>
+                            <option value="romantic">Romantic</option>
+                            <option value="bhakti">Bhakti</option>
+                            <option value="90s">90's</option>
+                            <option value="lofi">Lofi</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <!-- Song Description -->
+                        <label for="song_description" style="color: white; font-size: 16px;">Song Description:</label>
+                        <textarea id="song_description" name="song_description" rows="4" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
+
+                        <!-- Song Lyrics -->
+                        <label for="song_lyrics" style="color: white; font-size: 16px;">Song Lyrics:</label>
+                        <textarea id="song_lyrics" name="song_lyrics" rows="6" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
+
+                        <!-- Submit Button -->
+                        <input type="submit" value="Upload Song" style="background-color: crimson; color: white; font-weight: bold; padding: 10px; border: none; cursor: pointer;">
+                    </form>
+                </section>
+
             </div>
         </div>
         <!-- -------------------------------------------------------------- singer info ----------------------------------------------------------- -->
@@ -729,6 +781,11 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="profile_picture_click.js"></script>
     <script src="update_profile.js"></script>
     <script src="song_play.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById("song").pause();
+        }
+    </script>
 </body>
 
 </html>

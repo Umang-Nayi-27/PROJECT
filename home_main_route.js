@@ -38,11 +38,64 @@ var genreslofi = document.querySelector(".genreslofi");
 var playlistfunct = document.querySelector(".playlistfunct");
 var likedfunct = document.querySelector(".likedfunct");
 var queuefunct = document.querySelector(".queuefunct");
+var your_music_class = document.querySelector(".your_music_class");
+var upload_song_class = document.querySelector(".upload_song_class  ");
+
+
+document.getElementById("music_upload").addEventListener("click", function() {
+    event.preventDefault();
+
+    songfunct.style.zIndex="1";
+    searchfunct.style.zIndex="1";
+    // --------------------------------------------------------------------------    
+    arthin.style.zIndex="1";
+    arteng.style.zIndex="1";
+    artguj.style.zIndex="1";
+    artkpop.style.zIndex="1";
+    // -----------------------------------------------------------------------------
+    genresparty.style.zIndex="1";
+    genresdance.style.zIndex="1";
+    genresbollywood.style.zIndex="1";
+    genresromantic.style.zIndex="1";
+    genresbhakti.style.zIndex="1";
+    genreslofi.style.zIndex="1";
+    // -----------------------------------------------------------------------------
+    playlistfunct.style.zIndex="1";
+    likedfunct.style.zIndex="1";
+    queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="99";
+})
+
+document.getElementById("your_music").addEventListener("click", function(event) {
+    event.preventDefault();
+   
+    songfunct.style.zIndex="1";
+    searchfunct.style.zIndex="1";
+    // --------------------------------------------------------------------------    
+    arthin.style.zIndex="1";
+    arteng.style.zIndex="1";
+    artguj.style.zIndex="1";
+    artkpop.style.zIndex="1";
+    // -----------------------------------------------------------------------------
+    genresparty.style.zIndex="1";
+    genresdance.style.zIndex="1";
+    genresbollywood.style.zIndex="1";
+    genresromantic.style.zIndex="1";
+    genresbhakti.style.zIndex="1";
+    genreslofi.style.zIndex="1";
+    // -----------------------------------------------------------------------------
+    playlistfunct.style.zIndex="1";
+    likedfunct.style.zIndex="1";
+    queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="99";
+    upload_song_class.style.zIndex="1";
+});
 
 document.getElementById("all").addEventListener("click", function(event) {
     event.preventDefault();
-    
-    
     songfunct.style.zIndex="99";
     searchfunct.style.zIndex="1";
     // --------------------------------------------------------------------------    
@@ -61,6 +114,9 @@ document.getElementById("all").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("search").addEventListener("click", function(event) {
@@ -85,6 +141,9 @@ document.getElementById("search").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("hindi").addEventListener("click", function(event) {
@@ -109,6 +168,9 @@ document.getElementById("hindi").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("eng").addEventListener("click", function(event) {
@@ -133,6 +195,9 @@ document.getElementById("eng").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("guj").addEventListener("click", function(event) {
@@ -157,6 +222,9 @@ document.getElementById("guj").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("kpop").addEventListener("click", function(event) {
@@ -181,6 +249,9 @@ document.getElementById("kpop").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("party").addEventListener("click", function(event) {
@@ -205,6 +276,9 @@ document.getElementById("party").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 
@@ -230,6 +304,9 @@ document.getElementById("dance").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("bollywood").addEventListener("click", function(event) {
@@ -254,6 +331,9 @@ document.getElementById("bollywood").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("romantic").addEventListener("click", function(event) {
@@ -278,6 +358,9 @@ document.getElementById("romantic").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("bhakti").addEventListener("click", function(event) {
@@ -302,6 +385,9 @@ document.getElementById("bhakti").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("lofi").addEventListener("click", function(event) {
@@ -326,6 +412,9 @@ document.getElementById("lofi").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("plist").addEventListener("click", function(event) {
@@ -350,6 +439,9 @@ document.getElementById("plist").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="99";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("linked").addEventListener("click", function(event) {
@@ -374,6 +466,9 @@ document.getElementById("linked").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="99";
     queuefunct.style.zIndex="1";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
 
 document.getElementById("queue").addEventListener("click", function(event) {
@@ -398,5 +493,8 @@ document.getElementById("queue").addEventListener("click", function(event) {
     playlistfunct.style.zIndex="1";
     likedfunct.style.zIndex="1";
     queuefunct.style.zIndex="99";
+
+    your_music_class.style.zIndex="1";
+    upload_song_class.style.zIndex="1";
 });
                                                                                                                                 
