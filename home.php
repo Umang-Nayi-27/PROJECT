@@ -481,9 +481,7 @@ if (!isset($_SESSION["sessionuser"])) {
 
                         while ($row = mysqli_fetch_assoc($updateResult)) {
                             echo "<div class='biography-container'>";
-                            
-                            echo $row['img'];
-                            echo "<img class='biography-image' src='img/".$row['img']." alt='Singer Image'>";
+                            echo "<img class='biography-image' src='img/".$row['img']."' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>".$row['uname']."</h2>";
                             echo "<div class='biography-history'>";
                             echo "&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id quam vel libero tincidunt tincidunt.";
