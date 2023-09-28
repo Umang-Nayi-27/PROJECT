@@ -464,22 +464,39 @@ if (!isset($_SESSION["sessionuser"])) {
                     <br>
                     <br>
                     <?php
-                    for ($i = 0; $i < 4; $i++) {
-                        echo
-                        "<div class='biography-container'>
-                                <img class='biography-image' src='img/song3.png' alt='Singer Image'>
-                                <h2 class='biography-info'> Black Pink</h2>
-                                <div class='biography-history'>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id quam vel libero tincidunt tincidunt.
-                                    Sed ultricies ligula sed metus faucibus volutpat. In vehicula consectetur elit, nec varius dui dignissim nec.
-                                    Integer a mi eget ex semper finibus. Fusce bibendum, urna nec scelerisque fermentum, est felis bibendum nunc,
-                                    in rhoncus nisl eros eu quam. Sed at bibendum felis, a tincidunt risus. Fusce vestibulum massa non tellus
-                                    fermentum, nec mattis purus luctus. Sed nec arcu bibendum, cursus nunc in, vehicula ex. Quisque bibendum,
-                                    erat at bibendum bibendum, ipsum erat bibendum ex, ut laoreet metus nisl quis risus. In sit amet erat auctor,
-                                    fringilla ex vel, mattis lectus.
-                                </div>
-                                </div>";
+                    $connection = mysqli_connect("localhost", "root", "", "demo");
+
+                    if ($connection) 
+                    {
                     }
+                     else 
+                    {
+                        die("Not connected" . mysqli_connect_error());
+                    }
+                    
+                    $updateResult = mysqli_query($connection," SELECT  `uname`, `img`  FROM `demo_reg` WHERE `role`=2");
+
+                    if ($updateResult) 
+                    {
+
+                        while ($row = mysqli_fetch_assoc($updateResult)) {
+                            echo "<div class='biography-container'>";
+                            
+                            echo $row['img'];
+                            echo "<img class='biography-image' src='img/".$row['img']." alt='Singer Image'>";
+                            echo "<h2 class='biography-info'>".$row['uname']."</h2>";
+                            echo "<div class='biography-history'>";
+                            echo "&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id quam vel libero tincidunt tincidunt.";
+                            echo "Sed ultricies ligula sed metus faucibus volutpat. In vehicula consectetur elit, nec varius dui dignissim nec.";
+                            echo "Integer a mi eget ex semper finibus. Fusce bibendum, urna nec scelerisque fermentum, est felis bibendum nunc,";
+                            echo "in rhoncus nisl eros eu quam. Sed at bibendum felis, a tincidunt risus. Fusce vestibulum massa non tellus";
+                            echo "fermentum, nec mattis purus luctus. Sed nec arcu bibendum, cursus nunc in, vehicula ex. Quisque bibendum,";
+                            echo "erat at bibendum bibendum, ipsum erat bibendum ex, ut laoreet metus nisl quis risus. In sit amet erat auctor,";
+                            echo "fringilla ex vel, mattis lectus.";
+                            echo "</div>";
+                            echo "</div>";
+                        }  
+                    }                      
                     ?>
 
 
@@ -669,6 +686,9 @@ if (!isset($_SESSION["sessionuser"])) {
                         <label for="song_name" style="color: white; font-size: 16px;">Song Name:</label>
                         <input type="text" id="song_name" name="song_name" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
 
+                        <label for="song_file" style="color: white; font-size: 16px;">mp3 File:</label>
+                        <input type="file" id="song_file" name="song_file" accept="image/*" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
+
                         <!-- Song Image -->
                         <label for="song_image" style="color: white; font-size: 16px;">Song Image:</label>
                         <input type="file" id="song_image" name="song_image" accept="image/*" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
@@ -785,6 +805,8 @@ if (!isset($_SESSION["sessionuser"])) {
         window.onload = function() {
             document.getElementById("song").pause();
         }
+
+        
     </script>
 </body>
 

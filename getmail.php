@@ -46,8 +46,8 @@ error_reporting(E_ALL);
 $connection = mysqli_connect("localhost", "root", "", "demo");
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 function sendMail($email,$reset_token)
 {
@@ -78,7 +78,7 @@ function sendMail($email,$reset_token)
         $mail->Subject = 'Password Link For BeatBoxify';
         $mail->Body    = "Response of your forgot Password  <br> <b> Click link below </b>
                             <br>
-                            <a href='http://localhost/proj/forgetpass.php?email=$email&token=$reset_token'> Reset Password</a>";
+                            <a href='http://localhost/proj/enter_system/forgetpass.php?email=$email&token=$reset_token'> Reset Password</a>";
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     
         $mail->send();
