@@ -95,7 +95,7 @@ li {
 /* ------------------------------------------------------------ profile card ------------------------------------------------------------- */
 #prcard{
     background-color:#222; 
-    padding: 20px; 
+    padding: 20px 0px; 
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -103,12 +103,13 @@ li {
 }
 
 #prpic {
+    padding: 10px 10px;
     height: 390px;
-    border-radius: 5px;
     width: auto;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0px 10px;
+    padding-left: 10px;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 #upd {
@@ -224,12 +225,13 @@ li {
     align-items: center;
 }
 
-#playback div {
+#playback div 
+{
     display: inline-flex;
-    height: 40px;
-    width: 40px;
-    background-color:white; 
-    color:black;
+    height: 50px;
+    width: 50px;
+    background-color:#0a0a0a; 
+    color:white;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -241,6 +243,8 @@ li {
 #playback div:nth-child(2) {
     height: 60px;
     width: 60px;
+    background-color:white; 
+    color:black;
 }
 
 #playback div:hover {
@@ -373,6 +377,33 @@ li {
     width:39px;
     object-fit:cover;
     margin:3px 3px;
+}
+
+
+#artist_song_div {
+    margin-top: 10px;
+    width: 98%;
+    height: 70px;
+    display: grid;
+    grid-template-columns:1.5fr 3fr 3fr ;
+    grid-template-rows: 1fr;
+    padding: 5px;
+    background-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.artist_song_div_manage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 2px;
+    overflow: hidden;
+}
+
+#artist_song_div_img{
+    height: 100%;
+    width: 50%;
+    border-radius: 15px;
 }
 
 /* ---------------------------------------------------------- size ---------------------------------------------------------- */
@@ -599,7 +630,8 @@ li {
     background-color: #0a0a0a;
 }
 .biography-container {
-    border: 1px solid #222;
+    background-color: #000000;
+    border: 1px solid #000000;
     border-radius: 5px;
     padding: 15px;
     margin: 10px;
@@ -611,7 +643,7 @@ li {
 }
 
 .biography-container:hover {
-    background-color: #000000;
+    background-color:#111;
 }
 
 .biography-image {
@@ -620,6 +652,7 @@ li {
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 5px;
+    border-radius: 15px;
 }
 
 .biography-info {
@@ -636,11 +669,12 @@ li {
 }
 
 .biography-history {
+    white-space: pre-line;
     margin-top: 10px;
     font-size: 0.8rem;
     overflow-y: auto;
     padding-left: 10px;
-    color: #ccc;
+    color:#777;
     width: 700PX;
     
 }
@@ -730,3 +764,20 @@ li {
     z-index:-2;
     background-color: #0a0a0a; 
 }
+ .artist_section{
+    z-index: -3;
+    background-color: #0a0a0a;
+ }
+
+
+ #artist_img{
+    height: 250px;
+    width: auto;
+    border-radius: 30px;
+    margin-top: 150px;
+    box-shadow: 10px 10px 10px #000000 ; /* right side shadow */
+ }
+ #artist_click_name{
+    color: crimson;
+    font-weight: bolder;
+ }

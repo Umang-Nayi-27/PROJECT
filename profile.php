@@ -186,8 +186,6 @@ if (!isset($_SESSION["sessionuser"])) {
             </div>
         </div>
     </div>
-    
-
 </body>
 
 </html>

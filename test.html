@@ -3,97 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song Upload Form</title>
+    <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 8px;
-        }
-        input[type="text"],
-        input[type="file"],
-        select {
+        #try{
+            width: 98%;
+            height: 200px;
+            display: grid;
+            grid-template-columns:1fr 3fr 3fr ;
+            grid-template-rows: 1fr;
             padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        input[type="file"] {
-            padding: 5px;
-        }
-        input[type="submit"] {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: black;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Song Upload Form</h2>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <label for="songTitle">Song Title:</label>
-            <input type="text" id="songTitle" name="songTitle" required>
-
-            <label for="artistName">Artist Name:</label>
-            <input type="text" id="artistName" name="artistName" required>
-
-            <label for="songGenre">Song Genre:</label>
-            <select id="songGenre" name="songGenre" required>
-                <option value="Pop">Pop</option>
-                <option value="Rock">Rock</option>
-                <option value="Hip-Hop">Hip-Hop</option>
-                <option value="Electronic">Electronic</option>
-                <!-- Add more genre options as needed -->
-            </select>
-
-            <label for="songLanguage">songLanguage</label>
-            <select id="songLanguage" name="songLanguage" required>
-                <option value="English">English</option>
-                <option value="Hindi">Hindi</option>
-                <option value="Gujarati">Gujarati</option>
-                <option value="Korean">Korean</option>
-                <!-- Add more language options as needed -->
-            </select>
-
-            <label for="songImage">Song Profile Picture:</label>
-            <input type="file" id="songImage" name="songImage" accept="image/*" required>
-
-            <label for="songFile">Upload Song (MP3):</label>
-            <input type="file" id="songFile" name="songFile" accept=".mp3" required>
-
-            <label for="albumName">Album Name:</label>
-            <input type="text" id="albumName" name="albumName">
-
-            <!-- Add additional song details fields here -->
-
-            <input type="submit" value="Upload Song">
-        </form>
+    <div id="try">
+        <div id="first" style="background-color: gray;"></div>
+        <div id="second" style="background-color:blue"></div>
+        <div id="third" style="background-color: yellow"></div>
     </div>
+    
 </body>
 </html>

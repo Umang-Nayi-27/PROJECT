@@ -121,7 +121,6 @@ if (isset($_SESSION["sessionuser"]) && isset($_SESSION["sessionpass"])) {
                             $_SESSION["path"]  = $path;
                             $_SESSION["role"] = $role;
                             // Store hashed password in session
-                            echo "<script>alert(".$_SESSION["role"].")</script>";
                             echo "<script> window.location.href='home.php' </script>";
                         } else {
                             echo "<script>
