@@ -24,6 +24,8 @@ if (!isset($_SESSION["sessionuser"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatBoxify / Home</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="stylesheet" href="home.css">
 
     <link rel="shortcut icon" type="x-icon" href="img/browser.jpg" style="background-color: white;">
@@ -42,7 +44,7 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -691,17 +693,17 @@ if (!isset($_SESSION["sessionuser"])) {
 
                 <!-- ------------------------------------------------gerne ------------------------- -->
                 <section class="genresparty">
-                <img src="img/banner/party.jpg"  style="height:auto; width:100% ;overflow:0">
+                    <img src="img/banner/party.jpg" style="height:auto; width:100% ;overflow:0">
                 </section>
-                
+
                 <section class="genresdance">
-                <img src="img/banner/dance.jpg"  style="height:auto; width:100% ;overflow:0">
+                    <img src="img/banner/dance.jpg" style="height:auto; width:100% ;overflow:0">
                 </section>
 
 
                 <section class="genresromantic">
-                <img src="img/banner/romantic.jpg"  style="height:auto; width:100% ;overflow:0">
-                <?php
+                    <img src="img/banner/romantic.jpg" style="height:auto; width:100% ;overflow:0">
+                    <?php
                     $connection = mysqli_connect("localhost", "root", "", "demo");
                     if (!$connection) {
                         die("Not connected" . mysqli_connect_error());
@@ -711,35 +713,23 @@ if (!isset($_SESSION["sessionuser"])) {
                     $query = "SELECT * FROM `song` WHERE 	`song_genre`='romantic' ";
                     $result = mysqli_query($connection, $query);
 
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $songFile = json_encode($row['song_file']);
-                                $songImage = json_encode($row['song_image']);
-                                $songName = json_encode($row['song_name']);
-                                $songLyrics = json_encode($row['song_lyrics']);
-
-                                echo "<div id='artist_song_div' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics)'>";
-                                echo "<div class='artist_song_div_manage' id='artist_song_div_img'>";
-                                echo "<img style='height:100%' src={$row['song_image']}>";                                                  //in this { } is used to insert values
-                                echo "</div>";
-                                echo "<div class='artist_song_div_manage' id='artist_song_div_songname'>";
-                                echo "<h4 style='color: white;font-weight:lighter'>{$row['song_name']}</h4>";                               //in this { } is used to insert values
-                                echo "</div>";
-                                echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'>";
-                                echo "<h5 style='color: white; font-weight:lighter'>{$row['song_artist']}</h5>";                            //in this { } is used to insert values
-                                echo "</div>";
-                                echo "</div>";
-                            }
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $songFile = json_encode($row['song_file']);
+                            $songImage = json_encode($row['song_image']);
+                            $songName = json_encode($row['song_name']);
+                            $songLyrics = json_encode($row['song_lyrics']);
                         }
+                    }
                     ?>
                 </section>
 
                 <section class="genresbhakti">
-                <img src="img/banner/bhakti.jpg"  style="height:auto; width:100% ;overflow:0">
+                    <img src="img/banner/bhakti.jpg" style="height:auto; width:100% ;overflow:0">
                 </section>
 
                 <section class="genreslofi">
-                <img src="img/banner/lofi.jpg"  style="height:auto; width:100% ;overflow:0">
+                    <img src="img/banner/lofi.jpg" style="height:auto; width:100% ;overflow:0">
                 </section>
 
                 <!-- --------------------------------------------------------------------------------------->
@@ -764,43 +754,7 @@ if (!isset($_SESSION["sessionuser"])) {
 
                     <br>
                     <br>
-
-                    <?php
-                    $connection = mysqli_connect("localhost", "root", "", "demo");
-
-                    if (!$connection) {
-                        die("Not connected" . mysqli_connect_error());
-                    }
-
-                    // if (isset($_POST["artist_name"])); {
-                    //     $artist_name = $_POST["artist_name"]);
-                    $query = "SELECT * FROM `song` WHERE `song_artist`= 'Arijit_singh' ";
-                        $result = mysqli_query($connection, $query);
-
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $songFile = json_encode($row['song_file']);
-                                $songImage = json_encode($row['song_image']);
-                                $songName = json_encode($row['song_name']);
-                                $songLyrics = json_encode($row['song_lyrics']);
-
-                                echo "<div id='artist_song_div' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics)'>";
-                                echo "<div class='artist_song_div_manage' id='artist_song_div_img'>";
-                                echo "<img style='height:100%' src={$row['song_image']}>";                                                  //in this { } is used to insert values
-                                echo "</div>";
-                                echo "<div class='artist_song_div_manage' id='artist_song_div_songname'>";
-                                echo "<h4 style='color: white;font-weight:lighter'>{$row['song_name']}</h4>";                               //in this { } is used to insert values
-                                echo "</div>";
-                                echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'>";
-                                echo "<h5 style='color: white; font-weight:lighter'>{$row['song_artist']}</h5>";                            //in this { } is used to insert values
-                                echo "</div>";
-                                echo "</div>";
-                            }
-                        }
-                    // }
-
-                    ?>
-
+                    <div id="songList" style="width: 100%; padding:10px 10px"></div>
                 </section>
 
                 <section class="upload_song_class" style="background-color: #0a0a0a;  color: white;">
@@ -858,45 +812,7 @@ if (!isset($_SESSION["sessionuser"])) {
                 <h4 style="color: crimson;padding-top: 30px;padding-bottom: 20px;">Lyrics</h4>
             </center>
             <div id="lyrics_area" style="height: 240px; overflow-x: hidden; overflow-y:auto">
-
-                तुम जो आये जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-                तुम जो आये जिन्दगी में बात बन गयी
-
-                तेरे साथ गुज़रा हर लम्हा
-                कुछ भी समझ आया
-                क्यूँ कि तुम जो आये
-                जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-
-                तुम जो आये जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-                तुम जो आये...
-
-                तुम जो आये जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-
-                सारे सपने असर कोई ना पहचाने
-                अब तो आके भी वो
-                शक्ल है तू जो इनाम है तू
-                अब तो आके भी वो
-                शक्ल है तू जो इनाम है तू
-                क्यूँ कि तुम जो आये
-                जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-
-                तुम जो आये जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-
-                दिल को मेरे हुआ यकीं क़रार
-                क्यूँ कि तुम जो आये
-                जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-
-                तुम जो आये जिन्दगी में बात बन गयी
-                इश्क़ मजहब, इश्क़ मेरी जात बन गयी
-                तुम जो आये...
-
+                NO SONG PLAYING
             </div>
         </div>
 
@@ -927,33 +843,68 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="singer_area_click.js"></script>
     <script>
         function singer_click(name, path) {
-            document.querySelector(".artist_section").style.zIndex = "99";
-            document.getElementById("artist_img").src = path;
-            document.getElementById("artist_click_name").innerHTML = name;
-            
+            $(".artist_section").css("zIndex", "99");
+            $("#artist_img").attr("src", path);
+            $("#artist_click_name").html(name);
 
-            var xhr = new XMLHttpRequest();
+            event.preventDefault(); // Prevent the default link behavior
+            $.ajax({
+                type: "POST",
+                url: "get_songs.php", // Replace with your server-side script
+                data: {
+                    artist_name: name
+                },
+                dataType: "json",
+                success: function(response_from_php) {
+                    var songList = $("#songList");
+                    songList.empty(); // Clear existing songs
 
-            var xhr = new XMLHttpRequest();
+                    $.each(response_from_php, function(index, song) {
+                        var songFile = song.song_file;
+                        var songImage = song.song_image;
+                        var songName = song.song_name;
+                        var songLyrics = song.song_lyrics;
 
-            xhr.open("POST", "home.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        // Create HTML elements for each song using jQuery
+                        var songDiv = $("<div id='artist_song_div'></div>");
+                        songDiv.click(function() {
+                            singer_song_click(songFile, songImage, songName, songLyrics);
+                        });
 
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    console.log("done");
+                        var imgDiv = $("<div class='artist_song_div_manage' id='artist_song_div_img'></div>");
+                        imgDiv.append("<img style='height:100%' src='" + songImage + "'>");
+
+                        var nameDiv = $("<div class='artist_song_div_manage' id='artist_song_div_songname'></div>");
+                        nameDiv.append("<h4 style='color: white;font-weight:lighter'>" + songName + "</h4>");
+
+                        var artistDiv = $("<div class='artist_song_div_manage' id='artist_song_div_artistname'></div>");
+                        artistDiv.append("<h5 style='color: white; font-weight:lighter'>" + name + "</h5>");
+
+                        // Append the inner divs to the outer div
+                        songDiv.append(imgDiv);
+                        songDiv.append(nameDiv);
+                        songDiv.append(artistDiv);
+
+                        // Append the entire song container to the songList div
+                        songList.append(songDiv);
+                    });
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    console.error("Error: " + errorThrown);
                 }
-            };
-            xhr.send("artist_name=" + encodeURIComponent(name))
+            });
+
+
         }
+
 
         function singer_song_click(song, poster, name, lyrics) {
             document.getElementById("song").src = song;
             document.getElementById("pbimg").src = poster;
             document.getElementById("song-name").innerHTML = name;
-            document.getElementById("lyrics_area").innerHTML=lyrics;
-            document.getElementById("song").play();         
-            document.getElementById("play").innerHTML = '<i class="fa-solid fa-pause"></i>';   
+            document.getElementById("lyrics_area").innerHTML = lyrics;
+            document.getElementById("song").play();
+            document.getElementById("play").innerHTML = '<i class="fa-solid fa-pause"></i>';
 
         }
     </script>
