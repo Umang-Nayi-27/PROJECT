@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #try{
-            width: 98%;
-            height: 200px;
-            display: grid;
-            grid-template-columns:1fr 3fr 3fr ;
-            grid-template-rows: 1fr;
-            padding: 10px;
-            background-color: black;
-        }
-    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div id="try">
-        <div id="first" style="background-color: gray;"></div>
-        <div id="second" style="background-color:blue"></div>
-        <div id="third" style="background-color: yellow"></div>
-    </div>
-    
+    <a href="#" onclick="ajax_func(event)">click here babe</a>
 </body>
+<script>
+    function ajax_func(event){
+        event.preventDefault(); // Prevent the default link behavior
+        console.log("ajax_func() called"); // Debugging statement
+        $.ajax({
+            type: "POST",
+            url: "get_songs.php",
+            data: {
+                artist_name: "Arijit_singh"
+            },
+            dataType: "json",
+            success: function(response_from_php){
+                console.log("Success. Response received:"); // Debugging statement
+                
+                console.log(response_from_php[0].song_name);
+            },
+            error: function(){
+                console.log("Error occurred"); // Debugging statement
+            }
+        });
+    }
+</script>
 </html>

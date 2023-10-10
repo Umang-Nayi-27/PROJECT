@@ -40,7 +40,7 @@ var likedfunct = document.querySelector(".likedfunct");
 var your_music_class = document.querySelector(".your_music_class");
 var upload_song_class = document.querySelector(".upload_song_class  ");
 var artist_section = document.querySelector(".artist_section");
-
+var artist_song_div = document.getElementById("artist_song_div");
 
 
 function show(class_name) {
@@ -61,16 +61,18 @@ function show(class_name) {
     playlistfunct.style.zIndex = "1";
     likedfunct.style.zIndex = "1";
 
-
-        console.log(selected_section);
-        your_music_class.style.zIndex = "1";
-        upload_song_class.style.zIndex = "1";
+    your_music_class.style.zIndex = "1";
+    upload_song_class.style.zIndex = "1";
 
     artist_section.style.zIndex="1";
     var selected_section = document.querySelector('.' + class_name);
 
-    console.log(selected_section);
-    
-        selected_section.style.zIndex = "99";
+    gsap.from(selected_section, {        
+        x:20,           
+        duration: 1,       
+    });
+
+    selected_section.style.zIndex = "99";
+
 
 }
