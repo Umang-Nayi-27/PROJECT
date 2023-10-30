@@ -286,9 +286,9 @@ if (!isset($_SESSION["sessionuser"])) {
                     </div>
                     <div class="col-md-4">
                         <div class="service-card">
-                            <i class="fas fa-play-circle"></i>
-                            <h3 style="color: crimson;">Playlist Creation</h3>
-                            <p style="color:#999;">Create and manage your playlists to keep your music organized.</p>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                            <h3 style="color: crimson;">Search song</h3>
+                            <p style="color:#999;">Search your favorite song from your favorite song. </p>
                         </div>
                     </div>
                     <div class="col-md-4">

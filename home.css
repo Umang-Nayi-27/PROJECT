@@ -379,10 +379,9 @@ li {
     margin:3px 3px;
 }
 
-
 #artist_song_div {
     margin-top: 10px;
-    width: 98%;
+    width: 99%;
     height: 70px;
     display: grid;
     grid-template-columns:1.5fr 2fr 2fr 2fr;
@@ -391,6 +390,7 @@ li {
     background-color: black;
     border-radius: 20px;
     cursor: pointer;
+    color: white;
 }
 .artist_song_div_manage{
     display: flex;

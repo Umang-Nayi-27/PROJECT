@@ -28,10 +28,11 @@ document.getElementById("serach_func").onkeyup = function() {
                 var songDiv = $("<div id='artist_song_div'></div>");
                 songDiv.click(function() {
                     singer_song_click(songFile, songImage, songName, songLyrics, songartist);
+                    check_like_song(songName) 
                 });
 
                 var imgDiv = $("<div class='artist_song_div_manage' id='artist_song_div_img'></div>");
-                imgDiv.append("<img style='height:100%;border-radius:10px                                                       ' src='" + songImage + "'>");
+                imgDiv.append("<img style='height:100%;border-radius:10px' src='" + songImage + "'>");
 
                 var nameDiv = $("<div class='artist_song_div_manage' id='artist_song_div_songname'></div>");
                 nameDiv.append("<h6 style='color: white;font-weight:lighter'>" + songName + "</h6>");

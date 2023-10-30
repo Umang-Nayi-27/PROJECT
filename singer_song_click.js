@@ -59,7 +59,9 @@ function singer_song_click(song, poster, name, lyrics, artist, gerne) {
                 // Create a new div for each song
                 var songdiv = $("<div class='artist_song_div' style='height:50px; width:98% ; position:relative ; display:flex ;background-color:black; padding: 5px 5px ; margin-top:10px ; overflow:hidden ; gap:10px; cursor:pointer'></div>");
                 songdiv.click(function() {
+                    check_like_song(songName) 
                     singer_song_click(songFile, songImage, songName, songLyrics, songartist, song_genre);
+                    
                 });
                 songdiv.append("<img style='height:26px,width:100%; border-radius:5px' src='" + songImage + "'>");
                 songdiv.append("<span style='color: white;font-weight:lighter'>" + songName + "</span>");
