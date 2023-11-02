@@ -760,6 +760,11 @@ li {
     background-color: #0a0a0a; 
 }
 
+#your_music_class{
+    z-index: -1;
+    background-color: #0a0a0a; 
+}
+
 .upload_song_class{
     z-index:-2;
     background-color: #0a0a0a; 

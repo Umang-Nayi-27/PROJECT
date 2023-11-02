@@ -78,15 +78,18 @@ function show(class_name) {
     selected_section.style.zIndex = "99";
 
     if (class_name == "likedfunct") {
+        like_music_class()        
+    }
+    if (class_name == "your_music_class") {
         $.ajax({
             type: "POST",
-            url: "artist_music.php",
+            url: "yoour_music.php",
             dataType: "json",
             success: function (response_from_php) {
                 if (response_from_php.length > 0) {
                     console.log("Data received from PHP:", response_from_php);
-                    var songsearch_main2 = $("#songsearch_main2");
-                    songsearch_main2.empty(); // Clear previous content
+                    var artist_song_div_your_music = $("#artist_song_div_your_music");
+                    artist_song_div_your_music.empty(); // Clear previous content
         
                     $.each(response_from_php, function (index, song) {
                         var songFile = song.song_file;
@@ -97,27 +100,51 @@ function show(class_name) {
         
                         // Create HTML elements for each song using jQuery
                         var songDiv = $("<div id='artist_song_div'></div>");
-                        songDiv.click(function () {
+                       
+        
+                            var imgDiv = $("<div class='artist_song_div_manage' id='artist_song_div_img'></div>");
+                            var imgtag = $("<img style='height:100%;border-radius:10px' src='" + songImage + "'>");
+                            imgDiv.click(function () {
+                                singer_song_click(songFile, songImage, songName, songLyrics, songartist);
+                                check_like_song(songName)
+                            });
+                            imgDiv.append(imgtag)
+        
+                        var nameDiv = $("<div class='artist_song_div_manage' id='artist_song_div_songname'></div>");
+                        var songname= $("<h6 style='color: white;font-weight:lighter'>" + songName + "</h6>");
+                        nameDiv.click(function () {
                             singer_song_click(songFile, songImage, songName, songLyrics, songartist);
                             check_like_song(songName)
                         });
-        
-                        var imgDiv = $("<div class='artist_song_div_manage' id='artist_song_div_img'></div>");
-                        imgDiv.append("<img style='height:100%;border-radius:10px' src='" + songImage + "'>");
-        
-                        var nameDiv = $("<div class='artist_song_div_manage' id='artist_song_div_songname'></div>");
-                        nameDiv.append("<h6 style='color: white;font-weight:lighter'>" + songName + "</h6>");
+                        nameDiv.append(songname)
         
                         var artistDiv = $("<div class='artist_song_div_manage' id='artist_song_div_artistname'></div>");
-                        artistDiv.append("<h6 style='color: white; font-weight:lighter'>" + songartist + "</h6>");
+                        var songart = $("<h6 style='color: white; font-weight:lighter'>" + songartist + "</h6>");
+                        artistDiv.click(function () {
+                            singer_song_click(songFile, songImage, songName, songLyrics, songartist);
+                            check_like_song(songName)
+                        });
+                        artistDiv.append(songart)
+                        
+                        var deletediv = $("<div class='artist_song_div_manage' id='artist_song_div_artistname'></div>");
+                        var deletebtn =$("<input type='submit' value='Delete' style='border-radius:5px ; '  onclick='singer_song_delete_click("+songName +"))'>");
+
+                        deletebtn.click(
+                            function(){
+                                singer_song_delete_click(songName)   
+                            }
+                        )
+                        deletediv.append(deletebtn)
+                        
         
                         // Append the inner divs to the outer div
                         songDiv.append(imgDiv);
                         songDiv.append(nameDiv);
                         songDiv.append(artistDiv);
+                        songDiv.append(deletediv)
         
                         // Append the entire song container to the songList div
-                        songsearch_main2.append(songDiv);
+                        artist_song_div_your_music.append(songDiv);
                     });
                 } else {
                     console.log("No data received from PHP.");
@@ -126,7 +153,10 @@ function show(class_name) {
             error: function (xhr, textStatus, errorThrown) {
                 alert("ERROR");
             }
-        });        
+        });
     }
+
+    
+
 
 }

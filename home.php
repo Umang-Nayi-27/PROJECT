@@ -121,6 +121,11 @@ if (!isset($_SESSION["sessionuser"])) {
                             <br>
                             <label class="detail" style="color: #777;">full-name :</label><br>
                             <input type="text" id="fullname" name="fname" placeholder="Update Full Name" style="width: 100%;">
+                            <!-- <br>
+                            <br>
+                            <label class="detail" style="color: #777;">Update profile Picture</label><br>
+                            <input type="file" id="fullname" name="fimage"   accept="image/*" style="width: 100%;"> -->
+
                         </div>
                         <div class="text-center">
                             <br>
@@ -234,13 +239,13 @@ if (!isset($_SESSION["sessionuser"])) {
             <br>
             <div id="playback">
 
-                <div id="previous">
+                <div id="previous" onclick="next_song()">
                     <i class="fa-solid fa-backward"></i>
                 </div>
                 <div id="play">
                     <i class="fa-solid fa-play"></i>
                 </div>
-                <div id="next">
+                <div id="next" onclick="next_song()">
                     <i class="fa-solid fa-forward"></i>
                 </div>
             </div>
@@ -253,7 +258,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     <i class="fa-solid fa-shuffle"></i>
                 </div>
 
-                <div id="like" onclick="like_song()">
+                <div id="like" onclick="  like_song() ">
                     <i class="fa-regular fa-heart " id="like_song"></i>
                 </div>
                 <div id="volume">
@@ -359,8 +364,9 @@ if (!isset($_SESSION["sessionuser"])) {
                                     $songLyrics = json_encode($row['song_lyrics']);
                                     $songArtist = json_encode($row['song_artist']);
                                     $song_genre = json_encode($row['song_genre']);
+                                    $song_no = json_encode($row['id']);
 
-                                    echo "<div id='recentbox' style='cursor:pointer' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics , $songArtist ,$song_genre); check_like_song($songName)'>";
+                                    echo "<div id='recentbox' style='cursor:pointer' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics , $songArtist ,$song_genre , $song_no); check_like_song($songName)'>";
                                     echo "<img style='height: 150px;padding: 4px 10px;'    src='{$row['song_image']}' >";
                                     echo "<br>";                                                  //in this { } is used to insert values
                                     echo "<h6 style='color: white;font-weight:lighter;color: white;font-weight: lighter;font-size: small;padding:0px 10px '>{$row['song_name']}</h6>";                               //in this { } is used to insert values
@@ -440,7 +446,6 @@ if (!isset($_SESSION["sessionuser"])) {
                                 }
                             }
                             ?>
-
                         </div>
                     </div>
 
@@ -923,46 +928,14 @@ if (!isset($_SESSION["sessionuser"])) {
                 <!-- --------------------------------------------------------------------------------------->
                 <section class="playlistfunct">
                     <h1>this is playlist</h1>
-                    
+
                 </section>
 
                 <section class="likedfunct">
                     <div id="songsearch_main2" style="width: 100%; padding:10px 10px"></div>
                 </section>
-                <section class="your_music_class">
-                    <?php
-
-                    $name = $_SESSION['uname'];
-                    $query = "SELECT * FROM `song` WHERE 	`song_artist`= '$name' ";
-                    $result = mysqli_query($connection, $query);
-
-                    if ($result) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $songFile = json_encode($row['song_file']);
-                            $songImage = json_encode($row['song_image']);
-                            $songName = json_encode($row['song_name']);
-                            $songLyrics = json_encode($row['song_lyrics']);
-                            $songArtist = json_encode($row['song_artist']);
-                            $song_genre = json_encode($row['song_genre']);
-
-                            echo "<div id='artist_song_div' >";
-                            echo "<div class='artist_song_div_manage' id='artist_song_div_img'  onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics , $songArtist, $song_genre); check_like_song($songName)'>";
-                            echo "<img style='height:100%' src={$row['song_image']}>";                                                  //in this { } is used to insert values
-                            echo "</div>";
-                            echo "<div class='artist_song_div_manage' id='artist_song_div_songname' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics , $songArtist, $song_genre); check_like_song($songName)'>";
-                            echo "<h6 style='color: white;font-weight:lighter'>{$row['song_name']}</h6>";                               //in this { } is used to insert values
-                            echo "</div>";
-                            echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'  onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics , $songArtist, $song_genre); check_like_song($songName)'>";
-                            echo "<h6 style='color: white; font-weight:lighter'>{$row['song_artist']}</h6>";                            //in this { } is used to insert values
-                            echo "</div>";
-                            echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'>";
-                            echo "<input type='submit' value='Delete' style='border-radius:5px ; '  onclick='singer_song_delete_click($songName)'>";
-                            echo "</div>";
-
-                            echo "</div>";
-                        }
-                    }
-                    ?>
+                <section class="your_music_class" id="artist_song_div_your_music">
+                
                 </section>
 
                 <section class="artist_section">
@@ -1051,8 +1024,6 @@ if (!isset($_SESSION["sessionuser"])) {
                 NO SONG PLAYING
             </div>
         </div>
-
-
         <!-- // -------------------------------------------------------------song info---------------------------------------------------------------- -->
         <div id="suggested_info">
             <div id="recc">
@@ -1076,7 +1047,11 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="search_func.js"></script>
     <script src="insert_song.js"></script>
     <script src="singer_song_delete_click.js"></script>
+    <script src="like_music_class.js"></script>
     <script src="like_song.js"></script>
     <script src="check_like_song.js"></script>
+    <script src="next_prev.js"></script>
+    
 </body>
+
 </html>

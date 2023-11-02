@@ -14,11 +14,14 @@ function like_song() {
                 dataType: "json",
                 success: function(response_from_php) {
                     console.log('success');
+                    like_music_class() 
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     console.log("Undone");
                 }
             });
+
+            
 
     } else {
         document.getElementById('like_song').style.color = 'red'
@@ -31,7 +34,9 @@ function like_song() {
                 },
                 dataType: "json",
                 success: function(response_from_php) {
+                    
                     console.log('success');
+                    like_music_class() 
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     console.log("Undone");

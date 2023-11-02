@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-
+    
     var fullnameInput = document.getElementById("fullname");
     var updateProfileBtn = document.getElementById("updpr");
 

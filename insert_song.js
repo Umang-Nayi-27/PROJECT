@@ -9,13 +9,13 @@ document.getElementById("upload_song").addEventListener("click", function(event)
     var song_file_input = document.getElementById("song_file");
     var song_image_input = document.getElementById("song_image");
 
-    if (song_name.trim() === "" || song_language.trim() === "" || song_genre.trim() === "" || song_lyrics.trim() === "") {
-        console.log("Fill in all fields.");
+    if (song_name.trim() === "" || song_language.trim() === "" || song_genre.trim() === "" ) {
+        alert("Fill in all fields.");
         return;
     }
 
     if (song_file_input.files.length === 0 || song_image_input.files.length === 0) {
-        console.log("Select both a song file and an image file.");
+        alert("Select both a song file and an image file.");
         return;
     }
 
@@ -40,7 +40,7 @@ document.getElementById("upload_song").addEventListener("click", function(event)
             console.log(response_from_php.message);
             Swal.fire({
                 title: 'Song Uploaded',
-                text: 'song will be updated to mymusic after refresh !',
+                text: '',
                 icon: 'success'
             });
             document.getElementById("song_name").value = "";

@@ -14,5 +14,8 @@ $song_name = $_POST["song_name"];
 
         $query = "INSERT INTO `like_song`(`song_name`, `user_name`) VALUES ('$song_name','$artist')";
         $result = mysqli_query($connection, $query);
+
+
+        echo json_encode($result)
         
 ?>

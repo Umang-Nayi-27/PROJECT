@@ -1,5 +1,5 @@
 
-function singer_song_click(song, poster, name, lyrics, artist, gerne) {
+function singer_song_click(song, poster, name, lyrics, artist, gerne , ) {
     document.getElementById("song").src = song;
     document.getElementById("pbimg").src = poster;
     document.getElementById("song-name").innerHTML = name;
