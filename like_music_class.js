@@ -32,11 +32,13 @@ $.ajax({
                 var artistDiv = $("<div class='artist_song_div_manage' id='artist_song_div_artistname'></div>");
                 artistDiv.append("<h6 style='color: white; font-weight:lighter'>" + songartist + "</h6>");
 
+
                 // Append the inner divs to the outer div
                 songDiv.append(imgDiv);
                 songDiv.append(nameDiv);
                 songDiv.append(artistDiv);
 
+                
                 // Append the entire song container to the songList div
                 songsearch_main2.append(songDiv);
             });

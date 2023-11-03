@@ -16,7 +16,7 @@ document.getElementById("serach_func").onkeyup = function() {
             var songsearch_main = $("#songsearch_main");
             songsearch_main.empty(); // Clear previous content
 
-
+            if (response_from_php.length > 0) {
             $.each(response_from_php, function(index, song) {
                 var songFile = song.song_file;
                 var songImage = song.song_image;
@@ -48,7 +48,12 @@ document.getElementById("serach_func").onkeyup = function() {
                 // Append the entire song container to the songList div
                 songsearch_main.append(songDiv);
             });
-        },
+        }
+        else{
+            console.log("No data received from PHP.");
+        }
+    }
+        ,
         error: function(xhr, textStatus, errorThrown) {
             console.error("Error: " + errorThrown);
         }

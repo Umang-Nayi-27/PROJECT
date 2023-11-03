@@ -27,7 +27,8 @@ if (isset($_POST["logout"])) {
             background-color: white;
         }
     </style>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 
 <body>
@@ -57,10 +58,11 @@ if (isset($_POST["logout"])) {
 
 
     <div id="admin_poster" style="height: 90vh; width: 96vw; background-color: white; overflow: hidden; position: absolute; top: 8%; left: 2%; z-index: 5; display: flex; justify-content: center; align-items: center;">
-    <video autoplay loop muted playsinline style="max-width: 110%; max-height: 110%;">
-        <source src="upload/admin.mp4" type="video/mp4">
-    </video>
-</div>
+        <center>
+            <h3 id="welc" style="color:black ;font-size:40px; ">Welcome ,</h3>
+            <h1 id="bb" style="font-size: 200px;">BeatBoxify</h1>
+        </center>
+    </div>
 
     <!-- //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------USER -->
     <div id="User" style="height: 92vh; width: 96vw; background-color: white ;overflow-x: hidden; overflow-y: auto; position:absolute; top:7% ; left:2% ;z-index:1">
@@ -172,15 +174,14 @@ if (isset($_POST["logout"])) {
         </center>
         <hr style="background-color:black;">
 
-        <input type="submit" value="Add Artist" style="border-radius: 5px; margin-top: 30px;width:100%; height:50px" onclick="z_index('add_artist')" />
+
+        <input type="submit" value="Add Song" style="border-radius: 5px; margin-top: 30px;width:100%; height:50px" onclick="z_index('add_artist')" />
+        <input id="admin_search_song" type="text" placeholder="⚲  Seach Song " style="border-radius: 5px; margin-top: 30px;width:100%; height:30px">
         <br>
         <br>
-        <div id="admin_song_div" style="margin-top: 10px; width: 96%;margin-left:2% ;height: 70px; display: grid; grid-template-columns: 1.5fr 2fr 2fr 2fr 2fr 2fr 2fr; grid-template-rows: 1fr; padding: 5px; background-color:white ; border-radius: 5px; cursor: pointer; color: white; ">
+        <div id="admin_song_div" style="margin-top: 10px; width: 96%;margin-left:2% ;height: 70px; display: grid; grid-template-columns:  2fr 2fr 2fr 2fr 2fr 2fr; grid-template-rows: 1fr; padding: 5px; background-color:white ; border-radius: 5px; cursor: pointer; color: white; ">
             <div class="artist_song_div_manage" id="artist_song_div_songname">
                 <h6 style="color: black; font-weight: bolder; ">Song Image</h6>
-            </div>
-            <div class="artist_song_div_manage" id="artist_song_div_songname">
-                <h6 style="color: black; font-weight: bolder;">Song</h6>
             </div>
             <div class="artist_song_div_manage" id="artist_song_div_songname">
                 <h6 style="color: black; font-weight: bolder;">Song Name</h6>
@@ -198,7 +199,7 @@ if (isset($_POST["logout"])) {
                 <h6 style="color: black; font-weight: bolder">Operation</h6>
             </div>
         </div>
-        <div id="admin_songs_div" style="margin-top: 10px; width: 96%;margin-left:2% ;height: 70px; display: grid; grid-template-columns: 1.5fr 2fr 2fr 2fr 2fr 2fr 2fr; grid-template-rows: 1fr; padding: 5px; background-color: white; border-radius: 5px; cursor: pointer; color: white; ">
+        <div id="admin_songs_div" style="margin-top: 10px; width: 96%;margin-left:2% ;height: 70px; display: grid; grid-template-columns:  2fr 2fr 2fr 2fr 2fr 2fr; grid-template-rows: 1fr; padding: 5px; background-color: white; border-radius: 5px; cursor: pointer; color: white; ">
         </div>
 
 
@@ -355,6 +356,27 @@ if (isset($_POST["logout"])) {
     <!-- //-------GENRE ADDDINNNNN-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------GENRE -->
     <!-- //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------GENRE -->
 
+    <div id="admin_song_play" style="background-color:transparent; height:40vh ; width:20vw ; top:20% ; left:40% ;z-index:999 ;position:fixed ; display:grid ;grid-template-rows:0.5fr 4fr ; grid-template-columns:1fr ; display:none">
+        <div style="background-color:transparent; " onclick="admin_song_play_close()">
+            <input type="submit" style=" color:crimson ; font-weight:bolder" value="X">
+        </div>
+        <div style="background-color:#F5F5F5;margin-top:10px;border-radius:10px">
+            <center>
+                <img id="i_f" src="upload_song/song_poster/Attention(CharliePuth).jpg" style="padding:30px 30px ; width:auto; height:200px" alt="">
+                <br>
+                <audio id="song" controls style='width: 300px; height:70px ; padding-top:15px;border-width:5px'>
+                    <source id="a_f" src='upload_song/song/Attention(CharliePuth).mp3' type='audio/mpeg'>
+                </audio>
+                <br>
+                <br>
+                <h4 id="s_n">Song Name</h4>
+                <h6 id="a_n">Artist name </h6>
+                <br>
+            </center>
+        </div>
+
+
+    </div>
     <div id="Genre" style="height: 91vh; width: 96vw; background-color: white ;overflow-x: hidden; overflow-y: auto; position:absolute; top:7% ; left:2% ; z-index:1">
 
         <hr style="background-color:black;">
@@ -362,6 +384,7 @@ if (isset($_POST["logout"])) {
             <h1 style="position:absoulute; color:black"> GENRE</h1>
         </center>
         <hr style="background-color:black;">
+        <input type="submit" value="Add Genre" style="border-radius: 5px; margin-top: 30px;width:100%; height:50px" onclick="z_index('add_genre')" />
 
         <div id="admin_song_div" style="margin-top: 10px; width: 96%;margin-left:2%; height: 70px; display: grid; grid-template-columns: 1.5fr 2fr 2fr 2fr 2fr; grid-template-rows: 1fr; padding: 5px; background-color: white; border-radius: 5px; cursor: pointer; color: white; ">
             <div class="artist_song_div_manage" id="artist_song_div_songname">
@@ -381,42 +404,8 @@ if (isset($_POST["logout"])) {
             </div>
         </div>
 
-        <?php
-        $connection = mysqli_connect("localhost", "root", "", "demo");
-        if (!$connection) {
-            die("Not connected" . mysqli_connect_error());
-        }
-
-        $query = "SELECT * FROM `song_genre`  ";
-        $result = mysqli_query($connection, $query);
-
-        if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
-
-                echo "<div id='admin_song_div' style='margin-top: 10px;width: 96%;margin-left:2%;height: 70px;display: grid;grid-template-columns:1.5fr 2fr 2fr 2fr 2fr;grid-template-rows: 1fr;padding: 5px;background-color: #999;border-radius: 5px;cursor: pointer;color: white;position:absoulute'>";
-                echo "<div class='artist_song_div_manage' id='artist_song_div_songname''>";
-                echo "<h6 style='color: black;font-weight:lighter,'>{$row['song_genre_name']}</h6>";                               //in this { } is used to insert values
-                echo "</div>";
-                echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'>";
-                echo "<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' '>";
-                echo "<input type='submit' value='Update' style='border-radius:5px ; ' '>";
-                echo "</div>";
-                echo "<div class='artist_song_div_manage' id='artist_song_div_artistname' '>";
-                echo "<h6 style='color: black; font-weight:lighter'></h6>";                            //in this { } is used to insert values
-                echo "</div>";
-                echo "<div class='artist_song_div_manage' id='artist_song_div_artistname' '>";
-                echo "<h6 style='color: black; font-weight:lighter'></h6>";                            //in this { } is used to insert values
-                echo "</div>";
-                echo "<div class='artist_song_div_manage' id='artist_song_div_artistname' '>";
-                echo "<h6 style='color: black; font-weight:lighter'></h6>";                            //in this { } is used to insert values
-                echo "</div>";
-                echo "</div>";
-            }
-            echo "<center>";
-            echo "<input type='submit' value='Add Genre' style='border-radius:5px;margin-top:30px;' onclick='z_index(\"add_genre\")' />";
-            echo "</center>";
-        }
-        ?>
+        <div id="admin_genre_div" style="margin-top: 10px; width: 96%;margin-left:2% ;height: 70px; display: grid; grid-template-columns: 1.5fr  2fr 2fr 2fr 2fr ; grid-template-rows: 1fr; padding: 30px 5px; background-color: white; border-radius: 5px; cursor: pointer; color: white; ">
+        </div>
     </div>
     <div id="add_genre" style="height: 90vh; width: 96vw; background-color: white; overflow-x: hidden; overflow-y: auto; position: absolute; top: 8%; left: 2%; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr;">
         <div style="display: grid; align-items: center;">
@@ -483,6 +472,8 @@ if (isset($_POST["logout"])) {
             <h1 style="position:absoulute; color:black"> LANGUAGE</h1>
         </center>
         <hr style="background-color:black;">
+        <input type="submit" value="Add Language" style="border-radius: 5px; margin-top: 30px;width:100%; height:50px" onclick="z_index('add_language')" />
+
 
         <div id="admin_song_div" style="margin-top: 10px; width: 96%;margin-left:2%; height: 70px; display: grid; grid-template-columns: 1.5fr 2fr 2fr 2fr 2fr; grid-template-rows: 1fr; padding: 5px; background-color: white; border-radius: 5px; cursor: pointer; color: white; ">
             <div class="artist_song_div_manage" id="artist_song_div_songname">
@@ -502,7 +493,7 @@ if (isset($_POST["logout"])) {
             </div>
         </div>
 
-        <div id='admin_song_div' style='margin-top: 10px;width: 96%;margin-left:2%;height: 70px;display: grid;grid-template-columns:1.5fr 2fr 2fr 2fr 2fr;grid-template-rows: 1fr;padding: 5px;background-color: #999;border-radius: 5px;cursor: pointer;color: white;margin-left:5'>
+        <div id='admin_language_div' style='margin-top: 10px;width: 96%;margin-left:2%;height: 70px;display: grid;grid-template-columns:1.5fr 2fr 2fr 2fr 2fr;grid-template-rows: 1fr;padding: 5px;background-color: white;border-radius: 5px;cursor: pointer;color: white;margin-left:5'>
         </div>
 
     </div>
@@ -564,7 +555,9 @@ if (isset($_POST["logout"])) {
 
 
     <script src="admin_page_route.js"></script>
+    <script src="admin_song_search.js"></script>
     <script>
+        
         function test() {
             alert()
         }
