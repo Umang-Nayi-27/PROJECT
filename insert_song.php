@@ -24,10 +24,10 @@ try {
         $query = "INSERT INTO `song`(`song_name`, `song_language`, `song_genre`, `song_artist`, `song_lyrics`, `song_image`, `song_file`) VALUES ('$song_name','$song_language','$song_genre','$artist','$song_lyrics','$img_path','$song_path')";
         $result = mysqli_query($connection, $query);
 
-        if ($result) {
+        if ($result !== false) {
             echo json_encode(array("success" => true, "message" => "Song data inserted successfully."));
         } else {
-            echo json_encode(array("success" => false, "message" => "Database error: " . mysqli_error($connection)));
+            echo json_encode(array("success" => false, "message" => "Song Already Uploaded " ));
         }
     } else {
         echo json_encode(array("success" => false, "message" => "File upload failed."));

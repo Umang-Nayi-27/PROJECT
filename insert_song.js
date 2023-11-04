@@ -37,23 +37,26 @@ document.getElementById("upload_song").addEventListener("click", function(event)
         processData: false,
         dataType: "json",
         success: function(response_from_php) {
-            console.log(response_from_php.message);
-            Swal.fire({
-                title: 'Song Uploaded',
-                text: '',
-                icon: 'success'
-            });
-            document.getElementById("song_name").value = "";
-            document.getElementById("song_language").value = "";
-            document.getElementById("song_genre").value = "";
-            document.getElementById("song_lyrics").value = "";
-            document.getElementById("song_file").value = "";
-            document.getElementById("song_image").value = "";
-            // Handle success, e.g., show a success message to the user
+            if (response_from_php.success === true) {
+                // Code to execute on success
+                console.log(response_from_php.message);
+                Swal.fire({
+                    title: 'Song Uploaded',
+                    text: '',
+                    icon: 'success'
+                });
+                // Clear form inputs or perform other actions
+            } else {
+                // Code to handle failure
+                console.error(response_from_php.message);
+                alert("Error: " + response_from_php.message);
+            }
         },
         error: function(xhr, textStatus, errorThrown) {
-            console.log("Error: " + errorThrown);
             // Handle error, e.g., show an error message to the user
+            console.error("AJAX Error: " + errorThrown);
+            alert("AJAX Error: " + errorThrown);
         }
     });
+    
 });

@@ -27,6 +27,7 @@ if (isset($_POST["logout"])) {
             background-color: white;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
@@ -176,8 +177,43 @@ if (isset($_POST["logout"])) {
 
 
         <input type="submit" value="Add Song" style="border-radius: 5px; margin-top: 30px;width:100%; height:50px" onclick="z_index('add_artist')" />
-        <input id="admin_search_song" type="text" placeholder="⚲  Seach Song " style="border-radius: 5px; margin-top: 30px;width:100%; height:30px">
+        <input id="admin_search_song" type="text" placeholder="⚲  Seach Song " style="border-radius: 5px; margin-top: 30px;width:100%; height:40px">
         <br>
+        <br>
+
+        <div style="display: grid; grid-template-columns:  0.3fr 1fr 1fr; grid-template-rows: 1fr ;gap:20px">
+            <div>
+                <h6 style="font-weight: bolder;">
+                    <center>Filter : </center>
+                </h6>
+            </div>
+            <div>
+                <select name="Genre" id="select_genre" style="width: 90%" onclick="select_genre()">
+                    <option value="" disabled selected>Select Genre</option>
+                    <option value="english">English</option>
+                    <option value="gujarati">Gujarati</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="korean">Korean</option>
+                </select>
+
+            </div>
+            <div>
+                <select name="" id="select_language" style="width:90%" onclick="select_language()">
+
+                    <option value="" disabled selected>Select Language</option>
+                    <option value="bhakti">bhakti</option>
+
+                    <option value="dance">dance</option>
+
+                    <option value="lofi">lofi</option>
+
+                    <option value="party">party</option>
+
+                    <option value="romantic">romantic</option>
+                </select>
+            </div>
+        </div>
+        <hr>
         <br>
         <div id="admin_song_div" style="margin-top: 10px; width: 96%;margin-left:2% ;height: 70px; display: grid; grid-template-columns:  2fr 2fr 2fr 2fr 2fr 2fr; grid-template-rows: 1fr; padding: 5px; background-color:white ; border-radius: 5px; cursor: pointer; color: white; ">
             <div class="artist_song_div_manage" id="artist_song_div_songname">
@@ -556,11 +592,13 @@ if (isset($_POST["logout"])) {
 
     <script src="admin_page_route.js"></script>
     <script src="admin_song_search.js"></script>
+    <script src="admin_song_filter.js"></script>
     <script>
-        
         function test() {
             alert()
         }
+
+
     </script>
 </body>
 

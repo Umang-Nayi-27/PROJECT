@@ -23,6 +23,11 @@ function song(){
         url: "admin_song.php",
         dataType: "json",
         success: function (response_from_php) {
+
+            
+            document.getElementById("select_language").value = ""
+            document.getElementById("select_genre").value = ""
+
             if (response_from_php.length > 0) {
                 console.log("Data received from PHP:", response_from_php);
                 
@@ -31,6 +36,7 @@ function song(){
                 
     
                 $.each(response_from_php, function (index, song) {
+                    var songid = song.id
                     var songFile = song.song_file;
                     var songImage = song.song_image;
                     var songName = song.song_name;
@@ -59,7 +65,7 @@ function song(){
 
                     
                     var song_button = $("<div class='artist_song_div_manage' id='artist_song_div_songname'></div>")
-                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' >")
+                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' onclick='singer_song_delete_click(\" "+songid +" \")' >")
                     song_button.append("<input type='submit' value='Update' style='border-radius:5px ;margin-right:10px ' >")
                     song_button.append("<input type='submit' value='Play' style='border-radius:5px; margin-right:10px;' onclick='song_open(\"  " + songName +" \" , \" "+ songImage +"  \" ,\""+ songFile+"\" ,\" "+ songartist +"\");' />");
 
@@ -97,6 +103,38 @@ function song_open(name , image, songfile ,artist){
 
     document.getElementById("song").play()
     
+}
+
+function singer_song_delete_click(name) {
+    alert(name)
+    $.ajax({
+        type: "POST",
+        url: "admin_song_delete.php",
+        data: {
+            song_name: name
+        },
+        dataType: "json",
+        success: function(response_from_php) {
+            if (response_from_php.status === "done") {
+                console.log("Done");
+                song()
+                Swal.fire({
+                title: 'Song Deleted',
+                text: 'Song Is Deleted Now',
+                icon: 'delete'
+            });
+            
+            } else if (response_from_php.status === "error") {
+                console.log("Error: " + response_from_php.message);
+                
+            } else if (response_from_php.status === "no_data") {
+                console.log("No data provided");
+            }
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            console.log(error);
+        }
+    });
 }
 
 function admin_song_play_close(){
