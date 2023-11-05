@@ -1,0 +1,1 @@
+admin_genre_delete_click

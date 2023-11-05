@@ -14,7 +14,25 @@ gsap.from("#bb", {
 });
 
 
+function dis_add(name) {
+    document.getElementById(name).style.display = "block"
+    document.getElementById("Song").style.filter = "blur(10px)"
+    document.getElementById("nav").style.filter = "blur(10px)"
+    document.getElementById('User').style.filter = 'blur(10px)'
+    document.getElementById('Artist').style.filter = 'blur(10px)'
+    document.getElementById('Genre').style.filter = 'blur(10px)'
+    document.getElementById('Language').style.filter = 'blur(10px)'
+}
 
+function close_add(name) {
+    document.getElementById(name).style.display = "none"
+    document.getElementById("Song").style.filter = "blur(0px)"
+    document.getElementById("nav").style.filter = "blur(0px)"
+    document.getElementById('User').style.filter = 'blur(0px)'
+    document.getElementById('Artist').style.filter = 'blur(0px)'
+    document.getElementById('Genre').style.filter = 'blur(0px)'
+    document.getElementById('Language').style.filter = 'blur(0px)'
+}
 
 
 function song(){    
@@ -106,7 +124,6 @@ function song_open(name , image, songfile ,artist){
 }
 
 function singer_song_delete_click(name) {
-    alert(name)
     $.ajax({
         type: "POST",
         url: "admin_song_delete.php",
@@ -117,12 +134,13 @@ function singer_song_delete_click(name) {
         success: function(response_from_php) {
             if (response_from_php.status === "done") {
                 console.log("Done");
-                song()
+                
                 Swal.fire({
-                title: 'Song Deleted',
+                title: 'Deleted !',
                 text: 'Song Is Deleted Now',
-                icon: 'delete'
+                icon: 'warning'
             });
+            song()
             
             } else if (response_from_php.status === "error") {
                 console.log("Error: " + response_from_php.message);
@@ -132,8 +150,9 @@ function singer_song_delete_click(name) {
             }
         },
         error: function(xhr, textStatus, errorThrown) {
-            console.log(error);
-        }
+            console.log("Error: " + textStatus); // Log the error status
+            console.log(errorThrown); // Log the error message
+        }        
     });
 }
 
@@ -275,13 +294,13 @@ function genre(){
     
                 $.each(response_from_php, function (index, song) {
                     var genre = song.song_genre_name
+                    var id = song.id
 
                     var artistname = $("<div class='artist_song_div_manage' id='artist_song_div_songname' style='padding:30px 5px'></div>")
                     artistname.append("<h6 style='color: black;font-weight:lighter,'>"+genre+"</h6>")
 
                     var song_button = $("<div class='artist_song_div_manage' id='artist_song_div_songname' style='padding:30px 5px'></div>")
-                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' >")
-                    song_button.append("<input type='submit' value='update' style='border-radius:5px ;margin-right:10px ' >")
+                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' onclick='admin_genre_delete_data(\" "+id+" \")' >")
                     
                     var song_artist = $("<div class='artist_song_div_manage' id='artist_song_div_songname' style='padding:30px 5px'></div>")
                     song_artist.append("<h6 style='color: black;font-weight:lighter,></h6>")
@@ -309,6 +328,78 @@ function genre(){
         }
     });
 }
+
+function add_genre_data(name) {
+    var lang = document.getElementById("genre_name").value
+    close_add(name)
+
+
+    $.ajax({
+        type: "POST",
+        url: "admin_genre_add.php",
+        data: {
+            lang_name: lang
+        },
+        dataType: "json",
+        success: function(response_from_php) {
+            if (response_from_php.status === "done") {
+                console.log("Done");
+
+                Swal.fire({
+                    title: 'Added !',
+                    text: 'New Language Is Addeed Now',
+                    icon: 'sucess'
+                });
+                genre()
+            } else if (response_from_php.status === "error") {
+                alert("Cant Delete : Songs are Available for this  " + response_from_php.message);
+
+            } else if (response_from_php.status === "no_data") {
+                console.log("No data provided");
+            }
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            console.log("Error: " + textStatus); // Log the error status
+            console.log(errorThrown); // Log the error message
+        }
+    });
+}
+
+function admin_genre_delete_data(name){
+    $.ajax({
+        type: "POST",
+        url: "admin_genre_delete_click.php",
+        data: {
+            lang_name: name
+        },
+        dataType: "json",
+        success: function(response_from_php) {
+            if (response_from_php.status === "done") {
+                console.log("Done");
+
+                Swal.fire({
+                    title: 'Deleted !',
+                    text: 'Genre Is Deleted Now',
+                    icon: 'warning'
+                });
+                genre()
+
+            } else if (response_from_php.status === "error") {
+                
+            alert("Cant Delete : Songs are Available for this   ")
+
+            } else if (response_from_php.status === "no_data") {
+                console.log("No data provided");
+            }
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            alert("Cant Delete : Songs are Available for this   ")
+        }
+    });
+}
+
+
+
 function language(){
     $.ajax({
         type: "POST",
@@ -323,13 +414,14 @@ function language(){
     
                 $.each(response_from_php, function (index, song) {
                     var lang = song.language
+                    var id = song.id
+                    
 
                     var artistname = $("<div class='artist_song_div_manage' id='artist_song_div_songname' style='padding:30px 5px'></div>")
                     artistname.append("<h6 style='color: black;font-weight:lighter,'>"+lang+"</h6>")
 
                     var song_button = $("<div class='artist_song_div_manage' id='artist_song_div_songname' style='padding:30px 5px'></div>")
-                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' >")
-                    song_button.append("<input type='submit' value='update' style='border-radius:5px ;margin-right:10px ' >")
+                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px '  onclick='admin_lang_delete_click(\" "+ id +" \")'>")
                     
                     var song_artist = $("<div class='artist_song_div_manage' id='artist_song_div_songname' style='padding:30px 5px'></div>")
                     song_artist.append("<h6 style='color: black;font-weight:lighter,></h6>")
@@ -358,7 +450,74 @@ function language(){
     });
 }
 
+function add_language_data(name) {
+    var lang = document.getElementById("lang_name").value
+    close_add(name)
 
+
+    $.ajax({
+        type: "POST",
+        url: "admin_language_add.php",
+        data: {
+            lang_name: lang
+        },
+        dataType: "json",
+        success: function(response_from_php) {
+            if (response_from_php.status === "done") {
+                console.log("Done");
+
+                Swal.fire({
+                    title: 'Added !',
+                    text: 'New Language Is Addeed Now',
+                    icon: 'sucess'
+                });
+                language()
+            } else if (response_from_php.status === "error") {
+                alert("Cant Delete : Songs are Available for this  " + response_from_php.message);
+
+            } else if (response_from_php.status === "no_data") {
+                console.log("No data provided");
+            }
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            console.log("Error: " + textStatus); // Log the error status
+            console.log(errorThrown); // Log the error message
+        }
+    });
+}
+
+function admin_lang_delete_click(name) {
+    $.ajax({
+        type: "POST",
+        url: "admin_lang_delete_click.php",
+        data: {
+            lang_name: name
+        },
+        dataType: "json",
+        success: function(response_from_php) {
+            if (response_from_php.status === "done") {
+                console.log("Done");
+
+                Swal.fire({
+                    title: 'Deleted !',
+                    text: 'Language Is Deleted Now',
+                    icon: 'warning'
+                });
+                language()
+
+            } else if (response_from_php.status === "error") {
+                
+            alert("Cant Delete : Songs are Available for this   ")
+
+            } else if (response_from_php.status === "no_data") {
+                console.log("No data provided");
+            }
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            alert("Cant Delete : Songs are Available for this   ")
+        }
+    });
+}
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -378,11 +537,6 @@ function z_index(name) {
     document.getElementById('Artist').style.zIndex = '1'
     document.getElementById('Genre').style.zIndex = '1'
     document.getElementById('Language').style.zIndex = '1'
-    document.getElementById('add_user').style.zIndex = '1'
-    document.getElementById('add_song').style.zIndex = '1'
-    document.getElementById('add_artist').style.zIndex = '1'
-    document.getElementById('add_genre').style.zIndex = '1'
-    document.getElementById('add_language').style.zIndex = '1'
 
     document.getElementById(name).style.zIndex = '99'
 

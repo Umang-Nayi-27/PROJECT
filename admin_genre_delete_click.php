@@ -4,9 +4,10 @@ if (!$connection) {
     die("Not connected" . mysqli_connect_error());
 }
 
-if (isset($_POST["song_name"])) {
-    $song_name = $_POST["song_name"];
-    $query = "DELETE FROM `song` WHERE `id` = $song_name";
+if (isset($_POST["lang_name"])) {
+    $lang_name = $_POST["lang_name"];
+
+    $query = "DELETE FROM `song_genre` WHERE `id` ='$lang_name'";
     
     if (mysqli_query($connection, $query) !== false) {
         // Query was successful

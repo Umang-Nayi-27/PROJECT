@@ -92,6 +92,7 @@ function select_language() {
 
 
                 $.each(response_from_php, function(index, song) {
+                    var songid = song.id
                     var songFile = song.song_file;
                     var songImage = song.song_image;
                     var songName = song.song_name;
@@ -120,7 +121,7 @@ function select_language() {
 
 
                     var song_button = $("<div class='artist_song_div_manage' id='artist_song_div_songname'></div>")
-                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' >")
+                    song_button.append("<input type='submit' value='Delete' style='border-radius:5px ;margin-right:10px ' onclick='singer_song_delete_click(\" "+songid +" \")'  >")
                     song_button.append("<input type='submit' value='Update' style='border-radius:5px ;margin-right:10px ' >")
                     song_button.append("<input type='submit' value='Play' style='border-radius:5px; margin-right:10px;' onclick='song_open(\"  " + songName + " \" , \" " + songImage + "  \" ,\"" + songFile + "\" ,\" " + songartist + "\");' />");
 
